@@ -1,0 +1,34 @@
+---
+title: "European Covid-19 Scenario Modelling Hub"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+---
+<style>
+body{
+    font-size: 19px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+</style>
+
+:::::: {.columns}
+
+::: {.column width="48%"}
+
+Scenario modelling hub for Covid-19 cases, deaths and hospitalisations across Europe, created by a multitude of infectious disease modelling teams, coordinated by the [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en).
+
+:::
+
+::: {.column width="48%"}
+
+![European Scenario hub logo](images/logo.svg)
+
+:::
+
+::::::
