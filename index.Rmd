@@ -1,5 +1,5 @@
 ---
-title: "European Covid-19 Scenario Modelling Hub"
+title: "European Covid-19 Scenario Hub"
 output:
   html_document:
     toc: false

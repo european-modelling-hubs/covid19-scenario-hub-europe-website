@@ -1,6 +1,6 @@
 name: "covid19-scenario-hub-europe-website"
 navbar:
-  title: "European Covid-19 Scenario Modeling Hub"
+  title: "European Covid-19 Scenario Hub"
   type: inverse
   left:
     - text: "Contact"
