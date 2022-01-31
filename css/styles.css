@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #003a80;
+  background-color: #64a621;
 }
 
 body {
@@ -50,8 +50,8 @@ a:focus {
   background-color: #64a621;
 }
 
-.list-group-item.active, 
-.list-group-item.active:hover, 
+.list-group-item.active,
+.list-group-item.active:hover,
 .list-group-item.active:focus {
   background-color: #003a80;
 }
