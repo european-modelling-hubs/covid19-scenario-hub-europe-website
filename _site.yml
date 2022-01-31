@@ -19,4 +19,4 @@ output:
       in_header: header.html
       after_body: blank.html
 exclude:
-  - "DESCRIPTION"
+  - "renv.lock"
