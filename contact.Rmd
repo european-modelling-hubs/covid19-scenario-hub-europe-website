@@ -5,4 +5,5 @@ output:
     toc: false
     toc_float: false
 ---
-To get in touch, send us an email to [mail@covid19forecasthub.eu](mailto:mail@covid19forecasthub.eu).
+
+To get in touch, send us an email to [mail@covid19scenariohub.eu](mailto:mail@covid19scenariohub.eu).
