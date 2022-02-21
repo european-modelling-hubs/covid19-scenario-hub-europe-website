@@ -1,12 +1,10 @@
 ---
-title: "European Covid-19 Scenario Hub"
+title: "Comparison of COVID-19 scenario projections across European countries"
 output:
   html_document:
     toc: false
     toc_float: false
 ---
-
-# Comparison of COVID-19 scenario projections across European countries
 
 ## Background
 
