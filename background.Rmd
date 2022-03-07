@@ -1,12 +1,12 @@
 ---
-title: "Comparison of COVID-19 scenario projections across European countries"
+title: "Background"
 output:
   html_document:
     toc: false
     toc_float: false
 ---
 
-## Background
+The European Covid-19 Forecast Hub is run in collaboration between the [Epiforecasts team](http://epiforecasts.io/covid), which is part of the [Centre for Mathematical Modelling of Infectious Diseases](http://cmmid.github.io/topics/covid19) at the [London School of Hygiene & Tropical Medicine](http://www.lshtm.ac.uk), and the [European Centre for Disease Control and Prevention (ECDC)](http://ecdc.europa.eu).
 
 Scenario models for COVID-19 aim to bound the uncertainty around future outcomes over some time frame. Each potential scenario is composed of one or more variables (which could be, for example, biological parameters such as the rate of immunity waning, or assumed future changes in contact behaviours) deemed plausible. The scenario models encode the influence of these variables on COVID-19 outcomes, and results from scenario models show possible outcomes within the given timeframe assuming that present causal relationships hold in the future. The definition of scenario variables and values depends on the intended use of scenario results. One purpose of scenario modelling is to support comparisons of possible actions taken in the present with long term effects. Separately, scenarios can also be used to understand the sensitivity of future outcomes to varying parameter conditions. 
 
