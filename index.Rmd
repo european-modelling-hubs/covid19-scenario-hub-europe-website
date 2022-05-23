@@ -17,7 +17,7 @@ h1 {
 }
 </style>
 
-:::::: {.columns}
+<div class=".columns">
 
 ::: {.column width="48%"}
 
@@ -85,4 +85,4 @@ We are currently inviting participants to model [round 1 scenarios](scenarios.ht
   </tr>
 </table>
 
-::::::
+</div>
