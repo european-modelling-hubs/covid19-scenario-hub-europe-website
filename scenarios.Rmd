@@ -1,0 +1,286 @@
+---
+title: "Current and past scenarios"
+output:
+  html_document:
+    toc: true
+---
+
+## Round 1
+
+In this round we are exploring the impact of different timings of a [second booster campaign](#booster-campaign) while considering uncertainty around the speed of [waning immunity](#waning-immunity). We ask for projections over a period of [at least nine and at most twelve months](#key-dates).
+
+-   Please aim to submit by **3 June 2022**
+    -   [Submission information, key dates, and model abstract](#submission-information) below
+    -   Please note some [important differences from Round 0](#submission-differences-from-round-0)
+    -   [Let us know](mail@covid19scenariohub.eu) if you need more time
+
+### Round 1 scenarios
+
+<table>
+  <tr>
+    <td></td>
+    <td>
+      <b>Slow summer booster campaign</b><br>
+      <ul>
+          <li>2nd booster recommended for 60+</li>
+          <li>Uptake reaches 50% of 1st booster coverage by 15th December</li>
+          <li>Uptake starts <b>15th June*</b></li>
+      </ul>
+    </td>
+    <td>
+      <b>Fast autumn booster campaign</b><br>
+      <ul>
+          <li>2nd** booster recommended for 60+</li>
+          <li>Uptake reaches 50% of 1st booster coverage by 15th December</li>
+          <li>Uptake starts <b>15th September</b></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Optimistic slow immune waning</b><br>
+      <ul>
+        <li>60% reduction in immunity against infection</li>
+        <li>In <b>8 months</b></li>
+      </ul>
+    </td>
+    <td>
+      Scenario A
+    </td>
+    <td>
+      Scenario B
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Pessimistic fast immune waning</b><br>
+      <ul>
+        <li>60% reduction in immunity against infection</li>
+        <li>In <b>3 months</b></li>
+      </ul>
+    </td>
+    <td>
+      Scenario C
+    </td>
+    <td>
+      Scenario D
+    </td>
+  </tr>
+</table>
+
+_* If a second booster is already offered to 60+, vaccination uptake continues as currently_
+
+_** If a second booster is already offered to 60+, a third booster dose is recommended_
+
+In this section we cover scenario details for:
+
+-   [Booster campaign](#booster-campaign)
+
+-   [Waning immunity](#waning-immunity)
+
+-   [Additional shared assumptions](#additional-shared-assumptions)
+
+See also:
+
+-   [Round 1 overview slides](https://docs.google.com/presentation/d/1TmmPgv7uUxfEp5hgz5fJnn82kHFzubHlOM_QTj2AAAI/edit#slide=id.g1228efa36f8_0_0)
+
+-   [Round 1 submission information](#submission-information)
+
+-   [Data links](data-sources) for cross-European data sources
+
+### Booster campaign
+
+We consider scenarios for a second booster vaccination campaign among the **population aged 60+** in each country. This vaccination would typically be a fourth dose, following a completed course of two doses plus a first booster dose. We prescribe a relative reduction in vaccination coverage among this group, where by **15th December**, uptake of the second booster reaches **50% of coverage** achieved by the first booster campaign.
+
+In the scenarios we vary only the timing of the booster campaign:
+
+-   Slow summer campaign: uptake starts **15th June**
+
+-   Fast autumn campaign: uptake starts **15th September**
+
+We note that some countries have already started a second booster campaign. 
+
+- For nearly all countries, please **continue to use the scenarios as they are**. The scenarios ask for modellers to include a second booster dose open to ages 60+. In most countries currently offering a second booster, these scenarios are an expansion of the eligible age group
+
+- The exceptions are **Greece and the Netherlands**, where second booster vaccination is already open to ages 60+. In these two countries:
+   - In scenarios A & C (uptake starts in June), please model booster vaccination uptake among the 60+ **as it is continuing now**. 
+   - In scenarios B & D (uptake starts in September), please model a **third booster (fifth dose)**, with otherwise the same parameters (uptake among 60+, starting 15 September, coverage reaching 50% of first booster dose by December)
+
+
+#### Assumptions about the booster campaign
+
+##### Shared assumptions
+
+All modellers should include the following parameters when modelling the booster campaign:
+
+-   Second booster is only recommended for population aged \>=60 years
+
+-   Uptake among the target population reaches 50% of coverage achieved by the first booster campaign among that population
+
+-   Uptake at 50% of the target population is reached by 15th December
+
+##### Assumptions left to modeller judgement
+
+Modellers should use their own judgement and relevant literature if making assumptions about the following:
+
+-   The existing level of vaccination coverage reached in the first booster campaign
+
+-   Vaccine effectiveness against both infection and severe disease, for both previous vaccinations and the second booster
+
+### Waning immunity
+
+Waning immunity means protection against new COVID-19 infection. We take a similar general approach to waning immunity as in Round 0 (Euro Scenario Hub) and Round 13 (US Scenario Hub). We specify that immunity wanes to a **60% reduction** from baseline levels. The baseline is the level of protection reported immediately after exposure (vaccination or infection).
+
+In the scenarios we vary the median time taken to reach this reduction of immunity:
+
+-   Optimistic slow waning: a median time of **8 months** for immunity to wane by 60% from baseline
+
+-   Pessimistic fast waning: a median time of **3 months** for immunity to wane by 60% from baseline
+
+#### Assumptions about waning immunity
+
+##### Shared assumptions
+
+All modellers should include the following parameters when modelling waning immunity:
+
+-   *New to this round*
+
+    -   Immunity wanes by 60% (i.e. immunity after 3 or 8 months is 40% of baseline) across all scenarios
+
+    - Waning against severe disease: this is now left to modeller judgement with a recommendation to include waning against severe disease - see below
+
+-   *As the pilot round (text adapted from US Scenario Hub)*
+
+    -   We prescribe the relative reduction in protection against infection after the waning period, where comparison is to the levels observed immediately after natural infection or vaccination
+
+##### Assumptions left to modeller judgement
+
+Modellers should use their own judgement and relevant literature if making assumptions about the following:
+
+-   Waning of protection against severe disease
+    - We strongly recommend including a **decrease of 20% protection within 3 months**. This is a combined estimate based on various recent studies, [see example](https://view-hub.org/sites/default/files/2022-05/COVID19_VEStudies_ForestPlots_Delta_Omicron.pdf).
+    - However, this is up to modeller judgement and teams should continue to produce results even if they are unable to include waning against severe disease
+
+-   The absolute baseline level of protection against infection or severe disease after exposure
+
+-   Whether the baseline level of protection varies by the source of immunity (vaccination or natural infection)
+
+-   Whether or how new exposure to infection or vaccination during the waning period increases the level of immunity. Teams can choose to bump individuals to a higher level of protection after repeat exposures (where exposure is vaccination or infection), but waning would still occur on a 3 to 8 month timescale after each new exposure
+
+-   The distribution of waning immunity, including
+
+    -   the shape and rate at which immunity wanes, as long as the median is 3 or 8 months
+
+    -   whether immunity reaches a plateau or continues to wane after that time
+
+For additional background on waning immunity, we suggest exploring the scenarios for [Round 0](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-0) or the more extensive documentation for the [US Scenario Hub Round 13](https://github.com/midas-network/covid19-scenario-modeling-hub#waning-immunity).
+
+### Additional shared assumptions
+
+We also ask modellers to assume the following:
+
+-   No new variant of concern
+
+-   No novel vaccine types or novel drugs that strongly impact burden
+
+### Submission information
+
+#### Submission differences from Round 0
+
+We have updated the submission format for Round 1 and future rounds.
+
+-   Sample based submissions
+
+    -   We no longer ask for results across a quantile distribution
+
+    -   Please submit **100 samples**. If you think more are needed to capture the uncertainty from the outputs, please get in touch. If you cannot provide 100 samples, please submit as many as you can.
+
+    -   Each sample should be a single simulation from your model, all with equal probability
+
+    -   See more on [submission formatting](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#required-variables)
+
+-   Targets
+
+    -   Teams can submit one or more of any of the below targets. See more on [targets](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Targets-and-horizons#targets)
+
+    -   Key targets:
+
+        -   Incident deaths
+
+        -   Incident cases
+
+        -   Incident hospital admissions
+
+    -   Additional targets, if teams already produce these (please get in touch if yes as we will need to create associated variable names):
+
+        -   Incident infections
+
+        -   Intensive care (ICU) admissions
+
+### Key dates
+
+The dates for round 1 are:
+
+|                                                              | Round 1 date                         | [Epiweek](https://ibis.health.state.nm.us/resource/MMWRWeekCalendar.html#part2) ([conversion](https://www.dralshehri.com/epiweeks/)) |
+|--------------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| Submissions due                                              | June 03 2022                         |                                                                                                                                      |
+| End date for fitting data                                    | May 21 2022                          | EW-20 of 2022                                                                                                                        |
+| `origin_date` (first possible date of a daily simulation)    | May 22 2022                          | First day of EW-21 of 2022                                                                                                           |
+| Earliest `target_end_date` (first week of simulated results) | May 28 2022                          | EW-21 of 2022                                                                                                                        |
+| Latest `target_end_date` (projections over 9 to 12 months)   | From February 18 2023 to May 20 2023 | From EW-07 of 2023 to EW-20 of 2023                                                                                                  |
+
+### Scenario IDs
+
+Please use the following codes to identify between scenarios, with one for each value (row) in your [submission csv](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#scenario_id).
+
+| Scenario                                         | Scenario ID   |
+|--------------------------------------------------|---------------|
+| Scenario A. Slow waning, summer booster campaign | A-2022-05-22  |
+| Scenario B. Slow waning, autumn booster campaign | B-2022-05-22  |
+| Scenario C. Fast waning, summer booster campaign | C-2022-05-22  |
+| Scenario D. Fast waning, autumn booster campaign | D-2022-05-22  |
+
+### Model abstract
+
+Please include a brief abstract for your model as part of your submission. Please make a copy of the [Round 1 Abstract template](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/template/2022-05-22-MyTeam-MyModel-Abstract.md) and save this to your team's folder in `data-processed`, adjusting the filename format (`2022-05-22-MyTeam-MyModel-Abstract.md`).
+
+## Round 0
+
+The details for this round identically match those of the [US Scenario
+Hub](https://covid19scenariomodelinghub.org/viz.html), applied to the [32
+countries](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/data-locations/locations_eu.csv)
+of the European Hub.
+
+-   [Round 0
+    overview](https://docs.google.com/presentation/d/1MiQsN0p-nvDF8km-OLjHOaEAqxMDwmxlOuDPu3POxnk/edit?usp=sharing)
+-   [Full scenario details - US
+    Hub](https://github.com/midas-network/covid19-scenario-modeling-hub#round-13-scenarios)
+-   [Formatting and
+    submission](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format) -
+    see sidebar for contents of this Wiki
+-   Please aim to submit by March 22, 2022; [let us
+    know](mail@covid19scenariohub.eu) if you need more time
+
+### Submission information
+
+The key dates for round 0 are:
+
+|                                     | Round 0                                                                                                                                  |
+|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| Due date                            | March 22 2022                                                                                                                            |
+| End date for fitting data           | March 12 2022. No later than March 12, no earlier than March 5. We specify this to keep projections comparable with the US Scenario Hub. |
+| Scenario start date (`origin_date`) | March 13 2022 (first date of simulated transmission/outcomes)                                                                            |
+| Scenario end date                   | Earliest: June 11 2022 / Latest: March 18 2023                                                                                           |
+
+Please use the following codes to identify between scenarios, with one for each
+value (row) in your [submission
+csv](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#scenario_id).
+
+| Scenario                                                  | Scenario ID  |
+|-----------------------------------------------------------|--------------|
+| Scenario A. Optimistic waning, No immune escape variant   | A-2022-02-25 |
+| Scenario B. Optimistic waning, New immune escape variant  | B-2022-02-25 |
+| Scenario C. Pessimistic waning, No immune escape variant  | C-2022-02-25 |
+| Scenario D. Pessimistic waning, New immune escape variant | D-2022-02-25 |
+
+See also [data links](data-sources) for cross-European data sources.
