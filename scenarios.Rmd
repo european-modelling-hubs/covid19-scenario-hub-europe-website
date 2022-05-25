@@ -5,7 +5,7 @@ output:
     toc: true
 ---
 
-The details for each past and present round of scenarios are below. For technical details, the most up to date information is held on our [Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Scenario-rounds). For more general information on our approach to setting scenarios, read more in the [Background](https://covid19scenariohub.eu/background.html) to the Hub.
+Information about past and present rounds of scenarios is below. For modellers participating in each round, we have reproduced key information below but please refer to the [Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Scenario-rounds) for the most up to date details. For more general information on our approach to setting scenarios, read more in the [Background](https://covid19scenariohub.eu/background.html) to the Hub.
 
 # {.tabset}
 
