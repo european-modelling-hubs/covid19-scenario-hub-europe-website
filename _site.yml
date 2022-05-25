@@ -7,7 +7,7 @@ navbar:
       icon: fa-info-circle
       href: background.html
     - text: "Community"
-      icon: fa-user-circle
+      icon: fa-users
       href: community.html
     - text: "Scenarios"
       icon: fa-telescope
