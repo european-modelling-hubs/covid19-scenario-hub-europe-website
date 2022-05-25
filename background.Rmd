@@ -14,6 +14,8 @@ Each single model provides a framework for estimating the upper and lower limits
 
 We aim to create a European Scenario Hub that brings together scenario modellers for the purpose of better understanding possible COVID-19 futures in a way that informs short-term policy strategies for managing COVID-19 across Europe. This follows previous work to produce collaborative forecasts and scenarios in Europe and the United States (<https://covid19forecasthub.org/>, <https://github.com/KITmetricslab/covid19-forecast-hub-de>, <https://covid19scenariomodelinghub.org/>). The following text aims to ensure transparent principles and criteria to guide all participants in the Hub and interpretation of Hub results.
 
+# {.tabset}
+
 ## Aims
 
 The short-term goals of the European Scenario Hub are:
@@ -35,7 +37,7 @@ Long term goals include:
 
 This protocol addresses the first four of the short-term aims of the Scenario Hub.
 
-## Procedure
+## Procedure {.tabset .tabset-pills}
 
 ### Identifying scenarios and setting parameters
 

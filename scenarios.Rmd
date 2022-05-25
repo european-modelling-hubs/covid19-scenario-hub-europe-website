@@ -5,7 +5,9 @@ output:
     toc: true
 ---
 
-## Round 1
+# {.tabset}
+
+## Round 1 {.tabset .tabset-pills}
 
 In this round we are exploring the impact of different timings of a [second booster campaign](#booster-campaign) while considering uncertainty around the speed of [waning immunity](#waning-immunity). We ask for projections over a period of [at least nine and at most twelve months](#key-dates).
 
@@ -217,7 +219,7 @@ We have updated the submission format for Round 1 and future rounds.
 
         -   Intensive care (ICU) admissions
 
-### Key dates
+#### Key dates
 
 The dates for round 1 are:
 
@@ -229,7 +231,7 @@ The dates for round 1 are:
 | Earliest `target_end_date` (first week of simulated results) | May 28 2022                          | EW-21 of 2022                                                                                                                        |
 | Latest `target_end_date` (projections over 9 to 12 months)   | From February 18 2023 to May 20 2023 | From EW-07 of 2023 to EW-20 of 2023                                                                                                  |
 
-### Scenario IDs
+#### Scenario IDs
 
 Please use the following codes to identify between scenarios, with one for each value (row) in your [submission csv](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#scenario_id).
 
@@ -240,7 +242,7 @@ Please use the following codes to identify between scenarios, with one for each 
 | Scenario C. Fast waning, summer booster campaign | C-2022-05-22  |
 | Scenario D. Fast waning, autumn booster campaign | D-2022-05-22  |
 
-### Model abstract
+#### Model abstract
 
 Please include a brief abstract for your model as part of your submission. Please make a copy of the [Round 1 Abstract template](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/template/2022-05-22-MyTeam-MyModel-Abstract.md) and save this to your team's folder in `data-processed`, adjusting the filename format (`2022-05-22-MyTeam-MyModel-Abstract.md`).
 
