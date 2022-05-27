@@ -6,10 +6,14 @@ output:
     toc_float: false
 ---
 
-For general information about the European Scenario Hub, our [Github repository](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/issues/new) is typically the most up to date source. For updates on new scenario rounds, upcoming meetings, and results, all are welcome to join the European Scenario Hub [mailing list](https://groups.google.com/u/0/g/euro-covid19-scenario-hub). Please include your name and a brief sentence about your interest in the Hub (so that we can exclude bots). 
+For general information about the European Scenario Hub, our [Github repository](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/issues/new) is typically the most up to date source. 
 
-We welcome enquiries about the European Scenario Hub and we are keen to hear from modellers interested in participating.To get in touch, please:
+For updates on new scenario rounds, upcoming meetings, and results, all are welcome to join the European Scenario Hub [mailing list](https://groups.google.com/u/0/g/euro-covid19-scenario-hub). Please include your name and a brief sentence about your interest in the Hub (so that we can exclude bots). 
+
+We welcome enquiries about the European Scenario Hub and we are keen to hear from modellers interested in participating. To get in touch, please:
 
 - Send us an email at [mail@covid19scenariohub.eu](mailto:mail@covid19scenariohub.eu)
 
 - Open a [Github Issue](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/issues/new)
+
+We also have a [Slack](https://slack.com/) workspace for all those interested in the Hub - please get in touch for the invite link.
