@@ -29,3 +29,5 @@ output:
       after_body: blank.html
 exclude:
   - "renv.lock"
+include:
+  - "presentations/*"
