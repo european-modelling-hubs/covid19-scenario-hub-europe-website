@@ -24,5 +24,5 @@ h1 {
 Scenario modelling hub for Covid-19 cases, deaths and hospitalisations across Europe, created by a multitude of infectious disease modelling teams, coordinated by the [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en).
 
 <div>
-  <object class="embed-pdf" data="Euro-Scenario-Hub-launch.pdf" type="application/pdf">
+  <object class="embed-pdf" data="presentations/Euro-Scenario-Hub-launch.pdf" type="application/pdf">
 </div>
