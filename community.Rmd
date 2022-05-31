@@ -12,7 +12,7 @@ Meetings alternate between:
 - Joint seminars, shared with the European Forecast Hub
    - These are presentation-based to allow in depth exploration of a particular model or topic relevant to COVID-19 in Europe
    - We welcome anyone interested in epidemiological modelling and its public health use. For details of upcoming meetings, please join the [general mailing list](https://groups.google.com/u/0/g/euro-covid19-forecast-hub)
-   - [Recent meeting presentations](https://drive.google.com/drive/u/0/folders/13eaNhZAUElv8Bu6nMUAWPiVEqNz6YqSa?ths=true) (see [here](https://covid19forecasthub.eu/community.html) for presentations in 2021)
+   - [Recent meeting presentations](https://drive.google.com/drive/u/0/folders/13eaNhZAUElv8Bu6nMUAWPiVEqNz6YqSa?ths=true) (refer to [the 'Community' page from the Forecast Hub](https://covid19forecasthub.eu/community.html) for presentations in 2021)
    
 - Scenario Hub technical modeller meetings
    - These are intended as an informal discussion forum to discuss the present round of scenario modelling
