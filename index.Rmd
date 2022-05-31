@@ -42,7 +42,7 @@ Scenario modelling combines the best-available epidemiological evidence with rea
 
 The Scenario Hub will be updated by collating long-term modelling scenarios for thirty EU/EEA Member States, the UK and Switzerland. Each potential scenario is composed of one or more plausible and policy-relevant variables, while scenarios cover a period of nine to twelve months. Instead of just using single projections, the hub combines and compares different modelling projections from different modelling teams across Europe. The hub can thus contribute to increased confidence and robustness of drawn conclusions and insights. 
 
-**[Learn more](background.html)**
+**[Learn more](about.html)**
 
 ---
 
