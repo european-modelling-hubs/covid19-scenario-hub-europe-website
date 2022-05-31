@@ -6,17 +6,41 @@ output:
     toc_float: false
 ---
 
-The European Covid-19 Scenario Hub is run in collaboration between the [Epiforecasts team](http://epiforecasts.io/), which is part of the [Centre for Mathematical Modelling of Infectious Diseases](http://cmmid.github.io/topics/covid19) at the [London School of Hygiene & Tropical Medicine](http://www.lshtm.ac.uk), and the [European Centre for Disease Control and Prevention (ECDC)](http://ecdc.europa.eu).
+The European Scenario Hub brings together scenario modellers across Europe. We work collaboratively to:
 
-Scenario models for COVID-19 aim to bound the uncertainty around future outcomes over some time frame. Each potential scenario is composed of one or more variables (which could be, for example, biological parameters such as the rate of immunity waning, or assumed future changes in contact behaviours) deemed plausible. The scenario models encode the influence of these variables on COVID-19 outcomes, and results from scenario models show possible outcomes within the given timeframe assuming that present causal relationships hold in the future. The definition of scenario variables and values depends on the intended use of scenario results. One purpose of scenario modelling is to support comparisons of possible actions taken in the present with long term effects. Separately, scenarios can also be used to understand the sensitivity of future outcomes to varying parameter conditions. 
+- Inform short- and mid-term policy strategies for managing COVID-19 across Europe
+- Better understand the drivers of possible COVID-19 futures 
 
-Each single model provides a framework for estimating the upper and lower limits of uncertainty in COVID-19 outcomes corresponding to each scenario. However, there is no objectively best framework for modelling the transmission of SARS-CoV-2 and resulting dynamics of COVID-19, meaning the true range of uncertainty may be most appropriately expressed by results from multiple alternative models.
-
-We aim to create a European Scenario Hub that brings together scenario modellers for the purpose of better understanding possible COVID-19 futures in a way that informs short-term policy strategies for managing COVID-19 across Europe. This follows previous work to produce collaborative forecasts and scenarios in Europe and the United States (<https://covid19forecasthub.org/>, <https://github.com/KITmetricslab/covid19-forecast-hub-de>, <https://covid19scenariomodelinghub.org/>). The following text aims to ensure transparent principles and criteria to guide all participants in the Hub and interpretation of Hub results.
+We combine and interpret the work of many modelling teams, focussing on cases, deaths, and hospitalisations over the next 12 months in 32 European countries. 
 
 # {.tabset}
 
-## Aims
+## What?
+
+---
+
+##### Key definitions
+
+**Scenarios** _isolate fundamental drivers of COVID-19 dynamics_
+
+**Models** _quantitatively encode the influence of these drivers on COVID-19 outcomes_
+
+**Projections** _demonstrate the relative impact of different variables, given current knowledge_
+
+---
+##### Defining scenario modelling
+
+Scenario models for COVID-19 aim to bound the uncertainty around future outcomes over some time frame. Each potential scenario is composed of one or more variables (which could be, for example, biological parameters such as the rate of immunity waning, or assumed future changes in contact behaviours) deemed plausible. The scenario models encode the influence of these variables on COVID-19 outcomes, and results from scenario models show possible outcomes within the given timeframe (assuming that present causal relationships hold in the future). 
+
+##### Using scenarios
+
+The definition of scenario variables and values depends on the intended use of scenario results. One purpose of scenario modelling is to support comparisons of possible actions taken in the present with long term effects. Separately, scenarios can also be used to understand the sensitivity of future outcomes to varying parameter conditions. 
+
+##### Interpreting scenarios
+
+Each single model provides a framework for estimating the upper and lower limits of uncertainty in COVID-19 outcomes corresponding to each scenario. However, there is no objectively best framework for modelling the transmission of SARS-CoV-2 and resulting dynamics of COVID-19, meaning the true range of uncertainty may be most appropriately expressed by results from multiple alternative models.
+
+## Why?
 
 The short-term goals of the European Scenario Hub are:
 
@@ -33,11 +57,11 @@ Long term goals include:
 
 6. Creating an open database of standardised, comparable scenario projections that are easily accessible for secondary analyses by the wider research community
 7. Identifying benefits or drawbacks of collaborative improve real-time scenario modelling with implications for future work
-8. creating a self-sustaining community of European scenario modellers
+8. Creating a self-sustaining community of European scenario modellers
 
-This protocol addresses the first four of the short-term aims of the Scenario Hub.
+On this page we address the first four of the short-term aims of the Scenario Hub.
 
-## Procedure {.tabset .tabset-pills}
+## How? {.tabset .tabset-pills}
 
 ### Identifying scenarios and setting parameters
 
@@ -70,3 +94,17 @@ We will create ensembles from the individual models for each scenario round sepa
 For each scenario round, we will create a standardised visualisation allowing all models’ scenario projections to be compared. This will be presented on the website and we will follow this with a narrative summary of model results, including information taken from model abstracts to demonstrate differences between teams’ approach to and results from scenarios.
 
 We aim to choose plausible scenarios that can inform policy but do not expect any of them to be an exact characterisation of the future. We therefore do not expect data to align with any one model result. Moreover, observed data would not align with any scenario output if the scenarios excluded a parameter that operated within the relevant timeframe and had substantial confounding effects across all of the scenarios.
+
+## Related work
+
+We also run the [European Forecasting Hub](https://covid19forecasthub.eu/), producing forecasts of COVID-19 across Europe over the next 1-4 weeks. 
+
+The European Scenario Hub and broader Hub approach follows work across Europe and the United States, including the:
+
+- [US Scenario Modelling Hub](https://covid19scenariomodelinghub.org/)
+
+- [US Forecast Hub ](https://covid19forecasthub.org/)
+
+- [German and Polish Forecast Hub](https://github.com/KITmetricslab/covid19-forecast-hub-de) 
+
+We work closely with these teams and we are grateful for their support in setting up European Hubs.
