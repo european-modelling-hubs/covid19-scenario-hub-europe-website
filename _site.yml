@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "About"
       icon: fa-info-circle
-      href: background.html
+      href: about.html
     - text: "Scenarios"
       icon: fa-virus
       href: scenarios.html
