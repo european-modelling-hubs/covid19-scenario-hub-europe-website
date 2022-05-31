@@ -3,15 +3,15 @@ navbar:
   title: "European Covid-19 Scenario Hub"
   type: inverse
   left:
-    - text: "Background"
+    - text: "About"
       icon: fa-info-circle
       href: background.html
+    - text: "Scenarios"
+      icon: fa-virus
+      href: scenarios.html
     - text: "Community"
       icon: fa-users
       href: community.html
-    - text: "Scenarios"
-      icon: fa-telescope
-      href: scenarios.html
     - text: "Contact"
       icon: fa-envelope
       href: contact.html
