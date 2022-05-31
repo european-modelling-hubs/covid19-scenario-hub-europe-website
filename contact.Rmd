@@ -6,9 +6,9 @@ output:
     toc_float: false
 ---
 
-### Stay up to date on Hub news
+### Hub news
 
-For updates on new scenario rounds, upcoming meetings, and results, all are welcome to join the European Scenario Hub [mailing list](https://groups.google.com/u/0/g/euro-covid19-scenario-hub). Please include your name and a brief sentence about your interest in the Hub (so that we can exclude bots). 
+Stay up to date on new scenario rounds, upcoming meetings, and results. All are welcome to join the European Scenario Hub [mailing list](https://groups.google.com/u/0/g/euro-covid19-scenario-hub). Please include your name and a brief sentence about your interest in the Hub (so that we can exclude bots). 
 
 ### New enquiries
 

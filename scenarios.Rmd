@@ -298,7 +298,7 @@ countries](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-e
   </tr>
 </table>
 
-### Submission information
+### Projections
 
 In Round 0:
 
@@ -306,7 +306,7 @@ In Round 0:
 
 - 8 teams started working on Round 0; 5 teams contributed results
 
-- 5 countries with >2 model projections
+- 5 countries had >2 model projections
 
 ### Conclusions
 
