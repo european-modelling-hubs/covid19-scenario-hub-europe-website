@@ -103,7 +103,7 @@ The European Scenario Hub and broader Hub approach follows work across Europe an
 
 - [US Scenario Modelling Hub](https://covid19scenariomodelinghub.org/)
 
-- [US Forecast Hub ](https://covid19forecasthub.org/)
+- [US Forecast Hub](https://covid19forecasthub.org/)
 
 - [German and Polish Forecast Hub](https://github.com/KITmetricslab/covid19-forecast-hub-de) 
 

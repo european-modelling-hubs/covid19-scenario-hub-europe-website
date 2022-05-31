@@ -30,9 +30,9 @@ The European Scenario Hub brings together scenario modellers across Europe. We w
 
 We combine and interpret the work of many modelling teams, focussing on cases, deaths, and hospitalisations over the next 12 months in 32 European countries.
 
-Separately, we also produce collaborative short-term forecasts across Europe at the [European Forecast Hub](https://covid19forecasthub.eu/). The European Hubs are run in collaboration between the [Epiforecasts team](http://epiforecasts.io/) (part of the [Centre for Mathematical Modelling of Infectious Diseases](http://cmmid.github.io/topics/covid19) at the [London School of Hygiene & Tropical Medicine](http://www.lshtm.ac.uk)), and the [European Centre for Disease Control and Prevention (ECDC)](http://ecdc.europa.eu). 
+Separately, we also produce collaborative short-term forecasts across Europe at the [European Forecast Hub](https://covid19forecasthub.eu/). The European Hubs are run in collaboration between the [Epiforecasts team](https://epiforecasts.io/) (part of the [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19) at the [London School of Hygiene & Tropical Medicine](https://www.lshtm.ac.uk)), and the [European Centre for Disease Control and Prevention (ECDC)](https://ecdc.europa.eu). 
 
-We welcome enquiries - please [contact us](https://covid19scenariohub.eu/contact.html).
+We welcome enquiries - please [contact us](contact.html).
 
 ---
 
@@ -42,7 +42,7 @@ Scenario modelling combines the best-available epidemiological evidence with rea
 
 The Scenario Hub will be updated by collating long-term modelling scenarios for thirty EU/EEA Member States, the UK and Switzerland. Each potential scenario is composed of one or more plausible and policy-relevant variables, while scenarios cover a period of nine to twelve months. Instead of just using single projections, the hub combines and compares different modelling projections from different modelling teams across Europe. The hub can thus contribute to increased confidence and robustness of drawn conclusions and insights. 
 
-**[Learn more](https://covid19scenariohub.eu/background.html)**
+**[Learn more](background.html)**
 
 ---
 
