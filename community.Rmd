@@ -16,6 +16,6 @@ Meetings alternate between:
    
 - Scenario Hub technical modeller meetings
    - These are intended as an informal discussion forum to discuss the present round of scenario modelling
-   - We welcome modellers actively following or participating in the Scenario Hub. New modellers are very welcome: please [contact us](https://covid19scenariohub.eu/contact.html)
+   - We welcome modellers actively following or participating in the Scenario Hub. New modellers are very welcome: please [contact us](contact.html)
    - [Past meeting agendas](https://drive.google.com/drive/u/0/folders/1BjbWKag6u2ALgtJP64fkXXL05jkCVAXe?ths=true)
 
