@@ -1,0 +1,7 @@
+### `r tools::toTitleCase(str_replace_all(feature, "_", " "))`
+
+```{r results = 'asis'}
+model_details |> 
+  imap(~ glue::glue('- **{.y}**: {.x}\n\n')) |> 
+  walk(cat)
+```
