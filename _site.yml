@@ -15,9 +15,6 @@ navbar:
     - text: "Models"
       icon: fa-file-spreadsheet
       href: models.html
-    - text: "Scenarios"
-      icon: fa-telescope
-      href: scenarios.html
     - text: "Contact"
       icon: fa-envelope
       href: contact.html
