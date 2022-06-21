@@ -3,12 +3,24 @@ on:
   workflow_dispatch:
   push:
     branches: main
+  workflow_run:
+    workflows:
+      - "Create reports"
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   render-website:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+
+      - uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: reports.yml
+          name: reports
+          path: reports
 
       - uses: r-lib/actions/setup-pandoc@v1
 
