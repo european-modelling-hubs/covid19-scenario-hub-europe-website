@@ -4,6 +4,8 @@ output:
   html_document:
     self-contained: true
     toc: true
+    toc_float:
+      collapsed: false
 date: ""
 ---
 
