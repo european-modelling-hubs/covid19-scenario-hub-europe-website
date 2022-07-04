@@ -51,7 +51,13 @@ metadata <- data_processed_files |>
 
 ```{r, results='asis'}
 metadata |> 
-  purrr::map_dfr(~ .x[c("model_name", "model_contributors", "license")]) |> 
+  purrr::map_dfr(
+    ~ list(
+        "Model" = .x["model_abbr"],
+        "Authors" = glue::glue_collapse(purrr::map(.x$model_contributors, "name"), sep = ", "),
+        "License" = .x["license"]
+      )
+  ) |> 
   knitr::kable()
 ```
 
