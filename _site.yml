@@ -15,6 +15,11 @@ navbar:
     - text: "Models"
       icon: fa-file-spreadsheet
       href: models.html
+    - text: "Reports"
+      icon: fa-file-alt
+      menu:
+        - text: "Round 1"
+          href: report1.html
     - text: "Contact"
       icon: fa-envelope
       href: contact.html
