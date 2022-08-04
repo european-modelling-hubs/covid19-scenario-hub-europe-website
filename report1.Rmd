@@ -24,9 +24,9 @@ library(dplyr)
 library(ggplot2)
 library(purrr)
 library(covidHubUtils)
-source("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/code/load/scenarios.R")
-source("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/code/load/plot_scenarios.R")
-source("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/code/load/plot_palettes.R")
+source("code/load/scenarios.R")
+source("code/load/plot_scenarios.R")
+source("code/load/plot_palettes.R")
 
 # Load data -----------------------------------------------------------------
 # Get results
@@ -159,7 +159,7 @@ For each model and scenario, we compare the total number of outcomes over the en
 **Projections**
 
 ```{r plot-cumulative, results = 'asis'}
-source("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/code/summarise/cumulative.R")
+source("code/summarise/cumulative.R")
 cumulative_plots <- plot_cumulative_summary(data = results_multi_country,
                                             truth = truth,
                                             compare_last_year = TRUE)
@@ -216,7 +216,7 @@ for (target in scenarios$targets) {
 ## Peaks {.tabset}
 
 ```{r detect-peaks}
-source("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/code/summarise/peaks.R")
+source("code/summarise/peaks.R")
 peaks <- detect_peaks(results_multi_country)
 quantile_levels = c(0.05, 0.5, 0.95)
 
