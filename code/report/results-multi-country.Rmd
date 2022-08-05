@@ -18,58 +18,9 @@ knitr::knit_hooks$set(fig.width = knitr::hook_pngquant)
 ```
 
 ```{r prep}
-# Packages
+library(here)
 library(knitr)
-library(dplyr)
-library(ggplot2)
-library(purrr)
-library(covidHubUtils)
-source("code/load/scenarios.R")
-source("code/load/plot_scenarios.R")
-source("code/load/plot_palettes.R")
-
-# Load data -----------------------------------------------------------------
-# Get results
-round_text <- paste0("round-", params$round)
-
-data_path <- tempfile(fileext = ".parquet")
-download.file(
-  glue::glue("https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/releases/download/round{params$round}/round{params$round}.parquet"),
-  data_path
-)
-results <- arrow::read_parquet(data_path) |> 
-  left_join(read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/data-locations/locations_eu.csv")) |> 
-  mutate(
-    value_100k = value / population * 1e5,
-    scenario_label =  recode(scenario_id, !!!scenarios[[round_text]][["scenario_labels"]])
-  ) 
-  
-
-# Filter results to countries with multiple models
-multi_country <- distinct(results, model, location) %>%
-  group_by(location) %>%
-  tally() %>%
-  filter(n >= 2) %>%
-  pull(location)
-results_multi_country <- filter(results, location %in% multi_country)
-
-# Truth data ----------------------------------------------------------------
-truth <- load_truth(
-  truth_source = "JHU",
-  temporal_resolution = "weekly",
-  hub = "ECDC"
-) |>
-  select(-model)
-
-# Formatting -----------------------------------------------------------------
-# create consistent model and scenario colour palettes
-palette <- plot_palettes(results,
-                         scenario_reds = c("A", "C"),
-                         scenario_blues = c("B", "D"))
-target_dirs <- gsub("inc ", "", scenarios$targets)
-names(target_dirs) <- gsub("Weekly ", "", names(target_dirs))
-names(target_dirs) <- tools::toTitleCase(names(target_dirs))
-
+source(here("code", "report", "prep.R"))
 ```
 
 # Scenarios {.tabset}
@@ -93,7 +44,7 @@ In this report we only show results from countries with multiple models.
 We consider vaccination rates in countries for which multiple teams of modellers contributed projections. 
 
 ```{r describe-vax}
-source("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/data-truth/code/vaccination-age.R")
+source(here("data-truth", "code", "vaccination-age.R"))
 plot <- plot_vaccination_by_age(location_codes = multi_country)
 plot
 ```
@@ -159,7 +110,7 @@ For each model and scenario, we compare the total number of outcomes over the en
 **Projections**
 
 ```{r plot-cumulative, results = 'asis'}
-source("code/summarise/cumulative.R")
+source(here("code", "summarise", "cumulative.R"))
 cumulative_plots <- plot_cumulative_summary(data = results_multi_country,
                                             truth = truth,
                                             compare_last_year = TRUE)
@@ -216,7 +167,7 @@ for (target in scenarios$targets) {
 ## Peaks {.tabset}
 
 ```{r detect-peaks}
-source("code/summarise/peaks.R")
+source(here("code", "summarise", "peaks.R"))
 peaks <- detect_peaks(results_multi_country)
 quantile_levels = c(0.05, 0.5, 0.95)
 
