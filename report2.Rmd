@@ -27,7 +27,9 @@ library(covidHubUtils)
 source("code/load/scenarios.R")
 source("code/load/plot_scenarios.R")
 source("code/load/plot_palettes.R")
+```
 
+```{r}
 # Load data -----------------------------------------------------------------
 # Get results
 round_text <- paste0("round-", params$round)
@@ -163,17 +165,13 @@ source("code/summarise/cumulative.R")
 cumulative_plots <- plot_cumulative_summary(data = results_multi_country,
                                             truth = truth,
                                             compare_last_year = TRUE)
-for (target in scenarios$targets) {
-  target <- gsub("^inc ", "", target)
-  cat('\n')
-  cat(paste0('## ', tools::toTitleCase(target)))
-  cat('\n')
-  print(cumulative_plots[[target]])
-  cat('\n')
-  cat('\n')
-  cat(scenarios[["round-1"]][["scenario_caption"]])
-  cat('\n')
-}
+
+scenarios$targets |> 
+  purrr::map_chr(function(target) {
+    knitr::knit_expand("_cumulative_plots.Rmd", target = target)
+  }) |> 
+  knitr::knit_child(text = _, quiet = TRUE) |> 
+  cat(sep = "\n\n\n")
 ```
 
 # Incident outcomes {.tabset}
@@ -193,24 +191,12 @@ We explored the incidence of COVID-19 per 100,000 over the projection period and
 ## Over time {.tabset .tabset-pills}
 
 ```{r plot-projections, results = 'asis'}
-for (target in scenarios$targets) {
-  cat('\n')
-  cat(paste0('### ', tools::toTitleCase(gsub("^inc ", "", target))))
-  cat('\n')
-  print(
-    plot_scenarios(
-      results_multi_country, 
-      truth,
-      round = params$round,
-      target_variable = target,
-      columns = "scenario",
-      model_colours = palette$models,
-      scenario_colours = palette$scenarios,
-      subsample = 0.2, per_100k = TRUE
-    )
-  )
-  cat('\n')
-}
+scenarios$targets |> 
+  purrr::map_chr(function(target) {
+    knitr::knit_expand("_by_scenario.Rmd", target = target)
+  }) |> 
+  knitr::knit_child(text = _, quiet = TRUE) |> 
+  cat(sep = "\n\n\n")
 ```
 
 ## Peaks {.tabset}
@@ -220,16 +206,20 @@ source("code/summarise/peaks.R")
 peaks <- detect_peaks(results_multi_country)
 quantile_levels = c(0.05, 0.5, 0.95)
 
+
+peak_number_plot <- list()
+peak_size_plot <- list()
+
 # Create plots for whole projection
-peak_number_plot <- plot_peak_number(peaks = peaks)
-peak_size_plot <- plot_peak_size(peaks = peaks, truth = truth)
+peak_number_plot[["full"]] <- plot_peak_number(peaks = peaks)
+peak_size_plot[["full"]] <- plot_peak_size(peaks = peaks, truth = truth)
 
 # Create autumn-winter plots
 autumn_winter_months <- c(10,11,12,1,2,3)
 peaks_aw <- peaks |>
   filter(month(target_end_date) %in% autumn_winter_months)
-peak_number_plot_aw <- plot_peak_number(peaks = peaks_aw)
-peak_size_plot_aw <- plot_peak_size(peaks = peaks_aw, truth = truth)
+peak_number_plot[["aw"]] <- plot_peak_number(peaks = peaks_aw)
+peak_size_plot[["aw"]] <- plot_peak_size(peaks = peaks_aw, truth = truth)
 ```
 
 ### Autumn-winter {.tabset .tabset-pills}
@@ -237,21 +227,12 @@ peak_size_plot_aw <- plot_peak_size(peaks = peaks_aw, truth = truth)
 *Projections over November 2022 through March 2023*
 
 ```{r plot-peaks-aw, results = 'asis'}
-for (target in scenarios$targets) {
-  cat('\n')
-  cat(paste0('#### ', tools::toTitleCase(gsub("^inc ", "", target))))
-  cat('\n')
-  cat('\n A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations')
-  cat('\n')
-  print(peak_size_plot_aw[[target]])
-  cat('\n')
-  cat('\n B. Projected number of peaks (median with 5-95% probability)')
-  cat('\n')
-  print(peak_number_plot_aw[[target]])
-  cat('\n\n')
-  cat(scenarios[["round-1"]][["scenario_caption"]])
-  cat('\n')
-}
+scenarios$targets |> 
+  purrr::map_chr(function(target) {
+    knitr::knit_expand("_peaks.Rmd", target = target, period = "aw")
+  }) |> 
+  knitr::knit_child(text = _, quiet = TRUE) |> 
+  cat(sep = "\n\n\n")
 ```
 
 
@@ -260,20 +241,10 @@ for (target in scenarios$targets) {
 *Projections over June 2022 through June 2023*
 
 ```{r plot-peaks-alltime, results = 'asis'}
-for (target in scenarios$targets) {
-  cat('\n')
-  cat(paste0('#### ', tools::toTitleCase(gsub("^inc ", "", target))))
-  cat('\n')
-  cat('\n A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations')
-  cat('\n')
-  print(peak_size_plot[[target]])
-  cat('\n')
-  cat('\n B. Projected number of peaks (median with 5-95% probability)')
-  cat('\n')
-  print(peak_number_plot[[target]])
-  cat('\n\n')
-  cat(scenarios[["round-1"]][["scenario_caption"]])
-  cat('\n')
-}
+scenarios$targets |> 
+  purrr::map_chr(function(target) {
+    knitr::knit_expand("_peaks.Rmd", target = target, period = "full")
+  }) |> 
+  knitr::knit_child(text = _, quiet = TRUE) |> 
+  cat(sep = "\n\n\n")
 ```
-

@@ -1,0 +1,28 @@
+#### `r tools::toTitleCase(gsub("^inc ", "", "{{target}}"))`
+
+A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations
+
+```{r}
+h <-  results_multi_country |> 
+  filter(target_variable == "{{target}}") |> 
+  pull(location) |> 
+  n_distinct()
+```
+
+```{r, results='asis', fig.width = 8, fig.height = h * 2}
+print(peak_size_plot[["{{period}}"]][["{{target}}"]])
+```
+
+B. Projected number of peaks (median with 5-95% probability)
+
+```{r, results='asis', fig.width = 8, fig.height = h * 2}
+print(peak_number_plot[["{{period}}"]][["{{target}}"]])
+```
+
+```{r, results='asis'}
+cat(scenarios[[paste0("round-", params$round)]][["scenario_caption"]])
+```
+
+```{r, results='asis'}
+cat("\n\n")
+```

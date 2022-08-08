@@ -1,0 +1,24 @@
+```{r}
+short_target <- gsub("^inc ", "", "{{target}}")
+```
+
+## `r tools::toTitleCase(short_target)`
+
+```{r}
+h <-  results_multi_country |> 
+  filter(target_variable == "{{target}}") |> 
+  pull(location) |> 
+  n_distinct()
+```
+
+```{r, results='asis', fig.width = 8, fig.height = h * 2}
+print(cumulative_plots[[short_target]])
+```
+
+```{r, results='asis'}
+cat(scenarios[[paste0("round-", params$round)]][["scenario_caption"]])
+```
+
+```{r, results='asis'}
+cat("\n")
+```
