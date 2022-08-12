@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Background</title>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="images/favicon.svg" />
+
+<script data-goatcounter="https://covid19-scenario-hub-europe.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">European Covid-19 Scenario Hub</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="about.html">
+    <span class="fa fa-info-circle"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="scenarios.html">
+    <span class="fa fa-virus"></span>
+     
+    Scenarios
+  </a>
+</li>
+<li>
+  <a href="community.html">
+    <span class="fa fa-users"></span>
+     
+    Community
+  </a>
+</li>
+<li>
+  <a href="models.html">
+    <span class="fa fa-file-spreadsheet"></span>
+     
+    Models
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-file-alt"></span>
+     
+    Reports
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="report1.html">Round 1</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="contact.html">
+    <span class="fa fa-envelope"></span>
+     
+    Contact
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Background</h1>
+
+</div>
+
+
+<p>The European Scenario Hub brings together scenario modellers across Europe. We work collaboratively to:</p>
+<ul>
+<li>Inform short- and mid-term policy strategies for managing COVID-19 across Europe</li>
+<li>Better understand the drivers of possible COVID-19 futures</li>
+</ul>
+<p>We combine and interpret the work of many modelling teams, focussing on cases, deaths, and hospitalisations over the next 12 months in 32 European countries.</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="what" class="section level2">
+<h2>What?</h2>
+<hr />
+<div id="key-definitions" class="section level5">
+<h5>Key definitions</h5>
+<p><strong>Scenarios</strong> <em>isolate fundamental drivers of COVID-19 dynamics</em></p>
+<p><strong>Models</strong> <em>quantitatively encode the influence of these drivers on COVID-19 outcomes</em></p>
+<p><strong>Projections</strong> <em>demonstrate the relative impact of different variables, given current knowledge</em></p>
+<hr />
+</div>
+<div id="defining-scenario-modelling" class="section level5">
+<h5>Defining scenario modelling</h5>
+<p>Scenario models for COVID-19 aim to bound the uncertainty around future outcomes over some time frame. Each potential scenario is composed of one or more variables (which could be, for example, biological parameters such as the rate of immunity waning, or assumed future changes in contact behaviours) deemed plausible. The scenario models encode the influence of these variables on COVID-19 outcomes, and results from scenario models show possible outcomes within the given timeframe (assuming that present causal relationships hold in the future).</p>
+</div>
+<div id="using-scenarios" class="section level5">
+<h5>Using scenarios</h5>
+<p>The definition of scenario variables and values depends on the intended use of scenario results. One purpose of scenario modelling is to support comparisons of possible actions taken in the present with long term effects. Separately, scenarios can also be used to understand the sensitivity of future outcomes to varying parameter conditions.</p>
+</div>
+<div id="interpreting-scenarios" class="section level5">
+<h5>Interpreting scenarios</h5>
+<p>Each single model provides a framework for estimating the upper and lower limits of uncertainty in COVID-19 outcomes corresponding to each scenario. However, there is no objectively best framework for modelling the transmission of SARS-CoV-2 and resulting dynamics of COVID-19, meaning the true range of uncertainty may be most appropriately expressed by results from multiple alternative models.</p>
+</div>
+</div>
+<div id="why" class="section level2">
+<h2>Why?</h2>
+<p>The short-term goals of the European Scenario Hub are:</p>
+<ol style="list-style-type: decimal">
+<li>Creation and visualisation of open access scenario projections</li>
+<li>Collaboration among hub participants (that improves the quality of projections)</li>
+<li>Identifiable potential for use of results in policy decision-making</li>
+<li>Ethical communication of scenario projections to the public;</li>
+<li>Secondary analysis of scenario hub projections including
+<ul>
+<li>Degree of agreement between different models for the same scenario</li>
+<li>Understanding the impact of choices of model structure and complexity on projected futures</li>
+<li>Methods for combining scenario results</li>
+</ul></li>
+</ol>
+<p>Long term goals include:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Creating an open database of standardised, comparable scenario projections that are easily accessible for secondary analyses by the wider research community</li>
+<li>Identifying benefits or drawbacks of collaborative improve real-time scenario modelling with implications for future work</li>
+<li>Creating a self-sustaining community of European scenario modellers</li>
+</ol>
+<p>On this page we address the first four of the short-term aims of the Scenario Hub.</p>
+</div>
+<div id="how" class="section level2 tabset tabset-pills">
+<h2>How?</h2>
+<div id="identifying-scenarios-and-setting-parameters" class="section level3">
+<h3>Identifying scenarios and setting parameters</h3>
+<p>We will create scenarios at 4-8 week intervals with each set of scenarios (a round) projecting over a future 3-12 months. As a starting point, our framework for setting scenarios in each round is a 2x2 matrix composed of two variables, each with optimistic and pessimistic parameter values for its influence on COVID-19 outcomes.</p>
+<div id="variables" class="section level4">
+<h4>Variables</h4>
+<p>We aim to include one variable that is biologically intrinsic to COVID-19, and one variable that can be influenced extrinsically by national-level policy action. For each variable we will identify one or more observable parameters that represent the causal pathway from the variable to the outcome.</p>
+<p>For each scenario round, we will collaborate with the ECDC to define the extrinsic variable, based on their interactions with national policy-makers and assessment of possible policy options. We will draw on the epidemiology of COVID-19 in Europe to suggest themes for the biologically intrinsic variable. After an initial consultation with the ECDC, we will share and seek suggestions for the scenario variables from participating teams.</p>
+</div>
+<div id="parameters" class="section level4">
+<h4>Parameters</h4>
+<p>Each of the two variables can be expressed using one or multiple parameters representing an observable value on the causal pathway between the variable and outcome. We can explore the uncertain impact of each parameter by identifying the two most plausible parameter values that would create either the best possible (optimistic) or worst possible (pessimistic) COVID-19 outcome.</p>
+<p>Modelling teams do not have to include the underlying variables in their model, but the model structure should be able to include each explicit parameter value. Additional implicit parameters may be relevant to each variable but not quantitatively specified in the scenario definition. Whether these parameters are included in a model is at each teams’ discretion.</p>
+<p>For each scenario round, after defining the variables we will collaborate with teams to define which parameters are explicitly specified and at what value. Teams must be able to include the explicit parameters, and we do not specify any other restrictions on the type or structure of models that teams use.</p>
+</div>
+</div>
+<div id="contributing-and-combining-scenario-projections" class="section level3">
+<h3>Contributing and combining scenario projections</h3>
+<p>We focus on weekly incident targets, for any of the following COVID-19 outcomes: infections, cases, and deaths. To align with other Hubs we ask for quantile intervals at 0.01, 0.025, 0.05, every 5% to 0.95, 0.975, and 0.99. Inclusion in ensemble models requires a full set of quantiles from 0.01 to 0.99. We will collect metadata from teams in the form of a structured abstract. This will vary slightly with each round of scenarios. See the project Wiki for specific details.</p>
+<p>We will create ensembles from the individual models for each scenario round separately. As an initial choice we will create a median ensemble by taking the median of the given predictive quantiles of the different models for each scenario. Other ensemble choices will be considered and differences between outcomes presented by different models discussed with the modellers in order to avoid hiding differences from structural or parametric assumptions by taking the ensemble.</p>
+</div>
+<div id="reporting-and-interpreting-projections" class="section level3">
+<h3>Reporting and interpreting projections</h3>
+<p>For each scenario round, we will create a standardised visualisation allowing all models’ scenario projections to be compared. This will be presented on the website and we will follow this with a narrative summary of model results, including information taken from model abstracts to demonstrate differences between teams’ approach to and results from scenarios.</p>
+<p>We aim to choose plausible scenarios that can inform policy but do not expect any of them to be an exact characterisation of the future. We therefore do not expect data to align with any one model result. Moreover, observed data would not align with any scenario output if the scenarios excluded a parameter that operated within the relevant timeframe and had substantial confounding effects across all of the scenarios.</p>
+</div>
+</div>
+<div id="related-work" class="section level2">
+<h2>Related work</h2>
+<p>We also run the <a href="https://covid19forecasthub.eu/">European Forecasting Hub</a>, producing forecasts of COVID-19 across Europe over the next 1-4 weeks.</p>
+<p>The European Scenario Hub and broader Hub approach follows work across Europe and the United States, including the:</p>
+<ul>
+<li><p><a href="https://covid19scenariomodelinghub.org/">US Scenario Modelling Hub</a></p></li>
+<li><p><a href="https://covid19forecasthub.org/">US Forecast Hub</a></p></li>
+<li><p><a href="https://github.com/KITmetricslab/covid19-forecast-hub-de">German and Polish Forecast Hub</a></p></li>
+</ul>
+<p>We work closely with these teams and we are grateful for their support in setting up European Hubs.</p>
+</div>
+</div>
+
+<script type="text/javascript">
+var all_links = document.querySelectorAll('a');
+for (var i = 0; i < all_links.length; i++){
+       var a = all_links[i];
+       if(a.hostname != location.hostname) {
+               a.rel = 'noopener';
+               a.target = '_blank';
+       }
+}
+</script>
+<body>
+<footer>
+<hr>
+
+<div style="display: flex;">
+
+  <div><img src="images/logo.svg" width="200"></div>
+
+  <div><p>The European Scenario and <a href="https://covid19forecasthub.eu/index.html")>Forecast</a> Hubs are run in collaboration between the <a href="https://epiforecasts.io/">Epiforecasts team</a> at the <a href="https://www.lshtm.ac.uk")>London School of Hygiene & Tropical Medicine</a>; and the <a href="https://ecdc.europa.eu")>European Centre for Disease Control and Prevention (ECDC)</a>.</p><p><b><a href="contact.html")>Contact us</a></b></p></div>
+
+</div>
+
+<hr>
+</footer>
+
+</body>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<script type="text/javascript">
+var all_links = document.querySelectorAll('a');
+for (var i = 0; i < all_links.length; i++){
+       var a = all_links[i];
+       if(a.hostname != location.hostname) {
+               a.rel = 'noopener';
+               a.target = '_blank';
+       }
+}
+</script>
+<body>
+<footer>
+<hr>
+
+<div style="display: flex;">
+
+  <div><img src="images/logo.svg" width="200"></div>
+
+  <div><p>The European Scenario and <a href="https://covid19forecasthub.eu/index.html")>Forecast</a> Hubs are run in collaboration between the <a href="https://epiforecasts.io/">Epiforecasts team</a> at the <a href="https://www.lshtm.ac.uk")>London School of Hygiene & Tropical Medicine</a>; and the <a href="https://ecdc.europa.eu")>European Centre for Disease Control and Prevention (ECDC)</a>.</p><p><b><a href="contact.html")>Contact us</a></b></p></div>
+
+</div>
+
+<hr>
+</footer>
+
+</body>

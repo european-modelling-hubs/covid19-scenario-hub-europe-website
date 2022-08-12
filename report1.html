@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Round 1</title>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="images/favicon.svg" />
+
+<script data-goatcounter="https://covid19-scenario-hub-europe.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">European Covid-19 Scenario Hub</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="about.html">
+    <span class="fa fa-info-circle"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="scenarios.html">
+    <span class="fa fa-virus"></span>
+     
+    Scenarios
+  </a>
+</li>
+<li>
+  <a href="community.html">
+    <span class="fa fa-users"></span>
+     
+    Community
+  </a>
+</li>
+<li>
+  <a href="models.html">
+    <span class="fa fa-file-spreadsheet"></span>
+     
+    Models
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-file-alt"></span>
+     
+    Reports
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="report1.html">Round 1</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="contact.html">
+    <span class="fa fa-envelope"></span>
+     
+    Contact
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Round 1</h1>
+<h4 class="date">Report created 2022-08-12</h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#scenarios">Scenarios</a><ul>
+<li><a href="#scenario-description">Scenario description</a></li>
+<li><a href="#current-situation">Current situation</a></li>
+<li><a href="#participating-teams">Participating teams</a><ul>
+<li><a href="#models">Models</a></li>
+<li><a href="#countries">Countries</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#cumulative-outcomes">Cumulative outcomes</a><ul>
+<li><a href="#death">Death</a></li>
+<li><a href="#case">Case</a></li>
+<li><a href="#infection">Infection</a></li>
+<li><a href="#hosp">Hosp</a></li>
+<li><a href="#icu">Icu</a></li>
+</ul></li>
+<li><a href="#incident-outcomes">Incident outcomes</a><ul>
+<li><a href="#over-time">Over time</a><ul>
+<li><a href="#death-1">Death</a></li>
+<li><a href="#case-1">Case</a></li>
+<li><a href="#infection-1">Infection</a></li>
+<li><a href="#hosp-1">Hosp</a></li>
+<li><a href="#icu-1">Icu</a></li>
+</ul></li>
+<li><a href="#peaks">Peaks</a><ul>
+<li><a href="#autumn-winter">Autumn-winter</a><ul>
+<li><a href="#death-2">Death</a></li>
+<li><a href="#case-2">Case</a></li>
+<li><a href="#infection-2">Infection</a></li>
+<li><a href="#hosp-2">Hosp</a></li>
+<li><a href="#icu-2">Icu</a></li>
+</ul></li>
+<li><a href="#entire-projection-period">Entire projection period</a><ul>
+<li><a href="#death-3">Death</a></li>
+<li><a href="#case-3">Case</a></li>
+<li><a href="#infection-3">Infection</a></li>
+<li><a href="#hosp-3">Hosp</a></li>
+<li><a href="#icu-3">Icu</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="scenarios" class="section level1 tabset">
+<h1>Scenarios</h1>
+<div id="scenario-description" class="section level2">
+<h2>Scenario description</h2>
+<p>We asked teams of researchers across Europe to use quantitative models to project COVID-19 outcomes for 32 European countries over the next year. In order to explore different sets of assumptions about drivers of the pandemic, we asked teams to vary four sets of parameters. We can describe this in a 2x2 scenario specification:</p>
+<table>
+<tr>
+<td>
+</td>
+<td>
+<b>Slow summer booster campaign</b><br>
+<ul>
+<li>
+2nd booster recommended for 60+
+</li>
+<li>
+Uptake reaches 50% of 1st booster coverage by 15th December
+</li>
+<li>
+Uptake starts <b>15th June*</b>
+</li>
+</ul>
+</td>
+<td>
+<b>Fast autumn booster campaign</b><br>
+<ul>
+<li>
+2nd** booster recommended for 60+
+</li>
+<li>
+Uptake reaches 50% of 1st booster coverage by 15th December
+</li>
+<li>
+Uptake starts <b>15th September</b>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Optimistic slow immune waning</b><br>
+<ul>
+<li>
+60% reduction in immunity against infection
+</li>
+<li>
+In <b>8 months</b>
+</li>
+</ul>
+</td>
+<td>
+Scenario A (<i>‘Strong/Summer’</i>)
+</td>
+<td>
+Scenario B (<i>‘Strong/Autumn’</i>)
+</td>
+</tr>
+<tr>
+<td>
+<b>Pessimistic fast immune waning</b><br>
+<ul>
+<li>
+60% reduction in immunity against infection
+</li>
+<li>
+In <b>3 months</b>
+</li>
+</ul>
+</td>
+<td>
+Scenario C (<i>‘Weak/Summer’</i>)
+</td>
+<td>
+Scenario D (<i>‘Weak/Summer’</i>)
+</td>
+</tr>
+</table>
+<p><em>* If a second booster is already offered to 60+ (Greece, Netherlands), vaccination uptake continues as currently</em></p>
+<p><em>** If a second booster is already offered to 60+ (Greece, Netherlands), a third booster dose is recommended</em></p>
+<p>See also the <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-1">full scenario details</a> for more detail on the common set of assumptions teams used to create their models.</p>
+<p>In Round 1, we asked modellers to start their projections from the 2022-05-22. Data after this date were not included, and as a result, model projections are unlikely to fully account for later information on the changing variants or behavioural patterns.</p>
+<p>In this report we only show results from countries with multiple models.</p>
+</div>
+<div id="current-situation" class="section level2">
+<h2>Current situation</h2>
+<p>We consider vaccination rates in countries for which multiple teams of modellers contributed projections.</p>
+<p><img src="report1_files/figure-html/describe-vax-1.png" width="672" /></p>
+<p>We note that the following countries are already implementing a second booster dose among the 60+ age group:</p>
+<ul>
+<li>Netherlands</li>
+<li>Greece</li>
+</ul>
+</div>
+<div id="participating-teams" class="section level2 tabset tabset-pills">
+<h2>Participating teams</h2>
+<p>6 models contributed scenario projections to Round 1. No country had results from more than two models. Given this low coverage, we did not produce an ensemble model.</p>
+<div id="models" class="section level3">
+<h3>Models</h3>
+<table>
+<caption>Participating teams by number of countries and horizon</caption>
+<thead>
+<tr class="header">
+<th align="left">Team</th>
+<th align="right">Countries</th>
+<th align="right">Weeks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">USC-SIkJalpha</td>
+<td align="right">32</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td align="left">MOCOS-agent1</td>
+<td align="right">1</td>
+<td align="right">52</td>
+</tr>
+<tr class="odd">
+<td align="left">RIVM-vacamole</td>
+<td align="right">1</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td align="left">SIMID-SCM</td>
+<td align="right">1</td>
+<td align="right">52</td>
+</tr>
+<tr class="odd">
+<td align="left">UC3M-EpiGraph</td>
+<td align="right">1</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td align="left">TUWien-AustrianCoVABM</td>
+<td align="right">1</td>
+<td align="right">44</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="countries" class="section level3">
+<h3>Countries</h3>
+<table>
+<caption>Number of independent model projections for each target variable and location</caption>
+<thead>
+<tr class="header">
+<th align="left">Code</th>
+<th align="left">Country</th>
+<th align="right">Infection</th>
+<th align="right">Case</th>
+<th align="right">Hosp</th>
+<th align="right">Icu</th>
+<th align="right">Death</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AT</td>
+<td align="left">Austria</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">BE</td>
+<td align="left">Belgium</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">ES</td>
+<td align="left">Spain</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">NL</td>
+<td align="left">Netherlands</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">PL</td>
+<td align="left">Poland</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="cumulative-outcomes" class="section level1 tabset tabset-pills">
+<h1>Cumulative outcomes</h1>
+<p>For each model and scenario, we compare the total number of outcomes over the entire projection period as a % of the total country population. We compared the cumulative number of projected outcomes to the cumulative total over one year before projections started (May 2021 - May 2022).</p>
+<p><strong>Observations</strong></p>
+<ul>
+<li><p>Across all scenarios, we observed very low or no probability of deaths over the next year matching the previous year’s total. This was not true of other outcomes with comparative observed data (cases, hospitalisations).</p></li>
+<li><p>Comparing scenarios by immune assumptions, we observed higher total counts of projected outcomes when immunity was modelled as weaker (a faster decline to a reduced plateau of immunity). In these scenarios, in many countries the number of cases projected over the next year approached or exceeded the total observed over the last year.</p></li>
+<li><p>However, recent data indicate the optimistic scenario of immune waning may be more likely than the pessimistic scenario. Between scenarios with strong immunity (-60% over 8 months), we observed relatively little difference in cumulative outcomes between scenarios providing a summer or an autumn booster campaign.</p></li>
+</ul>
+<p><strong>Projections</strong></p>
+<div id="death" class="section level2">
+<h2>Death</h2>
+<p><img src="report1_files/figure-html/plot-cumulative-1.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="case" class="section level2">
+<h2>Case</h2>
+<p><img src="report1_files/figure-html/plot-cumulative-2.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="infection" class="section level2">
+<h2>Infection</h2>
+<p><img src="report1_files/figure-html/plot-cumulative-3.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="hosp" class="section level2">
+<h2>Hosp</h2>
+<p><img src="report1_files/figure-html/plot-cumulative-4.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="icu" class="section level2">
+<h2>Icu</h2>
+<p><img src="report1_files/figure-html/plot-cumulative-5.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+</div>
+<div id="incident-outcomes" class="section level1 tabset">
+<h1>Incident outcomes</h1>
+<p>We explored the incidence of COVID-19 per 100,000 over the projection period and in terms of projected peaks in incidence. We summarised peaks both over the entire projection period, and over only the autumn-winter period (November through March); we considered (A) the timing and maximum weekly incidence of each peak, and (B) the total number of peaks.</p>
+<p><strong>Observations</strong></p>
+<ul>
+<li><p>Across scenarios for hospitalisations, we noted that peak sizes rarely approached the highest level previously observed (dotted line).</p></li>
+<li><p>We saw no systematic difference in the number of peaks between scenarios modelling a booster campaign in summer versus autumn, but as before, differences were more clearly between a longer or shorter duration of waning immunity.</p></li>
+<li><p>Comparing projections for deaths, we noticed that projected peaks shift to slightly later in the year with a vaccination campaign in the summer compared to autumn, moving the likely timing of a peak from late summer/autumn into winter.</p></li>
+</ul>
+<p><strong>Projections</strong></p>
+<div id="over-time" class="section level2 tabset tabset-pills">
+<h2>Over time</h2>
+<div id="death-1" class="section level3">
+<h3>Death</h3>
+<p><img src="report1_files/figure-html/plot-projections-1.png" width="672" /></p>
+</div>
+<div id="case-1" class="section level3">
+<h3>Case</h3>
+<p><img src="report1_files/figure-html/plot-projections-2.png" width="672" /></p>
+</div>
+<div id="infection-1" class="section level3">
+<h3>Infection</h3>
+<p><img src="report1_files/figure-html/plot-projections-3.png" width="672" /></p>
+</div>
+<div id="hosp-1" class="section level3">
+<h3>Hosp</h3>
+<p><img src="report1_files/figure-html/plot-projections-4.png" width="672" /></p>
+</div>
+<div id="icu-1" class="section level3">
+<h3>Icu</h3>
+<p><img src="report1_files/figure-html/plot-projections-5.png" width="672" /></p>
+</div>
+</div>
+<div id="peaks" class="section level2 tabset">
+<h2>Peaks</h2>
+<div id="autumn-winter" class="section level3 tabset tabset-pills">
+<h3>Autumn-winter</h3>
+<p><em>Projections over November 2022 through March 2023</em></p>
+<div id="death-2" class="section level4">
+<h4>Death</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-aw-1.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-aw-2.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="case-2" class="section level4">
+<h4>Case</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-aw-3.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-aw-4.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="infection-2" class="section level4">
+<h4>Infection</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-aw-5.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-aw-6.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="hosp-2" class="section level4">
+<h4>Hosp</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-aw-7.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-aw-8.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="icu-2" class="section level4">
+<h4>Icu</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-aw-9.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-aw-10.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+</div>
+<div id="entire-projection-period" class="section level3 tabset tabset-pills">
+<h3>Entire projection period</h3>
+<p><em>Projections over June 2022 through June 2023</em></p>
+<div id="death-3" class="section level4">
+<h4>Death</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-alltime-1.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-alltime-2.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="case-3" class="section level4">
+<h4>Case</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-alltime-3.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-alltime-4.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="infection-3" class="section level4">
+<h4>Infection</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-alltime-5.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-alltime-6.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="hosp-3" class="section level4">
+<h4>Hosp</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-alltime-7.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-alltime-8.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+<div id="icu-3" class="section level4">
+<h4>Icu</h4>
+<p>A. Size and timing of peaks. Boxplots show summary of the likely value at peak incidence (median and interquartile range); points show timing and size of peaks from independent sample simulations <img src="report1_files/figure-html/plot-peaks-alltime-9.png" width="672" /></p>
+<p>B. Projected number of peaks (median with 5-95% probability) <img src="report1_files/figure-html/plot-peaks-alltime-10.png" width="672" /></p>
+<p><em>Guide to scenarios: Stronger or weaker immunity maintained over time (‘Strong/Weak’); 60+ second booster campaign starting in summer or autumn (‘Summer/Autumn’)</em></p>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+var all_links = document.querySelectorAll('a');
+for (var i = 0; i < all_links.length; i++){
+       var a = all_links[i];
+       if(a.hostname != location.hostname) {
+               a.rel = 'noopener';
+               a.target = '_blank';
+       }
+}
+</script>
+<body>
+<footer>
+<hr>
+
+<div style="display: flex;">
+
+  <div><img src="images/logo.svg" width="200"></div>
+
+  <div><p>The European Scenario and <a href="https://covid19forecasthub.eu/index.html")>Forecast</a> Hubs are run in collaboration between the <a href="https://epiforecasts.io/">Epiforecasts team</a> at the <a href="https://www.lshtm.ac.uk")>London School of Hygiene & Tropical Medicine</a>; and the <a href="https://ecdc.europa.eu")>European Centre for Disease Control and Prevention (ECDC)</a>.</p><p><b><a href="contact.html")>Contact us</a></b></p></div>
+
+</div>
+
+<hr>
+</footer>
+
+</body>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>

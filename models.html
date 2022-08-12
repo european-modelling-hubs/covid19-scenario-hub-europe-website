@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Documentation of the participating modelling teams, their models and modelling assumptions</title>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="images/favicon.svg" />
+
+<script data-goatcounter="https://covid19-scenario-hub-europe.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">European Covid-19 Scenario Hub</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="about.html">
+    <span class="fa fa-info-circle"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="scenarios.html">
+    <span class="fa fa-virus"></span>
+     
+    Scenarios
+  </a>
+</li>
+<li>
+  <a href="community.html">
+    <span class="fa fa-users"></span>
+     
+    Community
+  </a>
+</li>
+<li>
+  <a href="models.html">
+    <span class="fa fa-file-spreadsheet"></span>
+     
+    Models
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-file-alt"></span>
+     
+    Reports
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="report1.html">Round 1</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="contact.html">
+    <span class="fa fa-envelope"></span>
+     
+    Contact
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Documentation of the participating modelling teams, their models and modelling assumptions</h1>
+
+</div>
+
+
+<p>This page presents the various features and implementations in the models submitted to the Scenario Hub in a comparative fashion. The learn more about each model individually, please refer to <a href="#Abstracts">each model abstract</a>.</p>
+<div id="model-summary" class="section level2">
+<h2>Model summary</h2>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="86%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Model</th>
+<th align="left">Authors</th>
+<th align="left">License</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ECDC-CM_ONE</td>
+<td align="left">Rok Grah, Rene Niehus, Bastian Prasse, Frank Sandmann</td>
+<td align="left">cc-by-nc-4.0</td>
+</tr>
+<tr class="even">
+<td align="left">ICM-agentModel</td>
+<td align="left">Rafał P. Bartczuk, Filip Dreger, Łukasz Górski, Magdalena Gruziel-Słomka, Artur Kaczorek, Jan Kisielewski, Bartosz Krupa, Antoni Moszyński, Karol Niedzielewski, Jędrzej M. Nowosielski, Maciej Radwan, Franciszek Rakowski, Marcin Semeniuk, Jakub Zieliński</td>
+<td align="left">cc-by-4.0</td>
+</tr>
+<tr class="odd">
+<td align="left">JBUD-HMXK</td>
+<td align="left">Jozef Budzinski</td>
+<td align="left">cc-by-nc-nd-4.0</td>
+</tr>
+<tr class="even">
+<td align="left">MOCOS-agent1</td>
+<td align="left">Tyll Krueger, Marcin Bodych, Tomasz Ożański, Radosław Idzikowski, Piotr Szymański, Agata Migalska, Barbara Pabjan, Maciej Filiński, Marek Bawiec</td>
+<td align="left">mit</td>
+</tr>
+<tr class="odd">
+<td align="left">MODUS_Covid-Episim</td>
+<td align="left">Sebastian Müller, Billy Charlton, Ricardo Ewert, Sydney Paltra, Christian Rakow, Jakob Rehmann, Tim Conrad, Christof Schütte, Kai Nagel</td>
+<td align="left">agpl-3.0</td>
+</tr>
+<tr class="even">
+<td align="left">RIVM-vacamole</td>
+<td align="left">NULL</td>
+<td align="left">cc-by-4.0</td>
+</tr>
+<tr class="odd">
+<td align="left">SIMID-SCM</td>
+<td align="left">Nicolas Franco, Lander Willem, Steven Abrams, The SIMID COVID-19 team, Christel Faes, Philippe Beutels, Niel Hens</td>
+<td align="left">gpl-3.0</td>
+</tr>
+<tr class="even">
+<td align="left">TUWien-AustrianCoVABM</td>
+<td align="left">Martin Bicher, Claire Rippinger, Dominik Brunmeir, Christoph Urach, Melanie Zechmeister, Niki Popper</td>
+<td align="left">cc-by-4.0</td>
+</tr>
+<tr class="odd">
+<td align="left">UC3M-EpiGraph</td>
+<td align="left">David E. Singh, Aymar Cublier, Miguel Guzman Merino, Maria Cristina Marinescu, Jesus Carretero, Alberto Cascajo Garcia</td>
+<td align="left">cc-by-4.0</td>
+</tr>
+<tr class="even">
+<td align="left">USC-SIkJalpha</td>
+<td align="left">Ajitesh Srivastava</td>
+<td align="left">mit</td>
+</tr>
+<tr class="odd">
+<td align="left">USC-SIkJalpha_update</td>
+<td align="left">Ajitesh Srivastava</td>
+<td align="left">mit</td>
+</tr>
+<tr class="even">
+<td align="left">UVA-EpiHiper</td>
+<td align="left">Jiangzhuo Chen, Stefan Hoops, Parantapa Bhattacharya, Dustin Machi, Madhav Marathe</td>
+<td align="left">cc-by-4.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="models-details" class="section level2">
+<h2>Models details</h2>
+<div id="modeling-npi" class="section level3">
+<h3>Modeling NPI</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Considered that behaviour converges to a “new normal”, which may be close, but not equal to, pre-pandemic behaviour</li>
+<li><strong>ICM-agentModel</strong>: NPIs are represented in the model by variation (in time and space) of agent contacting rates in appropriate contexts such as schools, workplaces etc.</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: NPI as represented through the input parameter to the model controlling intensity of infection kernels</li>
+<li><strong>MODUS_Covid-Episim</strong>: Masks are worn on public transport, increased ventilation rate in schools compared to pre-pandemic behaviour, mobile phone data still shows a slight reduction in amount of time spent outside one’s own home. This reduction is transferred to the activity levels in our model.</li>
+<li><strong>RIVM-vacamole</strong>: The model uses different contact matrices from the Pienter Corona Study (<a href="https://www.rivm.nl/pienter-corona-studie" class="uri">https://www.rivm.nl/pienter-corona-studie</a>) estimated throughout 2020 and 2021 to approximate contact patterns under different levels of non-pharmaceutical interventions within and between age groups.</li>
+<li><strong>SIMID-SCM</strong>: NPI are modelled using CoMix social contact data collected every 2 weeks and additional age-specific proportionality factors detecting the transmission</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: NPIs are partially modelled directly (e.g. closure of schools, tracing, …) and partially modelled via reduction of contact numbers or transmissibility (e.g. face mask wearing)</li>
+<li><strong>UC3M-EpiGraph</strong>: In this simulation we consider use of facemasks. With no changing conditions in their use for the period between March 13th 2022 and March 7th 2022</li>
+<li><strong>USC-SIkJalpha</strong>: No NPI included, contact changes over time derived from Cuebiq data.</li>
+<li><strong>USC-SIkJalpha_update</strong>: No NPI included, contact changes over time derived from Cuebiq data.</li>
+<li><strong>UVA-EpiHiper</strong>: (i) A fraction of the population chooses to reduce non-essential (shopping, religion, and other) activities. (ii) All K-12 schools are closed from mid-June 2022 to mid-August 2022 and again from mid-December 2022 to the beginning of 2023. (iii) A fraction of symptomatic people choose to self-isolate themselves at home.</li>
+</ul>
+</div>
+<div id="compliance-npi" class="section level3">
+<h3>Compliance NPI</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not applicable</li>
+<li><strong>ICM-agentModel</strong>: NPIs are represented in the model by variation (in time and space) of agent contacting rates in appropriate contexts such as schools, workplaces etc.</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: NPI as represented through the input parameter to the model controlling intensity of infection kernels</li>
+<li><strong>MODUS_Covid-Episim</strong>: For masks on public transport we assume a 50% compliance, half of these wear a medical, half of these wear a FFP2 mask. For the venitalation rate we assume that windows are opened every 90 minutes.</li>
+<li><strong>RIVM-vacamole</strong>: Not applicable</li>
+<li><strong>SIMID-SCM</strong>: Compliance to the intervention measures taken is assumed to be gradual over 5 days</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Adherence values are not modelled directly but calibrated</li>
+<li><strong>UC3M-EpiGraph</strong>: We assume that the NPI do not change during the period from March 2022 to March 2023</li>
+<li><strong>USC-SIkJalpha</strong>: Not modeled.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Not modeled.</li>
+<li><strong>UVA-EpiHiper</strong>: Compliances are 15% on average for (i), 100% for (ii), and 75% for (iii).</li>
+</ul>
+</div>
+<div id="contact-tracing" class="section level3">
+<h3>Contact Tracing</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not applicable</li>
+<li><strong>ICM-agentModel</strong>: Not applicable</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: input parameter to the model understood as a probability that any of secondary infected persons for a positively tested individual will be detected</li>
+<li><strong>MODUS_Covid-Episim</strong>: Contact tracing with minimal capacity and 50% success rate.</li>
+<li><strong>RIVM-vacamole</strong>: Not applicable</li>
+<li><strong>SIMID-SCM</strong>: Not applicable</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: A certain percentage of agent-agent contacts within the last days are traced and isolated for a certain timespan. Parameter values vary with time and are in accordance with the official guidelines. K1-contact testing is implemented but was never activated in the calibrated parametrization.</li>
+<li><strong>UC3M-EpiGraph</strong>: We consider that a certain percentage of the infected individuals are self-quarantined at home.</li>
+<li><strong>USC-SIkJalpha</strong>: Not applicable.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Not applicable.</li>
+<li><strong>UVA-EpiHiper</strong>: Not applicable.</li>
+</ul>
+</div>
+<div id="testing" class="section level3">
+<h3>Testing</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not applicable</li>
+<li><strong>ICM-agentModel</strong>: simple scaling of the real infections to theconfirmed cases</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: input parameter to the model understood as a probability that given infected person will be tested positively</li>
+<li><strong>MODUS_Covid-Episim</strong>: No mandatory testing considered. Agents voluntarily perform one rapid antigen test every 2 weeks before a leisure activity.</li>
+<li><strong>RIVM-vacamole</strong>: Not applicable</li>
+<li><strong>SIMID-SCM</strong>: Not applicable</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: dependent on an age-dependent detection rate, infections become confirmed with a certain time-delay</li>
+<li><strong>UC3M-EpiGraph</strong>: Not considered for this version of the code (we will include it in future versions)</li>
+<li><strong>USC-SIkJalpha</strong>: Not applicable.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Not applicable.</li>
+<li><strong>UVA-EpiHiper</strong>: Not applicable.</li>
+</ul>
+</div>
+<div id="vaccine-efficacy-transmission" class="section level3">
+<h3>Vaccine Efficacy Transmission</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: See vaccine_immunity_duration</li>
+<li><strong>ICM-agentModel</strong>: VE is expressed as the reduction of daily probability of infection. In simple terms, the reduction constitutes partial immunity which is expressed as the product of some maximum immunity level and the profile of immunity variation in time.</li>
+<li><strong>JBUD-HMXK</strong>: Initial vaccine effectiveness (full dose): 90 %; Initial vaccine effectiveness (booster): 50 %</li>
+<li><strong>MOCOS-agent1</strong>: vaccine can protects from infection and from severe progression / death</li>
+<li><strong>MODUS_Covid-Episim</strong>: Model vaccine efficacy is via our antibody model, which is built upon <a href="http://DOI.org/10.1056/NEJMc2119236" class="uri">http://DOI.org/10.1056/NEJMc2119236</a> and <a href="http://DOI.org/10.1056/NEJMc2201607" class="uri">http://DOI.org/10.1056/NEJMc2201607</a></li>
+<li><strong>RIVM-vacamole</strong>: Depends on age, vaccine product, and dose</li>
+<li><strong>SIMID-SCM</strong>: We use a “leaky” vaccination approach. For example, vaccination with 50% effectiveness, implies that for a vaccinated individual the likelihood to acquire infection is 50% less compared to a non-vaccinated individual of the same age. The levels of protection against infection and hospital admissions after infection for different VOCs are presented in Page 5 Table 1 of <a href="https://covid-en-wetenschap.github.io/assets/20220415_technical_note_SIMID.pdf" class="uri">https://covid-en-wetenschap.github.io/assets/20220415_technical_note_SIMID.pdf</a></li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Immunity is modelled as vector of boolean states. Each vector entry represents, whether the agent is immune against infection with the regarded virus strain. After an immunization event (i.e. vaccination and recovery), two random numbers decide about, whether (a) immunity is gained at all and (b) how long immunity lasts. Hereby, a parameter matrix is used containing assumptions for each immunization cause (vaccine, recovery from certain variant) against infection from each virus variant.</li>
+<li><strong>UC3M-EpiGraph</strong>: The vaccine efficacy depends on the number of doses, the virus variant and its related immunity is also subjected to waning.</li>
+<li><strong>USC-SIkJalpha</strong>: Not explicitly modeled</li>
+<li><strong>USC-SIkJalpha_update</strong>: Not explicitly modeled</li>
+<li><strong>UVA-EpiHiper</strong>: Not applicable.</li>
+</ul>
+</div>
+<div id="vaccine-efficacy-delay" class="section level3">
+<h3>Vaccine Efficacy Delay</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not applicable</li>
+<li><strong>ICM-agentModel</strong>: 14 days since first dose or booster dose</li>
+<li><strong>JBUD-HMXK</strong>: 7 days</li>
+<li><strong>MOCOS-agent1</strong>: no delay</li>
+<li><strong>MODUS_Covid-Episim</strong>: Not applicable</li>
+<li><strong>RIVM-vacamole</strong>: Depends on vaccine product and dose but between 7-28 days.</li>
+<li><strong>SIMID-SCM</strong>: Vaccine-induced immunity against infection is implemented as a step function with a switch from, e.g., 0% to 50% protection against infection 21 days after the first vaccine dose. Vaccine-induced protection against hospital admission is implemented incrementally on top of the protection against infection. Protection induced by the second and booster vaccine doses is assumed to be achieved fully (i.e., depending on the maximal vaccine effectiveness) 7 days after administration.</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: 14 days since first dose</li>
+<li><strong>UC3M-EpiGraph</strong>: For Pfizer we consider, for the second doses and boosters, that after vaccination the maximum immunity is reached after 7 days. Then, it remains steady for 30 days and following this, it decreases following a gamma distribution.</li>
+<li><strong>USC-SIkJalpha</strong>: 14 days</li>
+<li><strong>USC-SIkJalpha_update</strong>: 14 days</li>
+<li><strong>UVA-EpiHiper</strong>: as specified in the scenario description.</li>
+</ul>
+</div>
+<div id="vaccine-hesitancy" class="section level3">
+<h3>Vaccine Hesitancy</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not applicable</li>
+<li><strong>ICM-agentModel</strong>: vaccinations in model consistent with official data for powiats (counties) and age groups</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: vaccinations in model distributed among agents consistently with official data for age groups</li>
+<li><strong>MODUS_Covid-Episim</strong>: No hesitancy integrate, but vaccination rates are based on vaccination numbers provided by RKI for the following age groups [5-11, 12-17, 18-59, 60+]</li>
+<li><strong>RIVM-vacamole</strong>: Not applicable</li>
+<li><strong>SIMID-SCM</strong>: Not applicable, uptake based on reported data</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Regarded in a meta-model which generates the vaccine-forecast.</li>
+<li><strong>UC3M-EpiGraph</strong>: First and second doses = Children 47%, Adults 16%, Elderly people 4%; Booster = Children 100%, Adults 60%, Elderly people 10%</li>
+<li><strong>USC-SIkJalpha</strong>: A “suceptible-infected”model. Boosters are modeled such that the “susceptible” population is the eligible population who are yet to get a booster. To achieve the desired saturation level to create sub-scenarios, we increase the adoption rate over time.</li>
+<li><strong>USC-SIkJalpha_update</strong>: A “suceptible-infected”model. Boosters are modeled such that the “susceptible” population is the eligible population who are yet to get a booster. To achieve the desired saturation level to create sub-scenarios, we increase the adoption rate over time.</li>
+<li><strong>UVA-EpiHiper</strong>: as specified in the scenario description.</li>
+</ul>
+</div>
+<div id="vaccine-immunity-duration" class="section level3">
+<h3>Vaccine Immunity Duration</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: We assume exponential waning of neutralisation levels that is related to vaccine efficacy (VE) against infection via the following paper: <a href="https://doi.org/10.1038/s41591-021-01377-8" class="uri">https://doi.org/10.1038/s41591-021-01377-8</a>. The starting VEs against infections for each vaccine product and age group is obtained from literature. The exponential decay time of neutralisation levels is then defined in such a way to obtain 40% (or 60%) decrease VE against infection after 10 (or 4) months. We assume no plateau.</li>
+<li><strong>ICM-agentModel</strong>: The immunity builds up to the maximum level for first 14 days, next it stays at maximum until 3 months after vaccination, finally the immunity decays gradually to predefined level.</li>
+<li><strong>JBUD-HMXK</strong>: 105/70 days</li>
+<li><strong>MOCOS-agent1</strong>: waning function based on empirical data / scenario constraints</li>
+<li><strong>MODUS_Covid-Episim</strong>: We assume an exponential decay rate (of antibody levels) with a half life of 60 days.</li>
+<li><strong>RIVM-vacamole</strong>: We assume vaccine effectiveness (VE) against transmission and infection wanes following a logistic curve parameterized such that VE decreases by 25 percentage points within the first 6 months after vaccination (Higdon et al. 2022). We assume VE against hospitalisation also wanes following a logistic curve, but at a slower rate than VE against infection and transmission, specifically, that VE decreases by 10 percentage points in the first 6 months following vaccination (Higdon et al. 2022).</li>
+<li><strong>SIMID-SCM</strong>: Waning as in scenarios, using exponential law</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Varies and depends on the shot number and the target virus-strain. Usually, a Weibull distribution is used to sample the immunity loss date, which is fitted to published effectiveness data.</li>
+<li><strong>UC3M-EpiGraph</strong>: 30 days after the dose, then waning following a gamma distribution</li>
+<li><strong>USC-SIkJalpha</strong>: Only waning immunity is considered! The probability of transferring to partially immune state by at time t is modeled as a gamma distribution such that: (i) the median is as per the scenario; (ii) the efficacy (given the partial immune protection against infection) after the first 60 days is the “initial” vaccine efficacy.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Only waning immunity is considered! The probability of transferring to partially immune state by at time t is modeled as a gamma distribution such that: (i) the median is as per the scenario; (ii) the efficacy (given the partial immune protection against infection) after the first 60 days is the “initial” vaccine efficacy.</li>
+<li><strong>UVA-EpiHiper</strong>: vaccinated people go to a partially immune state after a period that is sampled from an exponential distribution with either 10-month or 4-month median.</li>
+</ul>
+</div>
+<div id="natural-immunity-duration" class="section level3">
+<h3>Natural Immunity Duration</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: We assume exponential waning of natural immunity; the exponential time is obtained from definition that natural immunity protection lowers by 40% (or 60%) within 10 (or 4) months. We assume no plateau.</li>
+<li><strong>ICM-agentModel</strong>: Maximum immunity within 3 months since recovery (total immunity in case of the same variant as in previous infection), after 3 months immunity decays gradually to predefined level.</li>
+<li><strong>JBUD-HMXK</strong>: 202/135 days</li>
+<li><strong>MOCOS-agent1</strong>: waning function based on empirical data / scenario constraints</li>
+<li><strong>MODUS_Covid-Episim</strong>: Waning occurs with the same rate as for vaccine induced immunity.</li>
+<li><strong>RIVM-vacamole</strong>: We assume natural immunity wanes by 60% after 8 months and follows an Erlang distribution.</li>
+<li><strong>SIMID-SCM</strong>: 100% protection vs infection just after recovery, with waning as in scenarios using exponential law</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Varies and depends on the virus-strain the agent recovered from and the target virus-strain. Usually, a Weibull distribution is used to sample the immunity loss date, which is fitted to published effectiveness data.</li>
+<li><strong>UC3M-EpiGraph</strong>: 30 days after infection or (if the individual was already infected) after the vaccination, then waning following a gamma distribution</li>
+<li><strong>USC-SIkJalpha</strong>: Same as above</li>
+<li><strong>USC-SIkJalpha_update</strong>: Same as above</li>
+<li><strong>UVA-EpiHiper</strong>: recovered (from infections) people go to a partially immune state after a period that is sampled from an exponential distribution with either 10-month or 4-month median.</li>
+</ul>
+</div>
+<div id="case-fatality-rate" class="section level3">
+<h3>Case Fatality Rate</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Depending on age and vaccination status, ranging from 2.71e-9 to 1.3e-2</li>
+<li><strong>ICM-agentModel</strong>: Not applicable</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: age dependend, empirical data based</li>
+<li><strong>MODUS_Covid-Episim</strong>: Not applicable</li>
+<li><strong>RIVM-vacamole</strong>: Not applicable</li>
+<li><strong>SIMID-SCM</strong>: Not applicable, the model is not based on confirmed cases</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Varies with the variant. Mechanism implemented, but not up to date since it is hardly used.</li>
+<li><strong>UC3M-EpiGraph</strong>: Age-dependant values and dependent on whether the individual has acquired immunity. Not subjected to waning.</li>
+<li><strong>USC-SIkJalpha</strong>: Learned from recent data.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Learned from recent data.</li>
+<li><strong>UVA-EpiHiper</strong>: age stratified, specified based on recent COVID-19 literatures.</li>
+</ul>
+</div>
+<div id="infection-fatality-rate" class="section level3">
+<h3>Infection Fatality Rate</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Depending on age and vaccination status, ranging from 8.14e-9 to 3.9e-2</li>
+<li><strong>ICM-agentModel</strong>: derived from probabilities of transitions between agent states</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: age dependend, empirical data based</li>
+<li><strong>MODUS_Covid-Episim</strong>: Not applicable</li>
+<li><strong>RIVM-vacamole</strong>: Depends on age and vaccination status</li>
+<li><strong>SIMID-SCM</strong>: Calibrated</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Varies with the variant. Mechanism implemented, but not up to date since it is hardly used.</li>
+<li><strong>UC3M-EpiGraph</strong>: Age-dependant values and dependent on whether the individual has acquired immunity. Not subjected to waning.</li>
+<li><strong>USC-SIkJalpha</strong>: Learned from recent data.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Learned from recent data.</li>
+<li><strong>UVA-EpiHiper</strong>: age stratified, specified based on recent COVID-19 literatures.</li>
+</ul>
+</div>
+<div id="asymptomatics" class="section level3">
+<h3>Asymptomatics</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not applicable</li>
+<li><strong>ICM-agentModel</strong>: dependent on the agent age</li>
+<li><strong>JBUD-HMXK</strong>: Probability of diagnosis given symptoms: 75.00 %; Symptomatic proportion: 54.60 %</li>
+<li><strong>MOCOS-agent1</strong>: age dependend</li>
+<li><strong>MODUS_Covid-Episim</strong>: A rate of 0.2</li>
+<li><strong>RIVM-vacamole</strong>: Not applicable</li>
+<li><strong>SIMID-SCM</strong>: Calibrated</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Asymptomatic cases are not specifically regarded, since the terminology is too vague. We distinguish only between detected and undetected cases.</li>
+<li><strong>UC3M-EpiGraph</strong>: We assume that 25% of the infected are asymptomatic</li>
+<li><strong>USC-SIkJalpha</strong>: Similar to the range obtained for the US states using the CDC sero-prevelance data from the CDC. Note that this covers the currect cumulative fraction of unreported, untested, and asymptomatic.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Similar to the range obtained for the US states using the CDC sero-prevelance data from the CDC. Note that this covers the currect cumulative fraction of unreported, untested, and asymptomatic.</li>
+<li><strong>UVA-EpiHiper</strong>: 60% for naively susceptible people (without immunity), increased for people with immunity (from natural infection and/or vaccination).</li>
+</ul>
+</div>
+<div id="age-groups" class="section level3">
+<h3>Age Groups</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: [0-4, 5-9, 10-14, 15-17, 18-24, 25-49, 50-59, 60-69, 70-79, 80+]</li>
+<li><strong>ICM-agentModel</strong>: one-year groups</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: one-year</li>
+<li><strong>MODUS_Covid-Episim</strong>: Agents can have any age between 0 and 99, but certain parameters and analyses employ different binning systems based on the available data.</li>
+<li><strong>RIVM-vacamole</strong>: [0-9, 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80+]</li>
+<li><strong>SIMID-SCM</strong>: 10 years age groups</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: one-year groups</li>
+<li><strong>UC3M-EpiGraph</strong>: 0-5, 6-10, 10-15, 15-20, 20-30, 30-40, 40-50, 50-60, 60-70, 80-90, 90-100+</li>
+<li><strong>USC-SIkJalpha</strong>: No stratification by age</li>
+<li><strong>USC-SIkJalpha_update</strong>: No stratification by age</li>
+<li><strong>UVA-EpiHiper</strong>: preschool (0-4 years), students (5-17), adults (18-49), older adults (50-64) and seniors (65+).</li>
+</ul>
+</div>
+<div id="importations" class="section level3">
+<h3>Importations</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not considered relevant for this submission round, but model does provide the functionality to specify importation of cases</li>
+<li><strong>ICM-agentModel</strong>: seed agents introduced for each virus variant</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: Can be defined explicitly as input to the model. Available options include 1) InstantOutsideCases (constant number of imports at a given time), 2) CyclicOutsideCases (constant number of imports during the specified period and with a specified frequency). Each of the importations events include the variant type.</li>
+<li><strong>MODUS_Covid-Episim</strong>: Based on disease import for 2021. Numbers were provided by the public health authorities in Cologne.</li>
+<li><strong>RIVM-vacamole</strong>: Not included in this submission round, but model does allows for the specification of case importation rate</li>
+<li><strong>SIMID-SCM</strong>: No importation, except a seed for each new variant</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: scale with the reported/extrapolated number of overnight-stays per month and region.</li>
+<li><strong>UC3M-EpiGraph</strong>: We use data provided the by Spanish National Health service. We scale the detected cases in order to estimate the real ones.</li>
+<li><strong>USC-SIkJalpha</strong>: Not applicable</li>
+<li><strong>USC-SIkJalpha_update</strong>: Not applicable</li>
+<li><strong>UVA-EpiHiper</strong>: Not applicable.</li>
+</ul>
+</div>
+<div id="confidence-interval-method" class="section level3">
+<h3>Confidence Interval Method</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Quantiles followed from MCMC and prior distribution of parameters</li>
+<li><strong>ICM-agentModel</strong>: Not applicable</li>
+<li><strong>JBUD-HMXK</strong>: Nonparametric</li>
+<li><strong>MOCOS-agent1</strong>: Samples based</li>
+<li><strong>MODUS_Covid-Episim</strong>: Not applicable</li>
+<li><strong>RIVM-vacamole</strong>: Quantiles from multiple simulations</li>
+<li><strong>SIMID-SCM</strong>: Samples coming from independent MCMC chains, plus stochastic realisation on transmissions</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: Monte-Carlo simulation is used to quantify the uncertainty of the stochastic model mechanisms. Rarely used.</li>
+<li><strong>UC3M-EpiGraph</strong>: Based on calibration and statistical analysis of multiple executions.</li>
+<li><strong>USC-SIkJalpha</strong>: We generate multiple trajectories by (i) Uniform sampling of the recently seen infection rates, under-reporting/asymptomatic population, vaccine coverage, waning parameters uncertainty, and variant prevelance. (ii) For each of the above case trajectories, we use multiple possibilities of death and hospitalization rates that have been seen in the recent past. The above results in multiple points for each day. Quantiles are generated based on sampling among these points for each day.</li>
+<li><strong>USC-SIkJalpha_update</strong>: We generate multiple trajectories by (i) Uniform sampling of the recently seen infection rates, under-reporting/asymptomatic population, vaccine coverage, waning parameters uncertainty, and variant prevelance. (ii) For each of the above case trajectories, we use multiple possibilities of death and hospitalization rates that have been seen in the recent past. The above results in multiple points for each day. Quantiles are generated based on sampling among these points for each day.</li>
+<li><strong>UVA-EpiHiper</strong>: estimated from multiple replicates of simulations.</li>
+</ul>
+</div>
+<div id="calibration" class="section level3">
+<h3>Calibration</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Markov chain Monte Carlo</li>
+<li><strong>ICM-agentModel</strong>: The hybrid approach is utilised. Many model parameters are based on literature (e.g. duration of latent state) The absolute infectivity of the wild type (parameter alpha ) and the reference (assuming usual behaviour) fraction of symptomatic agents contributing to their non-household contexts (parameter f) is optimised using Bayesian search and historic confirmed cases data. Finally, some parameters, most notably multipliers of context contacting rates, are calibrated using the trial and error method.</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: Grid search samples around most likely points fitted to last 4 weeks of observed values</li>
+<li><strong>MODUS_Covid-Episim</strong>: Calibration against case numbers and shares of different VOCs.</li>
+<li><strong>RIVM-vacamole</strong>: The baseline (non-seasonal) transmission rate and initial conditions for forward simulations are calibrated by fitting the model to daily confirmed cases from the national notification database Osiris. The model is fitted to data piecewise to correspond with the correct contact patterns associated with different non-pharmaceutical interventions within each time window.</li>
+<li><strong>SIMID-SCM</strong>: MCMC Random-Walk Metropolis algorithm performed on a deterministic version of the model</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: The model uses one free time-dependent factor multiplied to the transmissibility to calibrate the model to past incident cases per age and federal-state. The sequentially used hospitalization model fits the hospitalization/ICU rates and length of stays to the last 100 daily observation points of the occupancy.</li>
+<li><strong>UC3M-EpiGraph</strong>: We calibrate the model using the time interval from July 2021 and March 2022</li>
+<li><strong>USC-SIkJalpha</strong>: All calibrations using regression. No manual-tuning other than the listed assumption and trivial settings: non-zero lag between infection and death.</li>
+<li><strong>USC-SIkJalpha_update</strong>: All calibrations using regression. No manual-tuning other than the listed assumption and trivial settings: non-zero lag between infection and death.</li>
+<li><strong>UVA-EpiHiper</strong>: For each state, we calibrate the transmissibility parameter in our disease model targeting daily confirmed cases in the recent weeks until the last date of fitting data.</li>
+</ul>
+</div>
+<div id="spatial-structure" class="section level3">
+<h3>Spatial Structure</h3>
+<ul>
+<li><strong>ECDC-CM_ONE</strong>: Not applicable</li>
+<li><strong>ICM-agentModel</strong>: model agents are geo-referenced</li>
+<li><strong>JBUD-HMXK</strong>: Not applicable</li>
+<li><strong>MOCOS-agent1</strong>: Not applicable</li>
+<li><strong>MODUS_Covid-Episim</strong>: Home and activity locations of agents are simulated using transportation model MATSim (<a href="http://matsim.org" class="uri">http://matsim.org</a>); in Episim these contact locations are simulated as containers with activity specific parameters.</li>
+<li><strong>RIVM-vacamole</strong>: Not applicable</li>
+<li><strong>SIMID-SCM</strong>: Not applicable</li>
+<li><strong>TUWien-AustrianCoVABM</strong>: one model agent is used for every inhabitant of the country. Each of them has a static latitude/longitude</li>
+<li><strong>UC3M-EpiGraph</strong>: 10 cities, 5,018,260 inhabitants.</li>
+<li><strong>USC-SIkJalpha</strong>: Not applicable.</li>
+<li><strong>USC-SIkJalpha_update</strong>: Not applicable.</li>
+<li><strong>UVA-EpiHiper</strong>: embedded in our synthetic contact network model.</li>
+</ul>
+</div>
+</div>
+
+<script type="text/javascript">
+var all_links = document.querySelectorAll('a');
+for (var i = 0; i < all_links.length; i++){
+       var a = all_links[i];
+       if(a.hostname != location.hostname) {
+               a.rel = 'noopener';
+               a.target = '_blank';
+       }
+}
+</script>
+<body>
+<footer>
+<hr>
+
+<div style="display: flex;">
+
+  <div><img src="images/logo.svg" width="200"></div>
+
+  <div><p>The European Scenario and <a href="https://covid19forecasthub.eu/index.html")>Forecast</a> Hubs are run in collaboration between the <a href="https://epiforecasts.io/">Epiforecasts team</a> at the <a href="https://www.lshtm.ac.uk")>London School of Hygiene & Tropical Medicine</a>; and the <a href="https://ecdc.europa.eu")>European Centre for Disease Control and Prevention (ECDC)</a>.</p><p><b><a href="contact.html")>Contact us</a></b></p></div>
+
+</div>
+
+<hr>
+</footer>
+
+</body>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+
+</body>
+</html>

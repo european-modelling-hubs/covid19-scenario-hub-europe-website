@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Scenarios</title>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="images/favicon.svg" />
+
+<script data-goatcounter="https://covid19-scenario-hub-europe.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">European Covid-19 Scenario Hub</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="about.html">
+    <span class="fa fa-info-circle"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="scenarios.html">
+    <span class="fa fa-virus"></span>
+     
+    Scenarios
+  </a>
+</li>
+<li>
+  <a href="community.html">
+    <span class="fa fa-users"></span>
+     
+    Community
+  </a>
+</li>
+<li>
+  <a href="models.html">
+    <span class="fa fa-file-spreadsheet"></span>
+     
+    Models
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-file-alt"></span>
+     
+    Reports
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="report1.html">Round 1</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="contact.html">
+    <span class="fa fa-envelope"></span>
+     
+    Contact
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Scenarios</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#section"></a><ul>
+<li><a href="#round-1">Round 1</a><ul>
+<li><a href="#round-1-scenarios">Round 1 scenarios</a></li>
+<li><a href="#assumptions">Assumptions</a></li>
+<li><a href="#submission-information">Submission information</a></li>
+</ul></li>
+<li><a href="#round-0">Round 0</a><ul>
+<li><a href="#scenarios">Scenarios</a></li>
+<li><a href="#projections">Projections</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<p>Information about past and present rounds of scenarios is below. For modellers participating in each round, we have reproduced key information below but please refer to the <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Scenario-rounds">Wiki</a> for the most up to date details. For more general information on our approach to setting scenarios, read more in the <a href="about.html">About</a> section.</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="round-1" class="section level2 tabset tabset-pills">
+<h2>Round 1</h2>
+<p>In this round we are exploring the impact of different timings of a <a href="#booster-campaign">second booster campaign</a> while considering uncertainty around the speed of <a href="#waning-immunity">waning immunity</a>. We ask for projections over a period of <a href="#key-dates">at least nine and at most twelve months</a>.</p>
+<ul>
+<li>Please aim to submit by <strong>3 June 2022</strong>
+<ul>
+<li><a href="#submission-information">Submission information, key dates, and model abstract</a> below</li>
+<li>Please note some <a href="#submission-differences-from-round-0">important differences from Round 0</a></li>
+<li><a href="mail@covid19scenariohub.eu">Let us know</a> if you need more time</li>
+</ul></li>
+</ul>
+<div id="round-1-scenarios" class="section level3">
+<h3>Round 1 scenarios</h3>
+<table>
+<tr>
+<td>
+</td>
+<td>
+<b>Slow summer booster campaign</b><br>
+<ul>
+<li>
+2nd booster recommended for 60+
+</li>
+<li>
+Uptake reaches 50% of 1st booster coverage by 15th December
+</li>
+<li>
+Uptake starts <b>15th June*</b>
+</li>
+</ul>
+</td>
+<td>
+<b>Fast autumn booster campaign</b><br>
+<ul>
+<li>
+2nd** booster recommended for 60+
+</li>
+<li>
+Uptake reaches 50% of 1st booster coverage by 15th December
+</li>
+<li>
+Uptake starts <b>15th September</b>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Optimistic slow immune waning</b><br>
+<ul>
+<li>
+60% reduction in immunity against infection
+</li>
+<li>
+In <b>8 months</b>
+</li>
+</ul>
+</td>
+<td>
+Scenario A
+</td>
+<td>
+Scenario B
+</td>
+</tr>
+<tr>
+<td>
+<b>Pessimistic fast immune waning</b><br>
+<ul>
+<li>
+60% reduction in immunity against infection
+</li>
+<li>
+In <b>3 months</b>
+</li>
+</ul>
+</td>
+<td>
+Scenario C
+</td>
+<td>
+Scenario D
+</td>
+</tr>
+</table>
+<p><em>* If a second booster is already offered to 60+, vaccination uptake continues as currently</em></p>
+<p><em>** If a second booster is already offered to 60+, a third booster dose is recommended</em></p>
+</div>
+<div id="assumptions" class="section level3 tabset">
+<h3>Assumptions</h3>
+<div id="booster-campaign" class="section level4">
+<h4>Booster campaign</h4>
+<p>We consider scenarios for a second booster vaccination campaign among the <strong>population aged 60+</strong> in each country. This vaccination would typically be a fourth dose, following a completed course of two doses plus a first booster dose. We prescribe a relative reduction in vaccination coverage among this group, where by <strong>15th December</strong>, uptake of the second booster reaches <strong>50% of coverage</strong> achieved by the first booster campaign.</p>
+<p>In the scenarios we vary only the timing of the booster campaign:</p>
+<ul>
+<li><p>Slow summer campaign: uptake starts <strong>15th June</strong></p></li>
+<li><p>Fast autumn campaign: uptake starts <strong>15th September</strong></p></li>
+</ul>
+<p>We note that some countries have already started a second booster campaign.</p>
+<ul>
+<li><p>For nearly all countries, please <strong>continue to use the scenarios as they are</strong>. The scenarios ask for modellers to include a second booster dose open to ages 60+. In most countries currently offering a second booster, these scenarios are an expansion of the eligible age group</p></li>
+<li><p>The exceptions are <strong>Greece and the Netherlands</strong>, where second booster vaccination is already open to ages 60+. In these two countries:</p>
+<ul>
+<li>In scenarios A &amp; C (uptake starts in June), please model booster vaccination uptake among the 60+ <strong>as it is continuing now</strong>.</li>
+<li>In scenarios B &amp; D (uptake starts in September), please model a <strong>third booster (fifth dose)</strong>, with otherwise the same parameters (uptake among 60+, starting 15 September, coverage reaching 50% of first booster dose by December)</li>
+</ul></li>
+</ul>
+<div id="assumptions-about-the-booster-campaign" class="section level5">
+<h5>Assumptions about the booster campaign</h5>
+<div id="shared-assumptions" class="section level6">
+<h6>Shared assumptions</h6>
+<p>All modellers should include the following parameters when modelling the booster campaign:</p>
+<ul>
+<li><p>Second booster is only recommended for population aged &gt;=60 years</p></li>
+<li><p>Uptake among the target population reaches 50% of coverage achieved by the first booster campaign among that population</p></li>
+<li><p>Uptake at 50% of the target population is reached by 15th December</p></li>
+</ul>
+</div>
+<div id="assumptions-left-to-modeller-judgement" class="section level6">
+<h6>Assumptions left to modeller judgement</h6>
+<p>Modellers should use their own judgement and relevant literature if making assumptions about the following:</p>
+<ul>
+<li><p>The existing level of vaccination coverage reached in the first booster campaign</p></li>
+<li><p>Vaccine effectiveness against both infection and severe disease, for both previous vaccinations and the second booster</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="waning-immunity" class="section level4">
+<h4>Waning immunity</h4>
+<p>Waning immunity means protection against new COVID-19 infection. We take a similar general approach to waning immunity as in Round 0 (Euro Scenario Hub) and Round 13 (US Scenario Hub). We specify that immunity wanes to a <strong>60% reduction</strong> from baseline levels. The baseline is the level of protection reported immediately after exposure (vaccination or infection).</p>
+<p>In the scenarios we vary the median time taken to reach this reduction of immunity:</p>
+<ul>
+<li><p>Optimistic slow waning: a median time of <strong>8 months</strong> for immunity to wane by 60% from baseline</p></li>
+<li><p>Pessimistic fast waning: a median time of <strong>3 months</strong> for immunity to wane by 60% from baseline</p></li>
+</ul>
+<div id="assumptions-about-waning-immunity" class="section level5">
+<h5>Assumptions about waning immunity</h5>
+<div id="shared-assumptions-1" class="section level6">
+<h6>Shared assumptions</h6>
+<p>All modellers should include the following parameters when modelling waning immunity:</p>
+<ul>
+<li><p><em>New to this round</em></p>
+<ul>
+<li><p>Immunity wanes by 60% (i.e. immunity after 3 or 8 months is 40% of baseline) across all scenarios</p></li>
+<li><p>Waning against severe disease: this is now left to modeller judgement with a recommendation to include waning against severe disease - see below</p></li>
+</ul></li>
+<li><p><em>As the pilot round (text adapted from US Scenario Hub)</em></p>
+<ul>
+<li>We prescribe the relative reduction in protection against infection after the waning period, where comparison is to the levels observed immediately after natural infection or vaccination</li>
+</ul></li>
+</ul>
+</div>
+<div id="assumptions-left-to-modeller-judgement-1" class="section level6">
+<h6>Assumptions left to modeller judgement</h6>
+<p>Modellers should use their own judgement and relevant literature if making assumptions about the following:</p>
+<ul>
+<li><p>Waning of protection against severe disease</p>
+<ul>
+<li>We strongly recommend including a <strong>decrease of 20% protection within 3 months</strong>. This is a combined estimate based on various recent studies, <a href="https://view-hub.org/sites/default/files/2022-05/COVID19_VEStudies_ForestPlots_Delta_Omicron.pdf">see example</a>.</li>
+<li>However, this is up to modeller judgement and teams should continue to produce results even if they are unable to include waning against severe disease</li>
+</ul></li>
+<li><p>The absolute baseline level of protection against infection or severe disease after exposure</p></li>
+<li><p>Whether the baseline level of protection varies by the source of immunity (vaccination or natural infection)</p></li>
+<li><p>Whether or how new exposure to infection or vaccination during the waning period increases the level of immunity. Teams can choose to bump individuals to a higher level of protection after repeat exposures (where exposure is vaccination or infection), but waning would still occur on a 3 to 8 month timescale after each new exposure</p></li>
+<li><p>The distribution of waning immunity, including</p>
+<ul>
+<li><p>the shape and rate at which immunity wanes, as long as the median is 3 or 8 months</p></li>
+<li><p>whether immunity reaches a plateau or continues to wane after that time</p></li>
+</ul></li>
+</ul>
+<p>For additional background on waning immunity, we suggest exploring the scenarios for <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-0">Round 0</a> or the more extensive documentation for the <a href="https://github.com/midas-network/covid19-scenario-modeling-hub#waning-immunity">US Scenario Hub Round 13</a>.</p>
+</div>
+</div>
+</div>
+<div id="additional-shared-assumptions" class="section level4">
+<h4>Additional shared assumptions</h4>
+<p>We also ask modellers to assume the following:</p>
+<ul>
+<li><p>No new variant of concern</p></li>
+<li><p>No novel vaccine types or novel drugs that strongly impact burden</p></li>
+</ul>
+</div>
+</div>
+<div id="submission-information" class="section level3">
+<h3>Submission information</h3>
+<div id="submission-differences-from-round-0" class="section level4">
+<h4>Submission differences from Round 0</h4>
+<p>We have updated the submission format for Round 1 and future rounds.</p>
+<ul>
+<li><p>Sample based submissions</p>
+<ul>
+<li><p>We no longer ask for results across a quantile distribution</p></li>
+<li><p>Please submit <strong>100 samples</strong>. If you think more are needed to capture the uncertainty from the outputs, please get in touch. If you cannot provide 100 samples, please submit as many as you can.</p></li>
+<li><p>Each sample should be a single simulation from your model, all with equal probability</p></li>
+<li><p>See more on <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#required-variables">submission formatting</a></p></li>
+</ul></li>
+<li><p>Targets</p>
+<ul>
+<li><p>Teams can submit one or more of any of the below targets. See more on <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Targets-and-horizons#targets">targets</a></p></li>
+<li><p>Key targets:</p>
+<ul>
+<li><p>Incident deaths</p></li>
+<li><p>Incident cases</p></li>
+<li><p>Incident hospital admissions</p></li>
+</ul></li>
+<li><p>Additional targets, if teams already produce these (please get in touch if yes as we will need to create associated variable names):</p>
+<ul>
+<li><p>Incident infections</p></li>
+<li><p>Intensive care (ICU) admissions</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="key-dates" class="section level4">
+<h4>Key dates</h4>
+<p>The dates for round 1 are:</p>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="16%" />
+<col width="57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Round 1 date</th>
+<th><a href="https://ibis.health.state.nm.us/resource/MMWRWeekCalendar.html#part2">Epiweek</a> (<a href="https://www.dralshehri.com/epiweeks/">conversion</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Submissions due</td>
+<td>June 03 2022</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>End date for fitting data</td>
+<td>May 21 2022</td>
+<td>EW-20 of 2022</td>
+</tr>
+<tr class="odd">
+<td><code>origin_date</code> (first possible date of a daily simulation)</td>
+<td>May 22 2022</td>
+<td>First day of EW-21 of 2022</td>
+</tr>
+<tr class="even">
+<td>Earliest <code>target_end_date</code> (first week of simulated results)</td>
+<td>May 28 2022</td>
+<td>EW-21 of 2022</td>
+</tr>
+<tr class="odd">
+<td>Latest <code>target_end_date</code> (projections over 9 to 12 months)</td>
+<td>From February 18 2023 to May 20 2023</td>
+<td>From EW-07 of 2023 to EW-20 of 2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="scenario-ids" class="section level4">
+<h4>Scenario IDs</h4>
+<p>Please use the following codes to identify between scenarios, with one for each value (row) in your <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#scenario_id">submission csv</a>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scenario A. Slow waning, summer booster campaign</td>
+<td>A-2022-05-22</td>
+</tr>
+<tr class="even">
+<td>Scenario B. Slow waning, autumn booster campaign</td>
+<td>B-2022-05-22</td>
+</tr>
+<tr class="odd">
+<td>Scenario C. Fast waning, summer booster campaign</td>
+<td>C-2022-05-22</td>
+</tr>
+<tr class="even">
+<td>Scenario D. Fast waning, autumn booster campaign</td>
+<td>D-2022-05-22</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="model-abstract" class="section level4">
+<h4>Model abstract</h4>
+<p>Please include a brief abstract for your model as part of your submission. Please make a copy of the <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/template/2022-05-22-MyTeam-MyModel-Abstract.md">Round 1 Abstract template</a> and save this to your team’s folder in <code>data-processed</code>, adjusting the filename format (<code>2022-05-22-MyTeam-MyModel-Abstract.md</code>).</p>
+</div>
+</div>
+</div>
+<div id="round-0" class="section level2 tabset tabset-pills">
+<h2>Round 0</h2>
+<p>We ran a pilot Round 0 over March-May 202, where we considered the differential impact of waning protection against infection against the introduction of a new variant with immune escape.</p>
+<div id="scenarios" class="section level3">
+<h3>Scenarios</h3>
+<p>The details for this round identically match those of the <a href="https://covid19scenariomodelinghub.org/viz.html">US Scenario Hub</a>, applied to the <a href="https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/data-locations/locations_eu.csv">32 countries</a> of the European Hub.</p>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1MiQsN0p-nvDF8km-OLjHOaEAqxMDwmxlOuDPu3POxnk/edit?usp=sharing">Round 0 overview</a></li>
+<li><a href="https://github.com/midas-network/covid19-scenario-modeling-hub#round-13-scenarios">Full scenario details - US Hub</a></li>
+</ul>
+<table>
+<tr>
+<td>
+</td>
+<td>
+<b>No new variant </b><br>
+<ul>
+<li>
+Projections are initialized with the mix of strains circulating at the start of the projection period
+</li>
+</ul>
+</td>
+<td>
+<b>New variant X</b><br>
+<ul>
+<li>
+Introduction: From May 1st 2022 is a continuous influx of 50 weekly infections of variant X over 16 weeks
+</li>
+<li>
+Characteristics: Variant X has 30% immune escape, and the same intrinsic transmissibility and severity as Omicron.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b> Optimistic waning of protection</b><br>
+<ul>
+<li>
+Speed: 10 months median time to transition to partial immunity
+</li>
+<li>
+Plateau: 40% reduction in protection from baseline (protection immediately after exposure) at plateau</b>
+</li>
+</ul>
+</td>
+<td>
+Scenario A
+</td>
+<td>
+Scenario B
+</td>
+</tr>
+<tr>
+<td>
+<b>Pessimistic waning of protection</b><br>
+<ul>
+<li>
+Speed: 4 months median time to transition to partial immunity
+</li>
+<li>
+Plateau: 60% reduction in protection from baseline level at immune plateau
+</li>
+</ul>
+</td>
+<td>
+Scenario C
+</td>
+<td>
+Scenario D
+</td>
+</tr>
+</table>
+</div>
+<div id="projections" class="section level3">
+<h3>Projections</h3>
+<p>In Round 0:</p>
+<ul>
+<li><p>20 independent teams joined calls and/or submitted models</p></li>
+<li><p>8 teams started working on Round 0; 5 teams contributed results</p></li>
+<li><p>5 countries had &gt;2 model projections</p></li>
+</ul>
+</div>
+<div id="conclusions" class="section level3">
+<h3>Conclusions</h3>
+<p>As it was a pilot round, we provide only general, broad conclusions for Round 0.</p>
+<ul>
+<li>Scientific interpretation
+<ul>
+<li>Results were consistent with the speed of waning protection against infection as a more significant factor in future outbreaks, compared to a new variant with some immune escape</li>
+<li>This matched with similar results from the US Hub Round 13</li>
+</ul></li>
+<li>Policy relevance
+<ul>
+<li>This indicates greater consideration for the timing of vaccination programmes relative to waning protection, rather than as a response to new variant introductions</li>
+</ul></li>
+<li>Interpret with caution:
+<ul>
+<li>Models were intended as experimental for the pilot round, and we found substantial variation between models as well as between countries and scenarios</li>
+<li>Results may be biased by both submission constraints and scenario confounding</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+var all_links = document.querySelectorAll('a');
+for (var i = 0; i < all_links.length; i++){
+       var a = all_links[i];
+       if(a.hostname != location.hostname) {
+               a.rel = 'noopener';
+               a.target = '_blank';
+       }
+}
+</script>
+<body>
+<footer>
+<hr>
+
+<div style="display: flex;">
+
+  <div><img src="images/logo.svg" width="200"></div>
+
+  <div><p>The European Scenario and <a href="https://covid19forecasthub.eu/index.html")>Forecast</a> Hubs are run in collaboration between the <a href="https://epiforecasts.io/">Epiforecasts team</a> at the <a href="https://www.lshtm.ac.uk")>London School of Hygiene & Tropical Medicine</a>; and the <a href="https://ecdc.europa.eu")>European Centre for Disease Control and Prevention (ECDC)</a>.</p><p><b><a href="contact.html")>Contact us</a></b></p></div>
+
+</div>
+
+<hr>
+</footer>
+
+</body>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>
