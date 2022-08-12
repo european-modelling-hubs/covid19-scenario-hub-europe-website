@@ -26,27 +26,28 @@ This page presents the various features and implementations in the models submit
 github_repo <- "covid19-forecast-hub-europe/covid19-scenario-hub-europe"
 branch <- "main"
 
-data_processed_files <- gh::gh(
+metadata_files <- gh::gh(
     "/repos/{github_repo}/git/trees/{branch}?recursive=1",
     github_repo = github_repo, branch = branch
   ) |> 
   pluck("tree") |> 
-  keep(~ .x$type == "blob" && grepl("data-processed/", .x$path))
+  keep(~ .x$type == "blob" && grepl("model-metadata/", .x$path))
 
-# Use model name as name
-names(data_processed_files) <- data_processed_files |> 
-  map("path") |> 
-  fs::path_split() |> 
-  map(2)
+abstract_files <- gh::gh(
+    "/repos/{github_repo}/git/trees/{branch}?recursive=1",
+    github_repo = github_repo, branch = branch
+  ) |> 
+  pluck("tree") |> 
+  keep(~ .x$type == "blob" && grepl("model-abstracts/", .x$path))
 ```
 
 ## Model summary
 
 ```{r}
-metadata <- data_processed_files |> 
-  keep(~ grepl("data-processed/(.*)/metadata-\\1", .x$path)) |> 
+metadata <- metadata_files |> 
   map_chr(~ glue::glue("https://raw.githubusercontent.com/{github_repo}/{branch}/{.x$path}")) |> 
   map(yaml::read_yaml)
+names(metadata) <- purrr::map(metadata, "model_abbr")
 ```
 
 ```{r, results='asis'}
@@ -73,15 +74,4 @@ metadata |>
   unlist() |> 
   knitr::knit_child(text = _, quiet = TRUE) |> 
   cat(sep = "\n")
-```
-
-## Abstracts
-
-```{r, results='asis'}
-abstract_files <- data_processed_files |> 
-  keep(~ grepl("data-processed/(.*)Abstract\\.md$", .x$path)) |> 
-  map_chr(~ glue::glue("https://github.com/{github_repo}/blob/{branch}/{.x$path}"))
-abstract_files |> 
-  imap_chr(~ glue::glue("- [{.y}]({.x})\n")) |> 
-  walk(cat, sep = "\n")
 ```
