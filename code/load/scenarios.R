@@ -82,5 +82,64 @@ scenarios <- list(
 
 _* If a second booster is already offered to 60+ (Greece, Netherlands), vaccination uptake continues as currently_
 
-_** If a second booster is already offered to 60+ (Greece, Netherlands), a third booster dose is recommended_")
+_** If a second booster is already offered to 60+ (Greece, Netherlands), a third booster dose is recommended_"),
+  # -------------------------------------------------------------------------
+  # Round 2
+  "round-2" = list("round" = 2,
+                   "scenario_labels" = c(
+                     "A-2022-07-24" = "60+Booster/Optimistic",
+                     "B-2022-07-24" = "18+Booster/Optimistic",
+                     "C-2022-07-24" = "60+Booster/Pessimistic",
+                     "D-2022-07-24" = "18+Booster/Pessimistic"),
+                   "origin_date" = as.Date("2022-07-24"),
+                   "submission_window_end" = as.Date("2022-07-29"),
+                   "scenario_caption" = "Guide to scenarios: ",
+                   "table" = "<table>
+  <tr>
+    <td></td>
+    <td>
+      <b>Age 60+ booster campaign</b><br>
+      <ul>
+          <li>2nd* booster recommended for 60+</li>
+          <li>Uptake starts 15th September, and reaches 50% coverage by 15th December</li>
+      </ul>
+    </td>
+    <td>
+      <b>Age 18+ booster campaign</b><br>
+      <ul>
+          <li>2nd* booster recommended for general population, ages 18+</li>
+          <li>Uptake starts 15th September, and reaches 50% coverage by 15th December</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Optimistic vaccine effectiveness</b><br>
+      <ul>
+        <li>Increased booster vaccine effectiveness to that seen against <b>Delta variant</b></li>
+      </ul>
+    </td>
+    <td>
+      Scenario A
+    </td>
+    <td>
+      Scenario B
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Pessimistic vaccine effectiveness</b><br>
+      <ul>
+        <li>Reduced booster vaccine effectiveness against infection from <b>BA.4/BA.5/BA.2.75 variants</b></li>
+      </ul>
+    </td>
+    <td>
+      Scenario C
+    </td>
+    <td>
+      Scenario D
+    </td>
+  </tr>
+</table>"
+  )
 )
