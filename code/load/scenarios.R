@@ -87,13 +87,15 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
   # Round 2
   "round-2" = list("round" = 2,
                    "scenario_labels" = c(
-                     "A-2022-07-24" = "60+Booster/Optimistic",
-                     "B-2022-07-24" = "18+Booster/Optimistic",
-                     "C-2022-07-24" = "60+Booster/Pessimistic",
-                     "D-2022-07-24" = "18+Booster/Pessimistic"),
+                     # Short text label for scenarios in format:
+                     #  "Policy scenario / Epidemiological scenario"
+                     "A-2022-07-24" = "60+Booster/Optimistic VE",
+                     "B-2022-07-24" = "18+Booster/Optimistic VE",
+                     "C-2022-07-24" = "60+Booster/Pessimistic VE",
+                     "D-2022-07-24" = "18+Booster/Pessimistic VE"),
                    "origin_date" = as.Date("2022-07-24"),
                    "submission_window_end" = as.Date("2022-07-29"),
-                   "scenario_caption" = "Guide to scenarios: ",
+                   "scenario_caption" = "Scenarios: Autumn second booster campaign among population aged '18+' or '60+'; vaccine effectiveness is 'optimistic'(effectiveness as of a booster vaccine against Delta) or 'pessimistic' (as against BA.4/BA.5/BA.2.75)",
                    "table" = "<table>
   <tr>
     <td></td>

@@ -12,7 +12,9 @@ library(ggpmisc)
 detect_peaks <- function(data) {
   data |>
     group_by(sample,
-             model, scenario_label, location, target_variable) |>
+             model,
+             scenario_epi, scenario_policy, scenario_label,
+             location, target_variable) |>
     mutate(target_variable = as.factor(target_variable),
            peak = ggpmisc:::find_peaks(x = value, span = 5)) |>
     filter(peak)
@@ -24,11 +26,14 @@ plot_peak_number <- function(peaks,
   # Summarise
   peaks_n <- peaks |>
     count(sample,
-          model, scenario_label, location, target_variable,
+          model, scenario_epi, scenario_policy, scenario_label,
+          location, target_variable,
           name = "peaks") |>
     ungroup() |>
     # take quantiles by model
-    group_by(model, scenario_label, location, target_variable) |>
+    group_by(model,
+             scenario_epi, scenario_policy, scenario_label,
+             location, target_variable) |>
     summarise(value = round(quantile(peaks, quantile_levels)),
               name = paste0("q", sub("\\.", "_", quantile_levels))) |>
     pivot_wider()
@@ -38,9 +43,11 @@ plot_peak_number <- function(peaks,
   plot_n <- map(targets,
                 ~ peaks_n |>
                     filter(target_variable == .x) |>
-                    group_by(model, scenario_label, location, target_variable) |>
+                    group_by(model,
+                             scenario_epi, scenario_policy, scenario_label,
+                             location, target_variable) |>
                     ggplot(aes(col = model, fill = model,
-                               x = scenario_label)) +
+                               x = scenario_policy)) +
                     geom_point(aes(y = q0_5),
                                position = position_dodge(0.5)) +
                     geom_linerange(aes(ymin = q0_05, ymax = q0_95),
@@ -51,7 +58,9 @@ plot_peak_number <- function(peaks,
                     labs(y = "Number of peaks", x = NULL,
                          caption = "Number of projected peaks",
                          col = NULL, fill = NULL) +
-                    facet_grid(rows = "location", scales = "free", drop = TRUE) +
+                    facet_grid(rows = vars(location),
+                               cols = vars(scenario_epi),
+                               scales = "free", drop = TRUE) +
                     theme(legend.position = "top"))
   names(plot_n) <- targets
   return(plot_n)
@@ -74,7 +83,9 @@ plot_peak_size <- function(peaks, truth) {
   plot_size <- map(targets,
                   ~ peaks |>
                       filter(target_variable == .x) |>
-                      group_by(model, scenario_label, location, target_variable) |>
+                      group_by(model,
+                               scenario_epi, scenario_policy, scenario_label,
+                               location, target_variable) |>
                       ggplot(aes(x = target_end_date,
                                  col = model)) +
                      # geom_boxplot(aes(y = value_100k),
