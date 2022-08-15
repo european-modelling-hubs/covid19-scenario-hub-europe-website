@@ -51,7 +51,7 @@ results <- arrow::read_parquet(data_path) |>
 multi_country <- distinct(results, model, location) %>%
   group_by(location) %>%
   tally() %>%
-  filter(n >= 2) %>%
+  filter(n >= 3) %>%
   pull(location)
 results_multi_country <- filter(results, location %in% multi_country)
 
