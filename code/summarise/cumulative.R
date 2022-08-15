@@ -9,7 +9,9 @@ plot_cumulative_summary <- function(data, truth,
   # get cumulative [code from @sbfnk] ----------------------------------------
   ## take final cumulative values
   summary <- data |>
-    group_by(location, scenario_label, target_variable, model,
+    group_by(location,
+             scenario_epi, scenario_policy, scenario_label,
+             target_variable, model,
              sample) |>
     arrange(target_end_date) |>
     mutate(cumulative = cumsum(value))
@@ -20,7 +22,9 @@ plot_cumulative_summary <- function(data, truth,
   ## take quantiles across samples
   quantile_levels = c(0, 0.05, 0.25, 0.5, 0.75, 0.95, 1)
   summary_quantiles <- final |>
-    group_by(location, scenario_label, target_variable, model) |>
+    group_by(location,
+             scenario_epi, scenario_policy, scenario_label,
+             target_variable, model) |>
     summarise(
       value = round(quantile(cumulative, quantile_levels)),
       name = paste0("q", sub("\\.", "_", quantile_levels)),
@@ -47,6 +51,7 @@ plot_cumulative_summary <- function(data, truth,
   } else {
     plot_caption <- "Dotted line at all-time cumulative total before projections start"
   }
+
   summary_truth <- summary_truth |>
     group_by(location, target_variable) |>
     arrange(target_end_date) |>
@@ -61,7 +66,9 @@ plot_cumulative_summary <- function(data, truth,
   cumulative_plot_data <- summary_proj |>
     ungroup() |>
     select(-value) |>
-    group_by(location, scenario_label, target_variable, model) |>
+    group_by(location,
+             scenario_epi, scenario_policy, scenario_label,
+             target_variable, model) |>
     pivot_wider(names_from = name,
                 values_from = value_p) |>
     left_join(summary_truth, by = c("location", "target_variable")) |>
@@ -71,7 +78,7 @@ plot_cumulative_summary <- function(data, truth,
   plot_cumulative <- function(data, target) {
     data |>
       filter(target_variable == target) |>
-      ggplot(aes(x = scenario_label, col = model)) +
+      ggplot(aes(x = scenario_policy, col = model)) +
       geom_point(aes(y = q0_5), position = position_dodge(0.5)) +
       geom_linerange(aes(ymin = q0_05, ymax = q0_95),
                      position = position_dodge(0.5)) +
@@ -83,7 +90,8 @@ plot_cumulative_summary <- function(data, truth,
            subtitle = paste0("Total incident ", target,
                              " over projection period"),
            caption = plot_caption) +
-      facet_grid(rows = "location",
+      facet_grid(rows = vars(location),
+                 cols = vars(scenario_epi),
                  scales = "fixed",
                  drop = TRUE) +
       theme(legend.position = "top")
