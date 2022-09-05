@@ -2,10 +2,10 @@
 title: "Scenarios"
 output:
   html_document:
-    toc: true
+    toc: false
 ---
 
-```{r prep, include = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                       message = FALSE, warning = FALSE)
 source("code/load/scenarios.R")
@@ -14,6 +14,26 @@ source("code/load/scenarios.R")
 Information about past and present rounds of scenarios is below. For modellers participating in each round,  please refer to the [Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Scenario-rounds) for the most up to date details. For more general information on our approach to setting scenarios, read more in the [About](about.html) section.
 
 # {.tabset}
+
+## Round 3 {.tabset .tabset-pills}
+
+### Scenarios
+
+Round 3 projections begin from `r scenarios[["round-3"]][["origin_date"]]`. 
+
+```{r scenario-round-3, results = 'asis'}
+cat(paste0("_", scenarios[["round-3"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-3"]][["table"]])
+```
+
+### Assumptions
+
+See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-3) for detailed guidance on the assumptions that modellers used in creating scenario projections.
+
+### Findings
+
+Round 3 submissions are anticipated by `r scenarios[["round-3"]][["submission_window_end"]]`. 
 
 ## Round 2 {.tabset .tabset-pills}
 
@@ -29,7 +49,7 @@ cat(scenarios[["round-2"]][["table"]])
 
 ### Assumptions
 
-See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-2) for detailed guidance on the assumptions that modellers use in creating scenario projections.
+See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-2) for detailed guidance on the assumptions that modellers used in creating scenario projections.
 
 ### Findings
 
@@ -150,11 +170,9 @@ See the [full report](https://covid19scenariohub.eu/report1.html) for our findin
 
 ## Round 0 {.tabset .tabset-pills}
 
-We ran a pilot Round 0 over March-May 202, where we considered the differential impact of waning protection against infection against the introduction of a new variant with immune escape.
-
 ### Scenarios
 
-Round 0 projections begin from `r scenarios[["round-0"]][["origin_date"]]`. 
+We ran a pilot round ("Round 0") over March-May 2022. Round 0 projections begin from `r scenarios[["round-0"]][["origin_date"]]`. 
 
 ```{r scenario-round-0, results = 'asis'}
 cat(paste0("_", scenarios[["round-0"]][["scenario_caption"]], "_"))
