@@ -16,7 +16,56 @@ scenarios <- list(
                                        "D-2022-02-25" = "Weak/New"),
                    "origin_date" = as.Date("2022-03-13"),
                    "submission_window_end" = as.Date("2022-04-22"),
-                   "scenario_caption" = "Strong/Weak = stronger/weaker immunity maintained over time; \n None/New = immune evading variant introduced May 2022"),
+                   "scenario_caption" = "Strong/Weak = stronger/weaker immunity maintained over time; \n None/New = immune evading variant introduced May 2022",
+    "table" = "<table>
+  <tr>
+    <td></td>
+    <td>
+      <b>No new variant
+      </b><br>
+      <ul>
+          <li>Projections are initialized with the mix of strains circulating at the start of the projection period</li>
+      </ul>
+    </td>
+    <td>
+      <b>New variant X</b><br>
+      <ul>
+          <li>Introduction: From May 1st 2022 is a continuous influx of 50 weekly infections of variant X over 16 weeks</li>
+          <li>Characteristics: Variant X has 30% immune escape, and the same intrinsic transmissibility and severity as Omicron.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b> Optimistic waning of protection</b><br>
+      <ul>
+        <li>Speed: 10 months median time to transition to partial immunity</li>
+        <li>Plateau: 40% reduction in protection from baseline (protection immediately after exposure) at plateau</b></li>
+      </ul>
+    </td>
+    <td>
+      Scenario A
+    </td>
+    <td>
+      Scenario B
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Pessimistic waning of protection</b><br>
+      <ul>
+        <li>Speed: 4 months median time to transition to partial immunity</li>
+        <li>Plateau: 60% reduction in protection from baseline level at immune plateau</li>
+      </ul>
+    </td>
+    <td>
+      Scenario C
+    </td>
+    <td>
+      Scenario D
+    </td>
+  </tr>
+</table>"),
   # -------------------------------------------------------------------------
   # Round 1
   "round-1" = list("round" = 1,
