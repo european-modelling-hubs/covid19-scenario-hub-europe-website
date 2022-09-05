@@ -9,17 +9,17 @@ navbar:
     - text: "Scenarios"
       icon: fa-virus
       href: scenarios.html
+      menu:
+        - text: "Round 1"
+          href: report1.html
+        - text: "Round 2"
+          href: report2.html
     - text: "Community"
       icon: fa-users
       href: community.html
     - text: "Models"
       icon: fa-file-spreadsheet
       href: models.html
-    - text: "Reports"
-      icon: fa-file-alt
-      menu:
-        - text: "Round 1"
-          href: report1.html
     - text: "Contact"
       icon: fa-envelope
       href: contact.html
