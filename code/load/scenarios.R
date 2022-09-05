@@ -192,5 +192,97 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
     </td>
   </tr>
 </table>"
+  ),
+  # -------------------------------------------------------------------------
+  # Round 3
+  "round-3" = list("round" = 3,
+                   # Short text label for scenarios in format:
+                   #  "Policy scenario / Epidemiological scenario"
+                   "scenario_labels" = c(
+                     "A" = "A. No vaccination, optimistic variants",
+                     "B" = "B. Annual vaccination, optimistic variants",
+                     "C" = "C. Biannual vaccination, optimistic variants",
+                     "D" = "D. No vaccination, pessimistic variants",
+                     "E" = "E. Annual booster campaign, pessimistic variants",
+                     "F" = "F. Biannual booster campaign, pessimistic variants"
+                     ),
+                   # Key dates
+                   "origin_date" = as.Date("2022-09-11"),
+                   "submission_window_end" = as.Date("2022-09-16"),
+                   # Short scenario guide (for website + figure captions)
+                   "scenario_caption" = "Scenarios: New vaccination (none/annual/biannual); \n New variants (optimistic/pessimistic)",
+                   # HTML format scenario table
+                   "table" = "<table> <tr>
+      <td>
+        Notes
+       <li> * Vaccination as planned = Primary schedule + 2 booster doses </li>
+       <li> ** Seasonal vaccination campaigns: Autumn = 15 September to 15 December; Spring = 15 March to 15 June
+      </td>
+      <td>
+        <b> No further vaccination </b><br>
+        <ul>
+            <li> Vaccination as planned*
+            <li> <b>No</b> further vaccination </li>
+        </ul>
+      </td>
+      <td>
+        <b> Annual vaccination </b><br>
+        <ul>
+            <li> Vaccination as planned* </li>
+            <li> <b>2023 onwards</b>: annual vaccination programme in <b>autumn</b>** </li>
+            <li> Uptake higher in 60+ than <60 age groups</li>
+        </ul>
+      </td>
+      <td>
+        <b> Bi-annual vaccination </b><br>
+        <ul>
+            <li> Vaccination as planned </li>
+            <li> <b>2023 onwards</b>: bi-annual (2 per year) vaccination in <b>spring</b>** and <b>autumn</b>**</li>
+            <li> Uptake higher in 60+ than <60 age groups </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Optimistic variant scenario</b><br>
+        <ul>
+          <li><b>20%</b> reduction in immunity against <b>infection</b> </li>
+          <li><b>0%</b> reduction in immunity against <b>severe</b> outcome </li>
+          <li><b>One new variant</b> every 9 months
+          <li> First introduction: <b>1st October 2022 </b></li>
+        </ul>
+      </td>
+      <td>
+        Scenario A
+      </td>
+      <td>
+        Scenario B
+      </td>
+      <td>
+        Scenario C
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Pessimistic variant scenario</b><br>
+        <ul>
+          <li><b>75%</b> reduction in immunity against <b>infection</b> </li>
+          <li><b>20%</b> reduction in immunity against <b>severe</b> outcomes </li>
+          <li><b>One new variant</b> every 9 months
+          <li> First introduction: <b>1st October 2022 </b></li>
+        </ul>
+      </td>
+      <td>
+        Scenario D
+      </td>
+      <td>
+        Scenario E
+      </td>
+      <td>
+        Scenario F
+      </td>
+    </tr>
+  </table>"
   )
 )
+
