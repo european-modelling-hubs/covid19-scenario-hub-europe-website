@@ -76,7 +76,7 @@ scenarios <- list(
                                       "D-2022-05-22" = "Weak/Autumn"),
     "origin_date" = as.Date("2022-05-22"),
     "submission_window_end" = as.Date("2022-07-01"),
-    "scenario_caption" = "_Guide to scenarios: Stronger or weaker immunity maintained over time ('Strong/Weak'); \n 60+ second booster campaign starting in summer or autumn ('Summer/Autumn')_",
+    "scenario_caption" = "Scenarios: Stronger or weaker immunity maintained over time ('Strong/Weak'); \n 60+ second booster campaign starting in summer or autumn ('Summer/Autumn')",
     "table" = "<table>
   <tr>
     <td></td>
@@ -144,7 +144,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
                      "D-2022-07-24" = "18+Booster/Pessimistic VE"),
                    "origin_date" = as.Date("2022-07-24"),
                    "submission_window_end" = as.Date("2022-07-29"),
-                   "scenario_caption" = "Scenarios: Autumn second booster campaign among population aged '18+' or '60+'; vaccine effectiveness is 'optimistic'(effectiveness as of a booster vaccine against Delta) or 'pessimistic' (as against BA.4/BA.5/BA.2.75)",
+                   "scenario_caption" = "Scenarios: Autumn second booster campaign among population aged '18+' or '60+'; \n Vaccine effectiveness is 'optimistic'(effectiveness as of a booster vaccine against Delta) or 'pessimistic' (as against BA.4/BA.5/BA.2.75)",
                    "table" = "<table>
   <tr>
     <td></td>

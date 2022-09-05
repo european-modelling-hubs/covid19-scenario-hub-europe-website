@@ -5,69 +5,43 @@ output:
     toc: true
 ---
 
+```{r prep, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, warning = FALSE)
+source("code/load/scenarios.R")
+```
+
 Information about past and present rounds of scenarios is below. For modellers participating in each round,  please refer to the [Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Scenario-rounds) for the most up to date details. For more general information on our approach to setting scenarios, read more in the [About](about.html) section.
 
 # {.tabset}
+
+## Round 2 {.tabset .tabset-pills}
+
+### Scenarios
+
+Round 2 projections begin from `r scenarios[["round-2"]][["origin_date"]]`. 
+
+```{r scenario-round-2, results = 'asis'}
+cat(paste0("_", scenarios[["round-2"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-2"]][["table"]])
+```
+
+### Findings
+
+See the [full report](https://covid19scenariohub.eu/report2.html) for our findings from Round 2.
 
 ## Round 1 {.tabset .tabset-pills}
 
 ### Scenarios
 
-<table>
-  <tr>
-    <td></td>
-    <td>
-      <b>Slow summer booster campaign</b><br>
-      <ul>
-          <li>2nd booster recommended for 60+</li>
-          <li>Uptake reaches 50% of 1st booster coverage by 15th December</li>
-          <li>Uptake starts <b>15th June*</b></li>
-      </ul>
-    </td>
-    <td>
-      <b>Fast autumn booster campaign</b><br>
-      <ul>
-          <li>2nd** booster recommended for 60+</li>
-          <li>Uptake reaches 50% of 1st booster coverage by 15th December</li>
-          <li>Uptake starts <b>15th September</b></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Optimistic slow immune waning</b><br>
-      <ul>
-        <li>60% reduction in immunity against infection</li>
-        <li>In <b>8 months</b></li>
-      </ul>
-    </td>
-    <td>
-      Scenario A
-    </td>
-    <td>
-      Scenario B
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Pessimistic fast immune waning</b><br>
-      <ul>
-        <li>60% reduction in immunity against infection</li>
-        <li>In <b>3 months</b></li>
-      </ul>
-    </td>
-    <td>
-      Scenario C
-    </td>
-    <td>
-      Scenario D
-    </td>
-  </tr>
-</table>
+Round 1 projections begin from `r scenarios[["round-1"]][["origin_date"]]`. 
 
-_* If a second booster is already offered to 60+, vaccination uptake continues as currently_
-
-_** If a second booster is already offered to 60+, a third booster dose is recommended_
+```{r scenario-round-1, results = 'asis'}
+cat(paste0("_", scenarios[["round-1"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-1"]][["table"]])
+```
 
 ### Assumptions {.tabset}
 
@@ -166,6 +140,10 @@ We also ask modellers to assume the following:
 
 -   No novel vaccine types or novel drugs that strongly impact burden
 
+### Findings
+
+See the [full report](https://covid19scenariohub.eu/report1.html) for our findings from Round 1.
+
 ## Round 0 {.tabset .tabset-pills}
 
 We ran a pilot Round 0 over March-May 202, where we considered the differential impact of waning protection against infection against the introduction of a new variant with immune escape.
@@ -179,56 +157,13 @@ countries](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-e
 -   [Round 0 overview](https://docs.google.com/presentation/d/1MiQsN0p-nvDF8km-OLjHOaEAqxMDwmxlOuDPu3POxnk/edit?usp=sharing)
 -   [Full scenario details - US  Hub](https://github.com/midas-network/covid19-scenario-modeling-hub#round-13-scenarios)
 
+Round 0 projections begin from `r scenarios[["round-0"]][["origin_date"]]`. 
 
-<table>
-  <tr>
-    <td></td>
-    <td>
-      <b>No new variant
-      </b><br>
-      <ul>
-          <li>Projections are initialized with the mix of strains circulating at the start of the projection period</li>
-      </ul>
-    </td>
-    <td>
-      <b>New variant X</b><br>
-      <ul>
-          <li>Introduction: From May 1st 2022 is a continuous influx of 50 weekly infections of variant X over 16 weeks</li>
-          <li>Characteristics: Variant X has 30% immune escape, and the same intrinsic transmissibility and severity as Omicron.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b> Optimistic waning of protection</b><br>
-      <ul>
-        <li>Speed: 10 months median time to transition to partial immunity</li>
-        <li>Plateau: 40% reduction in protection from baseline (protection immediately after exposure) at plateau</b></li>
-      </ul>
-    </td>
-    <td>
-      Scenario A
-    </td>
-    <td>
-      Scenario B
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Pessimistic waning of protection</b><br>
-      <ul>
-        <li>Speed: 4 months median time to transition to partial immunity</li>
-        <li>Plateau: 60% reduction in protection from baseline level at immune plateau</li>
-      </ul>
-    </td>
-    <td>
-      Scenario C
-    </td>
-    <td>
-      Scenario D
-    </td>
-  </tr>
-</table>
+```{r scenario-round-0, results = 'asis'}
+cat(paste0("_", scenarios[["round-0"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-0"]][["table"]])
+```
 
 ### Projections
 
@@ -240,7 +175,7 @@ In Round 0:
 
 - 5 countries had >2 model projections
 
-### Conclusions
+### Findings
 
 As it was a pilot round, we provide only general, broad conclusions for Round 0.
 
