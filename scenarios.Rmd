@@ -27,6 +27,10 @@ cat("\n\n")
 cat(scenarios[["round-2"]][["table"]])
 ```
 
+### Assumptions
+
+See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-2) for detailed guidance on the assumptions that modellers use in creating scenario projections.
+
 ### Findings
 
 See the [full report](https://covid19scenariohub.eu/report2.html) for our findings from Round 2.
@@ -150,13 +154,6 @@ We ran a pilot Round 0 over March-May 202, where we considered the differential 
 
 ### Scenarios
 
-The details for this round identically match those of the [US Scenario
-Hub](https://covid19scenariomodelinghub.org/viz.html), applied to the [32
-countries](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/data-locations/locations_eu.csv) of the European Hub.
-
--   [Round 0 overview](https://docs.google.com/presentation/d/1MiQsN0p-nvDF8km-OLjHOaEAqxMDwmxlOuDPu3POxnk/edit?usp=sharing)
--   [Full scenario details - US  Hub](https://github.com/midas-network/covid19-scenario-modeling-hub#round-13-scenarios)
-
 Round 0 projections begin from `r scenarios[["round-0"]][["origin_date"]]`. 
 
 ```{r scenario-round-0, results = 'asis'}
@@ -165,7 +162,16 @@ cat("\n\n")
 cat(scenarios[["round-0"]][["table"]])
 ```
 
-### Projections
+### Assumptions
+
+The details for this round identically match those of the [US Scenario
+Hub](https://covid19scenariomodelinghub.org/viz.html), applied to the [32
+countries](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/data-locations/locations_eu.csv) of the European Hub.
+
+-   [Round 0 overview](https://docs.google.com/presentation/d/1MiQsN0p-nvDF8km-OLjHOaEAqxMDwmxlOuDPu3POxnk/edit?usp=sharing)
+-   [Full scenario details - US  Hub](https://github.com/midas-network/covid19-scenario-modeling-hub#round-13-scenarios)
+
+### Findings
 
 In Round 0:
 
@@ -174,8 +180,6 @@ In Round 0:
 - 8 teams started working on Round 0; 5 teams contributed results
 
 - 5 countries had >2 model projections
-
-### Findings
 
 As it was a pilot round, we provide only general, broad conclusions for Round 0.
 

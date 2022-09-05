@@ -16,7 +16,7 @@ scenarios <- list(
                                        "D-2022-02-25" = "Weak/New"),
                    "origin_date" = as.Date("2022-03-13"),
                    "submission_window_end" = as.Date("2022-04-22"),
-                   "scenario_caption" = "Strong/Weak = stronger/weaker immunity maintained over time; \n None/New = immune evading variant introduced May 2022",
+                   "scenario_caption" = "Scenarios: Stronger/weaker immunity maintained over time; \n None/New immune evading variant introduced May 2022",
     "table" = "<table>
   <tr>
     <td></td>
