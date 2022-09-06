@@ -10,6 +10,8 @@ navbar:
       icon: fa-virus
       href: scenarios.html
       menu:
+        - text: "Overview"
+          href: scenarios.html
         - text: "Round 1"
           href: report1.html
         - text: "Round 2"
