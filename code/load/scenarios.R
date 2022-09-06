@@ -212,32 +212,30 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
                    # Short scenario guide (for website + figure captions)
                    "scenario_caption" = "Scenarios: New vaccination (none/annual/biannual); \n New variants (optimistic/pessimistic)",
                    # HTML format scenario table
-                   "table" = "<table> <tr>
+                   "table" = "<table>
+                   <tr>
       <td>
-        Notes
-       <li> * Vaccination as planned = Primary schedule + 2 booster doses </li>
-       <li> ** Seasonal vaccination campaigns: Autumn = 15 September to 15 December; Spring = 15 March to 15 June
       </td>
       <td>
         <b> No further vaccination </b><br>
         <ul>
-            <li> Vaccination as planned*
+            <li> Vaccination as planned<sup>*</sup> </li>
             <li> <b>No</b> further vaccination </li>
         </ul>
       </td>
       <td>
         <b> Annual vaccination </b><br>
         <ul>
-            <li> Vaccination as planned* </li>
-            <li> <b>2023 onwards</b>: annual vaccination programme in <b>autumn</b>** </li>
+            <li> Vaccination as planned<sup>*</sup> </li>
+            <li> <b>2023 onwards</b>: annual vaccination programme in <b>autumn</b><sup>**</sup> </li>
             <li> Uptake higher in 60+ than <60 age groups</li>
         </ul>
       </td>
       <td>
         <b> Bi-annual vaccination </b><br>
         <ul>
-            <li> Vaccination as planned </li>
-            <li> <b>2023 onwards</b>: bi-annual (2 per year) vaccination in <b>spring</b>** and <b>autumn</b>**</li>
+            <li> Vaccination as planned<sup>*</sup> </li>
+            <li> <b>2023 onwards</b>: bi-annual (2 per year) vaccination in <b>spring and autumn</b><sup>**</sup></li>
             <li> Uptake higher in 60+ than <60 age groups </li>
         </ul>
       </td>
@@ -248,7 +246,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
         <ul>
           <li><b>20%</b> reduction in immunity against <b>infection</b> </li>
           <li><b>0%</b> reduction in immunity against <b>severe</b> outcome </li>
-          <li><b>One new variant</b> every 9 months
+          <li><b>One new variant</b> every 9 months </li>
           <li> First introduction: <b>1st October 2022 </b></li>
         </ul>
       </td>
@@ -268,7 +266,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
         <ul>
           <li><b>75%</b> reduction in immunity against <b>infection</b> </li>
           <li><b>20%</b> reduction in immunity against <b>severe</b> outcomes </li>
-          <li><b>One new variant</b> every 9 months
+          <li><b>One new variant</b> every 9 months </li>
           <li> First introduction: <b>1st October 2022 </b></li>
         </ul>
       </td>
@@ -282,7 +280,11 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
         Scenario F
       </td>
     </tr>
-  </table>"
+  </table>
+
+  _* Vaccination as planned = Primary schedule + 2 booster doses_
+  \n
+  _** Seasonal vaccination campaigns: Autumn = 15 September to 15 December; Spring = 15 March to 15 June_"
   )
 )
 
