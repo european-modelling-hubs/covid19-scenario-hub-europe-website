@@ -30,7 +30,7 @@ The European Scenario Hub brings together scenario modellers across Europe. We w
 
 We combine and interpret the work of many modelling teams, focussing on cases, deaths, and hospitalisations over the next 12 months in 32 European countries.
 
-Separately, we also produce collaborative short-term forecasts across Europe at the [European Forecast Hub](https://covid19forecasthub.eu/). The European Hubs are run in collaboration between the [Epiforecasts team](https://epiforecasts.io/) (part of the [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19) at the [London School of Hygiene & Tropical Medicine](https://www.lshtm.ac.uk)), and the [European Centre for Disease Control and Prevention (ECDC)](https://ecdc.europa.eu). 
+Separately, we also produce collaborative short-term forecasts across Europe at the [European Forecast Hub](https://covid19forecasthub.eu/). Originally set up in collaboration with the [Epiforecasts team](https://epiforecasts.io/) (part of the [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19) at the [London School of Hygiene & Tropical Medicine](https://www.lshtm.ac.uk)), the European Hubs are run by the [European Centre for Disease Control and Prevention (ECDC)](https://ecdc.europa.eu). 
 
 We welcome enquiries - please [contact us](contact.html).
 
