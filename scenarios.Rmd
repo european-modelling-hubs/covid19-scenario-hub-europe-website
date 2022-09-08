@@ -2,79 +2,70 @@
 title: "Scenarios"
 output:
   html_document:
-    toc: true
+    toc: false
 ---
 
-Information about past and present rounds of scenarios is below. For modellers participating in each round, we have reproduced key information below but please refer to the [Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Scenario-rounds) for the most up to date details. For more general information on our approach to setting scenarios, read more in the [About](about.html) section.
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, warning = FALSE)
+source("code/load/scenarios.R")
+```
+
+Information about past and present rounds of scenarios is below. For modellers participating in each round,  please refer to the [Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Scenario-rounds) for the most up to date details. For more general information on our approach to setting scenarios, read more in the [About](about.html) section.
 
 # {.tabset}
 
+## Round 3 {.tabset .tabset-pills}
+
+### Scenarios
+
+Round 3 projections begin from `r scenarios[["round-3"]][["origin_date"]]`. 
+
+```{r scenario-round-3, results = 'asis'}
+cat(paste0("_", scenarios[["round-3"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-3"]][["table"]])
+```
+
+### Assumptions
+
+See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-3) for detailed guidance on the assumptions that modellers used in creating scenario projections.
+
+### Findings
+
+Round 3 submissions are anticipated by `r scenarios[["round-3"]][["submission_window_end"]]`. 
+
+## Round 2 {.tabset .tabset-pills}
+
+### Scenarios
+
+Round 2 projections begin from `r scenarios[["round-2"]][["origin_date"]]`. 
+
+```{r scenario-round-2, results = 'asis'}
+cat(paste0("_", scenarios[["round-2"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-2"]][["table"]])
+```
+
+### Assumptions
+
+See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-2) for detailed guidance on the assumptions that modellers used in creating scenario projections.
+
+### Findings
+
+See the [full report](https://covid19scenariohub.eu/report2.html) for our findings from Round 2.
+
 ## Round 1 {.tabset .tabset-pills}
 
-In this round we are exploring the impact of different timings of a [second booster campaign](#booster-campaign) while considering uncertainty around the speed of [waning immunity](#waning-immunity). We ask for projections over a period of [at least nine and at most twelve months](#key-dates).
+### Scenarios
 
--   Please aim to submit by **3 June 2022**
-    -   [Submission information, key dates, and model abstract](#submission-information) below
-    -   Please note some [important differences from Round 0](#submission-differences-from-round-0)
-    -   [Let us know](mail@covid19scenariohub.eu) if you need more time
+Round 1 projections begin from `r scenarios[["round-1"]][["origin_date"]]`. 
 
-### Round 1 scenarios
-
-<table>
-  <tr>
-    <td></td>
-    <td>
-      <b>Slow summer booster campaign</b><br>
-      <ul>
-          <li>2nd booster recommended for 60+</li>
-          <li>Uptake reaches 50% of 1st booster coverage by 15th December</li>
-          <li>Uptake starts <b>15th June*</b></li>
-      </ul>
-    </td>
-    <td>
-      <b>Fast autumn booster campaign</b><br>
-      <ul>
-          <li>2nd** booster recommended for 60+</li>
-          <li>Uptake reaches 50% of 1st booster coverage by 15th December</li>
-          <li>Uptake starts <b>15th September</b></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Optimistic slow immune waning</b><br>
-      <ul>
-        <li>60% reduction in immunity against infection</li>
-        <li>In <b>8 months</b></li>
-      </ul>
-    </td>
-    <td>
-      Scenario A
-    </td>
-    <td>
-      Scenario B
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Pessimistic fast immune waning</b><br>
-      <ul>
-        <li>60% reduction in immunity against infection</li>
-        <li>In <b>3 months</b></li>
-      </ul>
-    </td>
-    <td>
-      Scenario C
-    </td>
-    <td>
-      Scenario D
-    </td>
-  </tr>
-</table>
-
-_* If a second booster is already offered to 60+, vaccination uptake continues as currently_
-
-_** If a second booster is already offered to 60+, a third booster dose is recommended_
+```{r scenario-round-1, results = 'asis'}
+cat(paste0("_", scenarios[["round-1"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-1"]][["table"]])
+```
 
 ### Assumptions {.tabset}
 
@@ -173,72 +164,23 @@ We also ask modellers to assume the following:
 
 -   No novel vaccine types or novel drugs that strongly impact burden
 
-### Submission information
+### Findings
 
-#### Submission differences from Round 0
-
-We have updated the submission format for Round 1 and future rounds.
-
--   Sample based submissions
-
-    -   We no longer ask for results across a quantile distribution
-
-    -   Please submit **100 samples**. If you think more are needed to capture the uncertainty from the outputs, please get in touch. If you cannot provide 100 samples, please submit as many as you can.
-
-    -   Each sample should be a single simulation from your model, all with equal probability
-
-    -   See more on [submission formatting](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#required-variables)
-
--   Targets
-
-    -   Teams can submit one or more of any of the below targets. See more on [targets](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Targets-and-horizons#targets)
-
-    -   Key targets:
-
-        -   Incident deaths
-
-        -   Incident cases
-
-        -   Incident hospital admissions
-
-    -   Additional targets, if teams already produce these (please get in touch if yes as we will need to create associated variable names):
-
-        -   Incident infections
-
-        -   Intensive care (ICU) admissions
-
-#### Key dates
-
-The dates for round 1 are:
-
-|                                                              | Round 1 date                         | [Epiweek](https://ibis.health.state.nm.us/resource/MMWRWeekCalendar.html#part2) ([conversion](https://www.dralshehri.com/epiweeks/)) |
-|--------------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| Submissions due                                              | June 03 2022                         |                                                                                                                                      |
-| End date for fitting data                                    | May 21 2022                          | EW-20 of 2022                                                                                                                        |
-| `origin_date` (first possible date of a daily simulation)    | May 22 2022                          | First day of EW-21 of 2022                                                                                                           |
-| Earliest `target_end_date` (first week of simulated results) | May 28 2022                          | EW-21 of 2022                                                                                                                        |
-| Latest `target_end_date` (projections over 9 to 12 months)   | From February 18 2023 to May 20 2023 | From EW-07 of 2023 to EW-20 of 2023                                                                                                  |
-
-#### Scenario IDs
-
-Please use the following codes to identify between scenarios, with one for each value (row) in your [submission csv](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Submission-format#scenario_id).
-
-| Scenario                                         | Scenario ID   |
-|--------------------------------------------------|---------------|
-| Scenario A. Slow waning, summer booster campaign | A-2022-05-22  |
-| Scenario B. Slow waning, autumn booster campaign | B-2022-05-22  |
-| Scenario C. Fast waning, summer booster campaign | C-2022-05-22  |
-| Scenario D. Fast waning, autumn booster campaign | D-2022-05-22  |
-
-#### Model abstract
-
-Please include a brief abstract for your model as part of your submission. Please make a copy of the [Round 1 Abstract template](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/blob/main/template/2022-05-22-MyTeam-MyModel-Abstract.md) and save this to your team's folder in `data-processed`, adjusting the filename format (`2022-05-22-MyTeam-MyModel-Abstract.md`).
+See the [full report](https://covid19scenariohub.eu/report1.html) for our findings from Round 1.
 
 ## Round 0 {.tabset .tabset-pills}
 
-We ran a pilot Round 0 over March-May 202, where we considered the differential impact of waning protection against infection against the introduction of a new variant with immune escape.
-
 ### Scenarios
+
+We ran a pilot round ("Round 0") over March-May 2022. Round 0 projections begin from `r scenarios[["round-0"]][["origin_date"]]`. 
+
+```{r scenario-round-0, results = 'asis'}
+cat(paste0("_", scenarios[["round-0"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-0"]][["table"]])
+```
+
+### Assumptions
 
 The details for this round identically match those of the [US Scenario
 Hub](https://covid19scenariomodelinghub.org/viz.html), applied to the [32
@@ -247,58 +189,7 @@ countries](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-e
 -   [Round 0 overview](https://docs.google.com/presentation/d/1MiQsN0p-nvDF8km-OLjHOaEAqxMDwmxlOuDPu3POxnk/edit?usp=sharing)
 -   [Full scenario details - US  Hub](https://github.com/midas-network/covid19-scenario-modeling-hub#round-13-scenarios)
 
-
-<table>
-  <tr>
-    <td></td>
-    <td>
-      <b>No new variant
-      </b><br>
-      <ul>
-          <li>Projections are initialized with the mix of strains circulating at the start of the projection period</li>
-      </ul>
-    </td>
-    <td>
-      <b>New variant X</b><br>
-      <ul>
-          <li>Introduction: From May 1st 2022 is a continuous influx of 50 weekly infections of variant X over 16 weeks</li>
-          <li>Characteristics: Variant X has 30% immune escape, and the same intrinsic transmissibility and severity as Omicron.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b> Optimistic waning of protection</b><br>
-      <ul>
-        <li>Speed: 10 months median time to transition to partial immunity</li>
-        <li>Plateau: 40% reduction in protection from baseline (protection immediately after exposure) at plateau</b></li>
-      </ul>
-    </td>
-    <td>
-      Scenario A
-    </td>
-    <td>
-      Scenario B
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Pessimistic waning of protection</b><br>
-      <ul>
-        <li>Speed: 4 months median time to transition to partial immunity</li>
-        <li>Plateau: 60% reduction in protection from baseline level at immune plateau</li>
-      </ul>
-    </td>
-    <td>
-      Scenario C
-    </td>
-    <td>
-      Scenario D
-    </td>
-  </tr>
-</table>
-
-### Projections
+### Findings
 
 In Round 0:
 
@@ -307,8 +198,6 @@ In Round 0:
 - 8 teams started working on Round 0; 5 teams contributed results
 
 - 5 countries had >2 model projections
-
-### Conclusions
 
 As it was a pilot round, we provide only general, broad conclusions for Round 0.
 
