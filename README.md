@@ -41,6 +41,8 @@ Reports use the following Rmd chunks of common code:
 
 # Website pages
 
+The website updates (builds and deploys) automatically after each push to the main branch, using a [Github action](/.github/workflows/build-and-deploy.yml). 
+
 - [Home](index.Rmd)
 - [About](about.Rmd)
 - [Scenarios](scenarios.Rmd)
