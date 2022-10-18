@@ -1,5 +1,7 @@
 # COVID-19 Scenario Hub website: guide to code
 
+https://covid19scenariohub.eu/
+
 Contents:
 - [Code for analysis and reporting](#analysis-and-reporting)
 - [Editing specific website pages](#website-pages)
@@ -39,9 +41,16 @@ Reports use the following Rmd chunks of common code:
 
 # Website pages
 
+- [Home](index.Rmd)
 - [About](about.Rmd)
+- [Scenarios](scenarios.Rmd)
+   - [Overview](scenarios.Rmd)
+   - [Report 1](report1.Rmd)
+   - [Report 2](report2.Rmd)
+- [Models](models.Rmd)
 - [Community](community.Rmd)
 - [Contact](contact.Rmd)
-- [Scenarios](scenarios.Rmd)
-- [Report 1](report1.Rmd)
-- [Report 2](report2.Rmd)
+- [Website header](_site.yml)
+- [Website footer](blank.html)
+
+
