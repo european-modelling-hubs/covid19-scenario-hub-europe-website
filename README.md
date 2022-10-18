@@ -43,5 +43,5 @@ Reports use the following Rmd chunks of common code:
 - [Community](community.Rmd)
 - [Contact](contact.Rmd)
 - [Scenarios](scenarios.Rmd)
-- [Report 1](report-1.Rmd)
-- [Report 2](report-2.Rmd)
+- [Report 1](report1.Rmd)
+- [Report 2](report2.Rmd)
