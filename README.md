@@ -8,9 +8,9 @@ Contents:
 
 #### Analysis 
 
-Scenario analyses hinge on the file `scenarios.R` which provides meta-data for each scenario round.
+Scenario analyses hinge on the file [`scenarios.R`](/code/load/scenarios.R) which provides meta-data for each scenario round.
 
-Analysis functions are in sub-folders of `code`, as follows:
+Analysis functions are in sub-folders of [`code`](/code), as follows:
 
 Load
 - `scenarios.R`: Create scenario metadata
@@ -39,9 +39,9 @@ Reports use the following Rmd chunks of common code:
 
 # Website pages
 
-- About
-- Community
-- Contact
-- Scenarios
-- Report 1
-- Report 2
+- [About](about.Rmd)
+- [Community](community.Rmd)
+- [Contact](contact.Rmd)
+- [Scenarios](scenarios.Rmd)
+- [Report 1](report-1.Rmd)
+- [Report 2](report-2.Rmd)
