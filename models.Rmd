@@ -20,7 +20,7 @@ library(purrr)
 library(stringr)
 ```
 
-This page presents the various features and implementations in the models submitted to the Scenario Hub in a comparative fashion. The learn more about each model individually, please refer to [each model abstract](#Abstracts).
+This page presents the various features and implementations in the models submitted to the Scenario Hub. To learn more about each model individually, please refer to the latest set of [models abstracts](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/tree/main/model-abstracts).
 
 ```{r}
 github_repo <- "covid19-forecast-hub-europe/covid19-scenario-hub-europe"
@@ -62,11 +62,12 @@ metadata |>
   knitr::kable()
 ```
 
-## Models details
+## Model details
 
 ```{r, results='asis'}
 metadata |> 
   map("model_details") |> 
+  compact() |> 
   transpose() |> 
   imap(function(model_details, feature) {
     knitr::knit_child("_model_feature.Rmd", envir = environment())
