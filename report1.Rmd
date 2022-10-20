@@ -24,6 +24,7 @@ library(dplyr)
 library(ggplot2)
 library(purrr)
 library(covidHubUtils)
+library(curl)
 source("code/load/scenarios.R")
 source("code/load/plot_scenarios.R")
 source("code/load/plot_palettes.R")
@@ -33,10 +34,13 @@ source("code/load/plot_palettes.R")
 round_text <- paste0("round-", params$round)
 
 data_path <- tempfile(fileext = ".parquet")
-download.file(
+
+# download.file() is bugged on windows (https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/issues/67)
+curl::curl_download(
   glue::glue("https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/releases/download/round{params$round}/round{params$round}.parquet"),
   data_path
 )
+
 results <- arrow::read_parquet(data_path) |> 
   left_join(read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/round1/data-locations/locations_eu.csv")) |> 
   mutate(
