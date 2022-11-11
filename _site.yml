@@ -16,6 +16,8 @@ navbar:
           href: report1.html
         - text: "Round 2"
           href: report2.html
+        - text: "Round 3"
+          href: report3.html
     - text: "Community"
       icon: fa-users
       href: community.html
