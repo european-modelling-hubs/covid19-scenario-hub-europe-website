@@ -34,3 +34,6 @@ See also the [full scenario details](`r paste0("https://github.com/covid19-forec
 
 In Round `r params$round`, we asked modellers to start their projections from the `r scenarios[[round_text]][["origin_date"]]`. Data after this date were not included, and as a result, model projections are unlikely to fully account for later information on the changing variants or behavioural patterns.
 
+# Findings
+
+_Coming soon_
