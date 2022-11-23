@@ -58,7 +58,7 @@ Round 3 has received submissions from six international modelling teams across E
 Table 1. Participating teams by number of countries, scenarios, samples and time horizon
 
 | Team | Countries | Scenario    | Samples | Weeks |
-| ------------ | ---- |  --- | --- | --- |
+| :--- | :---: |  :---: | :---: | :---: |
 | USC-SIkJalpha | 29 | 6 | 96 | 156 |
 | ECDC-CM_ONE | 29 | 6 | 20 | 259 |
 | SwissTPH-OpenCOVID | 12 | 6 | 100 | 260 |
@@ -70,8 +70,8 @@ Table 1. Participating teams by number of countries, scenarios, samples and time
 Table 2. Number of independent model projections/samples for each target variable
 
 | Team      | Infections | Cases    | Hospitalistions | Deaths |
-| :---        |    :----:   |          ---: | ---: | ---: |
-| USC-SIkJalpha      | 0       | 96   | 0 | 96 |
+| :---        |    :---:   | :---: | :---: | :---: |
+| USC-SIkJalpha      | 0 | 96   | 0 | 96 |
 | ECDC-CM_ONE   | 20        | 0      | 20 | 20 |
 | SwissTPH-OpenCOVID   | 100        | 0   | 100 | 100 |
 | SIMID-SCM   | 100        | 0     | 100 |  100 |
