@@ -36,7 +36,7 @@ In Round `r params$round`, we asked modellers to start their projections from th
 
 
 # Shared assumptions
-- We ask all modellers to include the following parameters:
+We ask all modellers to include the following parameters:
 - Vaccination as planned includes a full primary schedule and 2 booster doses
 - Vaccination uptake is higher in 60+ than <60 age groups (for example, 75% / 15% respectively)
 - There is sufficient vaccine supply
