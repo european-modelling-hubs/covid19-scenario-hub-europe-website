@@ -33,7 +33,7 @@ See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-sce
 
 ### Findings
 
-Round 3 submissions are anticipated by `r scenarios[["round-3"]][["submission_window_end"]]`. 
+See the [full report](https://covid19scenariohub.eu/report3.html) for our findings from Round 2.
 
 ## Round 2 {.tabset .tabset-pills}
 
