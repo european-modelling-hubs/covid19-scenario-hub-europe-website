@@ -80,7 +80,8 @@ Table 2. Number of independent model projections/samples for each target variabl
 In this report we only show results from models that provided projections for all 6 scenarios (A-F), and for the three common outcomes of infections, hospitalisations and deaths.
 
 
-#Results
+# Results
+
 ## Cumulative outcomes in the next three years per 100,000 population
 For each model and scenario, we compare the cumulative number of the three outcomes (infections, hospitalisations, and deaths) for the next three years. The results for each model are aggregated across all countries as well as across samples from the random distributions that describe uncertain parameters. 
 
