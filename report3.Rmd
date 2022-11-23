@@ -56,6 +56,7 @@ In Round `r params$round`, we asked modellers to start their projections from th
 Round 3 has received submissions from six international modelling teams across EU/EEA and beyond: Two teams submitted for 29 EU/EEA countries (not LI due to small numbers in the input data), one team submitted for twelve EU/EEA countries, and three teams submitted for one EU/EEA country. These submissions include five model submissions for infections and deaths, one model submission for cases, and five model submissions for hospitalisation projections.
 
 Table 1. Participating teams by number of countries, scenarios, samples and time horizon
+
 | Team | Countries | Scenario    | Samples | Weeks |
 | ------------ | ---- |  --- | --- | --- |
 | USC-SIkJalpha | 29 | 6 | 96 | 156 |
@@ -67,6 +68,7 @@ Table 1. Participating teams by number of countries, scenarios, samples and time
 
 
 Table 2. Number of independent model projections/samples for each target variable
+
 | Team      | Infections | Cases    | Hospitalistions | Deaths |
 | :---        |    :----:   |          ---: | ---: | ---: |
 | USC-SIkJalpha      | 0       | 96   | 0 | 96 |
