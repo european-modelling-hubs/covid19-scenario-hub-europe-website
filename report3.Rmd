@@ -86,7 +86,7 @@ In this report we only show results from models that provided projections for al
 # Results
 
 ## Cumulative outcomes in the next three years per 100,000 population
-For each model and scenario, we compare the cumulative number of the three outcomes (infections, hospitalisations, and deaths) for the next three years. The results for each model are aggregated across all countries as well as across samples from the random distributions that describe uncertain parameters. 
+For each model and scenario, we compare the cumulative number of the three outcomes (infections, hospitalisations, and deaths) for the next three years. The results for each model are aggregated across samples from the random distributions that describe uncertain parameters as well as across all countries. Hence, the result for a single country could be closer to either the upper or lower side of the boxplots that were obtain from all countries.
 
 Figure 1 below shows that, for any given scenario, all three outcomes across different models are relatively consistent, including hospitalisation and death projections, which often include the highest level of variation across different models due to different assumptions (including the protection of vaccinations and prior infection, the speed of the waning of protection, etc). The ranking of scenarios A-C over D-F is also highlighting the differences in outcomes expected for the optimistic vs pessimistic variant, and the results show how the vaccination programmes reduce the burden compared to a scenario with no further vaccination. 
 
@@ -94,11 +94,13 @@ Figure 1 below shows that, for any given scenario, all three outcomes across dif
 
 ## Number of infections in the next three years over different age groups
 We evaluated the average cumulative number of infections per individual person in three different age groups (aged <18 years, 18-59 years, and 60+ years) over the next three years for the different models and scenarios. 
-Figure 2 below shows that the largest risk of (re-)infection lies in the population younger than 60 years old, with multiple infections expected over the three-year period in most models and scenarios. The boxplots show the variation across different countries and samples from the random distributions that describe uncertain parameters. This risk is decreased with vaccination campaigns. Moreover, scenarios with the pessimistic variant introduction (D-F) generally lead to higher numbers of (re-)infections  than the optimistic variant scenarios (A-C). 
+
+Figure 2 below shows that the largest risk of (re-)infection lies in the population younger than 60 years old, with multiple infections expected over the three-year period in most models and scenarios. The boxplots show the variation across different countries and samples from the random distributions that describe uncertain parameters. This risk is decreased with vaccination campaigns. Moreover, scenarios with the pessimistic variant introduction (D-F) generally lead to higher numbers of (re-)infections  than the optimistic variant scenarios (A-C). Due to the aggregation over all submitted countries, the results of a single countries could be closer to either the upper or the lower side of the boxplots that were obtain from all countries. 
 
 ![your image alt text here](./images/Round3_Fig2.png)
 
 _Scenarios: A - optimistic variant and no further vaccination scenario, B - optimistic variant and yearly vaccination scenario, C - optimistic variant and bi-yearly vaccination scenario, D - pessimistic variant and no further vaccination scenario, E - pessimistic variant and yearly vaccination scenario, F - pessimistic variant and bi-yearly vaccination scenario._
+
 
 ## Relative impact of vaccination campaigns over the next three years
 For each outcome, model and scenario, we evaluate the proportion of averted outcomes due to the vaccination campaigns (scenarios B-C and E-F). The cumulative outcome is compared between baseline scenario A (or D) and the corresponding vaccination campaign scenarios B and C (or E and F). The results are aggregated across different countries.
