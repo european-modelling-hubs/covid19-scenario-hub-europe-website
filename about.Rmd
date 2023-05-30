@@ -108,3 +108,32 @@ The European Scenario Hub and broader Hub approach follows work across Europe an
 - [German and Polish Forecast Hub](https://github.com/KITmetricslab/covid19-forecast-hub-de) 
 
 We work closely with these teams and we are grateful for their support in setting up European Hubs.
+
+## Evaluation of the European COVID-19 Modelling Hubs
+
+In late 2022 we have run an evaluation of the European COVID-19 Forecast Hub, European COVID-19 Scenario Hub, and the European Modelling Hub meetings, using a survey sent to all participants of the Hub. The results and presentation of the evaluation can be found below.
+
+```{r evaluations, results='asis', echo=FALSE}
+files <- rev(fs::dir_ls("evaluations"))
+
+dates <- sub(
+  "^([0-9]{4})-([0-9]{2})-([0-9]{2})-.*$",
+  "\\3/\\2/\\1",
+  basename(files)
+)
+
+nms <- files %>%
+  fs::path_file() %>%
+  fs::path_ext_remove() %>%
+  substring(12) %>%
+  { gsub("-", " ", .) }
+
+sprintf(
+  "- %s\t\t[%s](%s)",
+  dates,
+  nms,
+  files
+) %>%
+  cat(sep = "\n")
+```
+
