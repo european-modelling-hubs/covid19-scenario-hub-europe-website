@@ -58,12 +58,49 @@ multi_country <- distinct(results, model, location) %>%
 results_multi_country <- filter(results, location %in% multi_country)
 
 # Truth data ----------------------------------------------------------------
-truth <- load_truth(
-  truth_source = "JHU",
-  temporal_resolution = "weekly",
-  hub = "ECDC"
-) |>
-  select(-model)
+# truth <- load_truth(
+#   truth_source = "JHU",
+#   temporal_resolution = "weekly",
+#   hub = "ECDC"
+# ) |>
+#   select(-model)
+
+# Loading truth data; cases and deaths from JHU and ECDC (for post JHU data), hosps from OWID
+# JHU data
+data_truth_JHU <- read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe/main/data-truth/JHU/truth_JHU-Incident%20Cases.csv") %>%
+  mutate(target_variable = "inc case") %>% 
+  bind_rows( read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe/main/data-truth/JHU/truth_JHU-Incident%20Deaths.csv") %>% mutate(target_variable = "inc death") ) %>%
+  mutate(epiweek = str_sub(date2ISOweek(date),1,-3)) %>%
+  group_by(location, location_name, epiweek, target_variable) %>%
+  summarise(value = sum(value)) %>%
+  ungroup() %>%
+  mutate(target_end_date  = ISOweek2date(paste0(epiweek,"-6"))) %>%
+  select(-epiweek)
+
+# ECDC data  
+data_truth_ECDC <- read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe/main/data-truth/ECDC/truth_ECDC-Incident%20Cases.csv") %>%
+  mutate(target_variable = "inc case") %>% 
+  bind_rows( read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe/main/data-truth/ECDC/truth_ECDC-Incident%20Deaths.csv") %>% mutate(target_variable = "inc death") ) %>%
+  mutate(epiweek = str_sub(date2ISOweek(date),1,-3)) %>%
+  group_by(location, location_name, epiweek, target_variable) %>%
+  summarise(value = sum(value)) %>%
+  ungroup() %>%
+  mutate(target_end_date  = ISOweek2date(paste0(epiweek,"-6"))) %>%
+  select(-epiweek) %>%
+  filter(target_end_date > max(data_truth_JHU$target_end_date))
+
+# OWID data
+data_truth_hosp <- read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe/main/data-truth/OWID/truth_OWID-Incident%20Hospitalizations.csv") %>%
+  mutate(target_variable = "inc hosp") %>% 
+  mutate(epiweek = str_sub(date2ISOweek(date),1,-3)) %>%
+  group_by(location, location_name, epiweek, target_variable) %>%
+  summarise(value = sum(value)) %>%
+  ungroup() %>%
+  mutate(target_end_date  = ISOweek2date(paste0(epiweek,"-6"))) %>%
+  select(-epiweek)
+
+truth <- bind_rows(data_truth_JHU, data_truth_ECDC, data_truth_hosp ) %>%
+  left_join( read.csv("https://raw.githubusercontent.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe/main/data-locations/locations_eu.csv") %>% select(location, population))
 
 # Formatting -----------------------------------------------------------------
 # create consistent model and scenario colour palettes
