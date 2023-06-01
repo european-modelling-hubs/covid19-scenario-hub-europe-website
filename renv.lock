@@ -1455,6 +1455,12 @@
       "Requirements": [
         "lattice"
       ]
+    },
+    "ISOweek": {
+      "Package": "ISOweek",
+      "Version": "0.6-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
     }
   }
 }
