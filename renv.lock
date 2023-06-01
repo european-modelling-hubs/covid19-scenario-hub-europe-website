@@ -1461,6 +1461,10 @@
       "Version": "0.6-2",
       "Source": "Repository",
       "Repository": "CRAN",
+      "Requirements": [
+        "stringr"
+      ],
+      "Hash": "ad7e2b013b9379cb560caa9b168202f0"
     }
   }
 }
