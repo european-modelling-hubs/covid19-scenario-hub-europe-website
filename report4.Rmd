@@ -39,7 +39,8 @@ In Round `r params$round`, we asked modellers to start their projections from th
 We asked all modellers to include the following parameters and assumptions:
 
   - Protection against infection was assumed to decrease to 70% (or 40%) of the initial immunity after 6 months in the optimistic (or pessimistic) waning scenario, respectively.
-- Protection against severe outcome was assumed to not decrease (or to decrease to 80%) of the initial immunity after 6 months in the optimistic (or pessimistic) waning scenario, respectively.- There is sufficient vaccine supply
+- Protection against severe outcome was assumed to not decrease (or to decrease to 80%) of the initial immunity after 6 months in the optimistic (or pessimistic) waning scenario, respectively.
+- There is sufficient vaccine supply
 - The parameters for the waning speed of protection related to the waning since the most recent vaccination or infection.
 - We assumed no plateau for existing immunity against infection.
 - Over the whole projected time period, one new variant was introduced on 01 May 2023.
