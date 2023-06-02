@@ -109,3 +109,30 @@ The European Scenario Hub and broader Hub approach follows work across Europe an
 
 We work closely with these teams and we are grateful for their support in setting up European Hubs.
 
+## The evaluation of the European Modelling Hubs
+
+ECDC has conducted a survey among the participants of the European Modelling Hub, getting feedback and thus evaluating the European COVID-19 Forecast Hub, European COVID-19 Scenario Hub, and the European Modelling Hub meetings. The results and conclusions of the survey can be found below:
+
+```{r presentations, results='asis', echo=FALSE}
+files <- rev(fs::dir_ls("presentations"))
+
+dates <- sub(
+  "^([0-9]{4})-([0-9]{2})-([0-9]{2})-.*$",
+  "\\3/\\2/\\1",
+  basename(files)
+)
+
+nms <- files %>%
+  fs::path_file() %>%
+  fs::path_ext_remove() %>%
+  substring(12) %>%
+  { gsub("-", " ", .) }
+
+sprintf(
+  "- %s\t\t[%s](%s)",
+  dates,
+  nms,
+  files
+) %>%
+  cat(sep = "\n")
+```
