@@ -113,12 +113,16 @@ We work closely with these teams and we are grateful for their support in settin
 
 ECDC has conducted a survey among the participants of the European Modelling Hub, getting feedback and thus evaluating the European COVID-19 Forecast Hub, European COVID-19 Scenario Hub, and the European Modelling Hub meetings. The results and conclusions of the survey can be found below:
 
-```{r presentations, results='asis', echo=FALSE}
+```{r hub_evaluations, echo = FALSE, warning = FALSE, message = FALSE}
 library("yaml")
 library("purrr")
 library("fs")
 library("dplyr")
-files <- rev(fs::dir_ls("presentations"))
+```
+
+```{r hub_evaluations, results='asis', echo=FALSE}
+
+files <- rev(fs::dir_ls("hub_evaluations"))
 
 dates <- sub(
   "^([0-9]{4})-([0-9]{2})-([0-9]{2})-.*$",
