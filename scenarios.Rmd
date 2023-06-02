@@ -15,6 +15,26 @@ Information about past and present rounds of scenarios is below. For modellers p
 
 # {.tabset}
 
+## Round 4 {.tabset .tabset-pills}
+
+### Scenarios
+
+Round 4 projections begin from `r scenarios[["round-4"]][["origin_date"]]`. 
+
+```{r scenario-round-4, results = 'asis'}
+cat(paste0("_", scenarios[["round-4"]][["scenario_caption"]], "_"))
+cat("\n\n")
+cat(scenarios[["round-4"]][["table"]])
+```
+
+### Assumptions
+
+See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-4) for detailed guidance on the assumptions that modellers used in creating scenario projections.
+
+### Findings
+
+See the [full report](https://covid19scenariohub.eu/report4.html) for our findings from Round 4.
+
 ## Round 3 {.tabset .tabset-pills}
 
 ### Scenarios
