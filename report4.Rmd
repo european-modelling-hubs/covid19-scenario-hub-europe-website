@@ -40,7 +40,7 @@ We asked all modellers to include the following parameters and assumptions:
 
   - Protection against infection was assumed to decrease to 70% (or 40%) of the initial immunity after 6 months in the optimistic (or pessimistic) waning scenario, respectively.
 - Protection against severe outcome was assumed to not decrease (or to decrease to 80%) of the initial immunity after 6 months in the optimistic (or pessimistic) waning scenario, respectively.
-- There is sufficient vaccine supply
+- There is sufficient vaccine supply.
 - The parameters for the waning speed of protection related to the waning since the most recent vaccination or infection.
 - We assumed no plateau for existing immunity against infection.
 - Over the whole projected time period, one new variant was introduced on 01 May 2023.
@@ -61,7 +61,7 @@ Round 4 has received submissions from five international modelling teams across 
 Table 1. Participating teams by number of countries, scenarios, samples and time horizon
 
 | Team | Countries | Scenario    | Samples |  By age |
-| :--- | :---: |  :---: | :---: | :---: | :---: |
+| :--- | :---: |  :---: | :---: | :---: | 
 | ECDC-CM_TWO | 24 | 4 | 100 |  Yes |
 | SwissTPH-OpenCOVID | 11 | 4 | 10 | Yes |
 | SIMID-SCM | 1 | 4 | 100 |  Yes |
@@ -75,11 +75,11 @@ For each model and scenario, we evaluated the proportion of the three outcomes (
 
 ![your image alt text here](./images/Round4_Fig1.png)
 
-_Figure 1: Relative change in cumulative deaths (left), hospitalisations (middle) and infections (right) across scenarios, relative to scenario A. The light and dark boxes show the  80% and 50% quantiles, respectively, and the black dot shows the median across samples and countries. The four scenarios are: (A) optimistic waning and no new variant, (B) optimistic waning and a new variant, (C) pessimistic waning and no new variant,  (D) pessimistic waning and a new variant. One model was excluded from the figure due to the low estimated number of severe outcomes in scenarios A&B. Note that we truncate the y-axis at (-0.5, 1.0)._
+_Figure 1: Relative change in cumulative infections (left), hospitalisations (middle) and deaths (right) across scenarios, relative to scenario A. The light and dark boxes show the  80% and 50% quantiles, respectively, and the black dot shows the median across samples and countries. The four scenarios are: (A) optimistic waning and no new variant, (B) optimistic waning and a new variant, (C) pessimistic waning and no new variant,  (D) pessimistic waning and a new variant. One model was excluded from the figure due to the low estimated number of severe outcomes in scenarios A&B. Note that we truncate the y-axis at (-0.5, 1.0)._
 
 
 # Observations
 
-Some models use local (country provided) data sources which can result in their model projections to vary both in past and current values as well as projected trends. Further harmonisation of input data and calibration periods can help with reducing the variation between models. Some teams have experienced difficulties in calibrating the models.
+Some models use local (country provided) data sources which can result in their model projections to vary both in past and current values as well as projected trends. Further harmonisation of input data and calibration periods can help with reducing the variation between models. Some teams also have experienced difficulties in calibrating the models.
 
 
