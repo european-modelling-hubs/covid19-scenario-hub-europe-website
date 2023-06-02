@@ -295,7 +295,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
                    "A" = "A. Optimistic waning and no new variant",
                    "B" = "B. Optimistic waning and a new variant",
                    "C" = "C. Pessimistic waning and no new variant",
-                   "D" = "D. Pessimistic waning and a new variant",
+                   "D" = "D. Pessimistic waning and a new variant"
                  ),
                  # Key dates
                  "origin_date" = as.Date("2023-03-15"),
