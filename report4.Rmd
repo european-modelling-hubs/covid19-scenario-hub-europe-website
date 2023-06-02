@@ -1,16 +1,16 @@
 ---
-  title: "Round `r params$round`"
+title: "Round `r params$round`"
 output:
   html_document:
   self_contained: false
-toc: true
-toc_depth: 5
+  toc: true
+  toc_depth: 5
 date: "Report created `r Sys.Date()`"
 params:
   round: 4
 ---
 
-  ```{r setup, include = FALSE}
+```{r setup, include = FALSE}
 # Settings
 knitr::opts_chunk$set(eval = TRUE, echo = FALSE,
                       message = FALSE, warning = FALSE)
@@ -60,17 +60,17 @@ Round 4 has received submissions from five international modelling teams across 
 Table 1. Participating teams by number of countries, scenarios, samples and time horizon
 
 | Team | Countries | Scenario    | Samples |  By age |
-  | :--- | :---: |  :---: | :---: | :---: | :---: |
-  | ECDC-CM_TWO | 24 | 4 | 100 |  Yes |
-  | SwissTPH-OpenCOVID | 11 | 4 | 10 | Yes |
-  | SIMID-SCM | 1 | 4 | 100 |  Yes |
-  | UC3M-EpiGraph | 1 | 4 | 30 |  Yes |
-  | ICM | 1 | 4 | 64 | Yes |
+| :--- | :---: |  :---: | :---: | :---: | :---: |
+| ECDC-CM_TWO | 24 | 4 | 100 |  Yes |
+| SwissTPH-OpenCOVID | 11 | 4 | 10 | Yes |
+| SIMID-SCM | 1 | 4 | 100 |  Yes |
+| UC3M-EpiGraph | 1 | 4 | 30 |  Yes |
+| ICM | 1 | 4 | 64 | Yes |
 
 
-  # Results
+# Results
 
-  For each model and scenario, we evaluated the proportion of the three outcomes (deaths, hospitalisations, infections), that is due to a new variant and/or faster (i.e., pessimistic) waning. The cumulative outcomes were compared between baseline scenario A and the other scenarios. The results were aggregated across different countries. Figure 1 below shows that pessimistic waning (scenario C) in most models and outcomes leads to a substantial increase in cumulative burden compared to optimistic waning (scenario A). The introduction of a new variant also showed a substantial impact on the cumulative burden (i.e., comparing scenarios A and B, or C and D) across most models and outcomes. There is a substantial variation in precise values between different models, which is partly due to variation between models, model assumptions, as well as aggregation across different countries (see Table 1 above to see number of countries modelled by each model).
+For each model and scenario, we evaluated the proportion of the three outcomes (deaths, hospitalisations, infections), that is due to a new variant and/or faster (i.e., pessimistic) waning. The cumulative outcomes were compared between baseline scenario A and the other scenarios. The results were aggregated across different countries. Figure 1 below shows that pessimistic waning (scenario C) in most models and outcomes leads to a substantial increase in cumulative burden compared to optimistic waning (scenario A). The introduction of a new variant also showed a substantial impact on the cumulative burden (i.e., comparing scenarios A and B, or C and D) across most models and outcomes. There is a substantial variation in precise values between different models, which is partly due to variation between models, model assumptions, as well as aggregation across different countries (see Table 1 above to see number of countries modelled by each model).
 
 ![your image alt text here](./images/Round4_Fig1.png)
 _Figure 1: Relative change in cumulative deaths (left), hospitalisations (middle) and infections (right) across scenarios, relative to scenario A. The light and dark boxes show the  80% and 50% quantiles, respectively, and the black dot shows the median across samples and countries. The four scenarios are: (A) optimistic waning and no new variant, (B) optimistic waning and a new variant, (C) pessimistic waning and no new variant,  (D) pessimistic waning and a new variant. One model was excluded from the figure due to the low estimated number of severe outcomes in scenarios A&B. Note that we truncate the y-axis at (-0.5, 1.0)._
