@@ -55,7 +55,7 @@ We asked all modellers to include the following parameters and assumptions:
 
 
 
-# Round 3 submissions
+# Round 4 submissions
 Round 4 has received submissions from five international modelling teams across the EU/EEA and beyond: Two teams submitted for 30 EU/EEA countries, and three teams submitted for one EU/EEA country. These submissions include four model submissions for infections, and five model submissions for hospitalisation and death projections.
 
 Table 1. Participating teams by number of countries, scenarios, samples and time horizon
