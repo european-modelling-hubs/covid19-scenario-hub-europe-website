@@ -32,7 +32,7 @@ cat(scenarios[[round_text]][["table"]])
 
 See also the [full scenario details](`r paste0("https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-", params$round)`) for more detail on the common set of assumptions teams used to create their models.
 
-In Round `r params$round`, we asked modellers to start their projections from the `r scenarios[[round_text]][["origin_date"]]`. Data after this date were not included, and as a result, model projections are unlikely to fully account for later information on the changing variants or behavioural patterns.
+In Round `r params$round`, we asked modellers to start their projections from the `r scenarios[[round_text]][["origin_date"]]`. Data after this date were not included, and as a result, model projections are unlikely to fully account for later information on the changing variants or behavioural patterns. Please note these scenarios have not explored the impact of future vaccination campaigns and thus cannot be used to estimate the impact of vaccination. We plan to explore this in the future scenario rounds.
 
 
 # Shared assumptions
@@ -71,7 +71,7 @@ Table 1. Participating teams by number of countries, scenarios, samples and time
 
 # Results
 
-For each model and scenario, we evaluated the proportion of the three outcomes (deaths, hospitalisations, infections), that is due to a new variant and/or faster (i.e., pessimistic) waning. The cumulative outcomes were compared between baseline scenario A and the other scenarios. The results were aggregated across different countries. Figure 1 below shows that pessimistic waning (scenario C) in most models and outcomes leads to a substantial increase in cumulative burden compared to optimistic waning (scenario A). The introduction of a new variant also showed a substantial impact on the cumulative burden (i.e., comparing scenarios A and B, or C and D) across most models and outcomes. There is a substantial variation in precise values between different models, which is partly due to variation between models, model assumptions, as well as aggregation across different countries (see Table 1 above to see number of countries modelled by each model).
+For each model and scenario, we evaluated the proportion of the three outcomes (deaths, hospitalisations, infections), that is due to a new variant and/or faster (i.e., pessimistic) waning. The cumulative outcomes were compared between baseline scenario A and the other scenarios. The results were aggregated across different countries. Figure 1 below shows that pessimistic waning (scenario C) in most models and outcomes leads to a substantial increase in cumulative burden compared to optimistic waning (scenario A). The introduction of a new variant also showed a substantial impact on the cumulative burden (i.e., comparing scenarios A and B, or C and D) across most models and outcomes. There is a substantial variation in precise values between different models, which is partly due to variation between models, model assumptions, as well as aggregation across different countries (see Table 1 above to see number of countries modelled by each model). Please note these scenarios have not explored the impact of future vaccination campaigns and thus cannot be used to estimate the impact of vaccination. We plan to explore this in the future scenario rounds.
 
 ![your image alt text here](./images/Round4_Fig1.png)
 
