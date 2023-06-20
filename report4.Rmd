@@ -83,3 +83,4 @@ _Figure 1: Relative change in cumulative infections (left), hospitalisations (mi
 Some models use local (country provided) data sources which can result in their model projections to vary both in past and current values as well as projected trends. Further harmonisation of input data and calibration periods can help with reducing the variation between models. Some teams also have experienced difficulties in calibrating the models.
 
 
+Update 19/06/2023: Clarified that vaccination was not explicitly modelled in this scenario round, and the results shown here cannot be directly interpreted for future vaccination campaigns.
