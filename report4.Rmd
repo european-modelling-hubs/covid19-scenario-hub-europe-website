@@ -84,4 +84,5 @@ Some models use local (country provided) data sources which can result in their 
 
 
 Update 19/06/2023: Clarified that vaccination was not explicitly modelled in this scenario round, and the results shown here cannot be directly interpreted for future vaccination campaigns.
+
 Update 20/06/2023: Updated Figure 1 with new Model 4 results which corrected for minor issues related to calibration of the pessistic waning scenarios. 
