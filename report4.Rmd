@@ -75,7 +75,7 @@ For each model and scenario, we evaluated the proportion of the three outcomes (
 
 ![your image alt text here](./images/Round4_Fig1.png)
 
-_Figure 1: Relative change in cumulative infections (left), hospitalisations (middle) and deaths (right) across scenarios, relative to scenario A. The light and dark boxes show the  80% and 50% quantiles, respectively, and the black dot shows the median across samples and countries. The four scenarios are: (A) optimistic waning and no new variant, (B) optimistic waning and a new variant, (C) pessimistic waning and no new variant,  (D) pessimistic waning and a new variant. One model was excluded from the figure due to the low estimated number of severe outcomes in scenarios A&B. Note that we truncate the y-axis at (-0.5, 1.0)._
+_Figure 1: Relative change in cumulative infections (left), hospitalisations (middle) and deaths (right) across scenarios, relative to scenario A. The light and dark boxes show the  80% and 50% quantiles, respectively, and the black dot shows the median across samples and countries. The four scenarios are: (A) optimistic waning and no new variant, (B) optimistic waning and a new variant, (C) pessimistic waning and no new variant,  (D) pessimistic waning and a new variant. One model was excluded from the figure due to the low estimated number of severe outcomes in scenarios A&B. Note that we truncate the y-axis at (-0.5, 1.5)._
 
 
 # Observations
