@@ -376,8 +376,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
                  # Short scenario guide (for website + figure captions)
                  "scenario_caption" = "Scenarios: Autumn COVID-19 vaccination campaign; \n Immunity waning (optimistic/pessimistic)",
                  # HTML format scenario table
-                 "
-<table>
+                 "table" = "<table>
   <tr>
     <td>
     </td>
