@@ -353,7 +353,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
     </td>
   </tr>
   </table>"
-)
+),
 
 # -------------------------------------------------------------------------
 # Round 4
