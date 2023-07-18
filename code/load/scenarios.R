@@ -371,8 +371,8 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
                    "H" = "H. Upper boundary vaccination, pessimistic waning"
                  ),
                  # Key dates
-                 "origin_date" = as.Date("2023-03-15"),
-                 "submission_window_end" = as.Date("2023-03-17"),
+                 "origin_date" = as.Date("2023-08-01"),
+                 "submission_window_end" = as.Date("2023-08-20"),
                  # Short scenario guide (for website + figure captions)
                  "scenario_caption" = "Scenarios: Autumn COVID-19 vaccination campaign; \n Immunity waning (optimistic/pessimistic)",
                  # HTML format scenario table
