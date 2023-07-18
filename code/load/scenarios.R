@@ -356,3 +356,100 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
 )
 )
 
+# -------------------------------------------------------------------------
+# Round 4
+"round-5" = list("round" = 5,
+                 # Short text label for scenarios in format:
+                 #  "Policy scenario / Epidemiological scenario"
+                 "scenario_labels" = c(
+                   "A" = "A. No vaccination, optimistic waning",
+                   "B" = "B. Pessimistic vaccination, optimistic waning",
+                   "C" = "C. Optimistic vaccination, optimistic waning",
+                   "D" = "D. Upper boundary vaccination, optimistic waning",
+                   "E" = "E. No vaccination, pessimistic waning",
+                   "F" = "F. Pessimistic vaccination, pessimistic waning",
+                   "G" = "G. Optimistic vaccination, pessimistic waning",
+                   "H" = "H. Upper boundary vaccination, pessimistic waning"
+                 ),
+                 # Key dates
+                 "origin_date" = as.Date("2023-03-15"),
+                 "submission_window_end" = as.Date("2023-03-17"),
+                 # Short scenario guide (for website + figure captions)
+                 "scenario_caption" = "Scenarios: Autumn COVID-19 vaccination campaign; \n Immunity waning (optimistic/pessimistic)",
+                 # HTML format scenario table
+                 "
+<table>
+  <tr>
+    <td>
+    </td>
+    <td>
+      <b> No vaccination </b>
+      <ul>
+      </ul>
+    </td>
+    <td>
+      <b> Pessimistic vaccination </b>
+      <ul>
+          <li> <b>60+</b> booster with <b>-50%</b> of flu vaccination uptake* </li>
+      </ul>
+    </td>
+    <td>
+      <b> Optimistic vaccination </b>
+      <ul>
+          <li> <b>60+</b> booster with <b>+15 percentage points</b> of flu vaccination uptake* (capped at 100%) </li>
+      </ul>
+    </td>
+    <td>
+      <b> Upper boundary vaccination </b>
+      <ul>
+          <li> <b>60+</b> booster with <b>100%</b> coverage </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Optimistic waning</b><br>
+      <ul>
+        <li> Protection against infection: <b>6 months</b> median time to transition to <b>70%</b> of the initial immunity </li>
+        <li> Protection against severe outcomes: no waning </li>
+      </ul>
+    </td>
+    <td>
+      Scenario A
+    </td>
+    <td>
+      Scenario B
+    </td>
+    <td>
+      Scenario E
+    </td>
+    <td>
+      Scenario D
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Pessimistic waning</b><br>
+      <ul>
+        <li> Protection against infection: <b>6 months</b> median time to transition to <b>40%</b> of the initial immunity </li>
+        <li> Protection against severe outcomes: <b>6 months</b> median time to transition to <b>80%</b> of the initial immunity </li> </li>
+      </ul>
+    </td>
+    <td>
+      Scenario E
+    </td>
+    <td>
+      Scenario F
+    </td>
+    <td>
+      Scenario G
+    </td>
+    <td>
+      Scenario H
+    </td>
+  </tr>
+</table>"
+)
+)
+
+
