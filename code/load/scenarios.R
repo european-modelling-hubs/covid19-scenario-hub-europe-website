@@ -356,7 +356,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
 ),
 
 # -------------------------------------------------------------------------
-# Round 4
+# Round 5
 "round-5" = list("round" = 5,
                  # Short text label for scenarios in format:
                  #  "Policy scenario / Epidemiological scenario"
