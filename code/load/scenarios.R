@@ -419,7 +419,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
       Scenario B
     </td>
     <td>
-      Scenario E
+      Scenario C
     </td>
     <td>
       Scenario D
