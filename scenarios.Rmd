@@ -33,7 +33,7 @@ See our [Github Wiki](https://github.com/covid19-forecast-hub-europe/covid19-sce
 
 ### Findings
 
-Findings will be published after Round 5 concludes.
+See the [full report](https://covid19scenariohub.eu/report5.html) for our findings from Round 5.
 
 ## Round 4 {.tabset .tabset-pills}
 
