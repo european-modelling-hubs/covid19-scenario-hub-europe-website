@@ -37,21 +37,19 @@ In Round `r params$round`, we asked modellers to start their projections from th
 
 
 # Shared assumptions
-We asked all modellers to include the following parameters and assumptions:
+We asked all modellers to include the following parameters and assumptions, beyond the assumptions of the Scenario table above:
 
-  - Protection against infection was assumed to decrease to 70% (or 40%) of the initial immunity after 6 months in the optimistic (or pessimistic) waning scenario, respectively.
-- Protection against severe outcome was assumed to not decrease (or to decrease to 80%) of the initial immunity after 6 months in the optimistic (or pessimistic) waning scenario, respectively.
+- The vaccination campaigns begin on 01-10-2023 and last for 90 days.
+- New vaccinates will not be a "game changer" compared to previously observed VEs.
 - There is sufficient vaccine supply.
-- The parameters for the waning speed of protection related to the waning since the most recent vaccination or infection.
+- No additional new vaccination campaigns, except those specified in the scenarios.
 - We assumed no plateau for existing immunity against infection.
-- Over the whole projected time period, one new variant was introduced on 01 May 2023.
-- We asked teams to assume that at least 0.1% of infections/cases were due to the new variant on the day of introduction. After the day of the introduction, we asked teams that this number should not drop below 0.1% for at least 16 weeks.
-- We assumed that  the inherent transmissibility of variants does not change over time.
-- The inherent severity of the new variant was assumed to not change over time.
-- No new public health and social measures (non-pharmaceutical interventions / NPIs) would be introduced.
+- The parameters for the waning speed of protection relates to the waning since the most recent vaccination or infection.
+- No new "game changer" variants.
+- No new public health and social measures (non-pharmaceutical interventions / NPIs).
 - No changes in demography given the short timeframe.
 - No novel drugs that strongly impact burden or transmission.
-- No new vaccination campaigns, and the vaccination uptake continues with the current trends.
+- Data sources used: modellers use ECDC provided data for death and hospitalisation incidence, but are free to use any data source for case data. (For countries that have discontinued reporting of an epi indicator, we ask teams to initiate model projections starting at the last reliable data point.)
 
 # Assumptions left to modeller judgement
 Modellers should use their own judgement and relevant literature if making assumptions about a number of aspects. Note that the resulting between-team differences in these assumptions are mean to reflect the uncertainty regarding these aspects and they are main contributor to the uncertainty in the analysis results. 
