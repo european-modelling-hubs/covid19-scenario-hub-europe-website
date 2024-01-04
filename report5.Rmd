@@ -37,39 +37,46 @@ In Round `r params$round`, we asked modellers to start their projections from th
 
 
 # Shared assumptions
-We asked all modellers to include the following parameters and assumptions, beyond the assumptions of the Scenario table above:
+We asked all modellers to include the following parameters and assumptions, beyond the assumptions of the Scenario Table above:
 
-- The vaccination campaigns begin on 01-10-2023 and last for 90 days.
-- New vaccinates will not be a "game changer" compared to previously observed VEs.
+- Any vaccination campaign begins on 01-10-2023 and last for 90 days.
+- New/updated vaccinates will not be a "game changer" compared to previously observed VEs.
 - There is sufficient vaccine supply.
 - No additional new vaccination campaigns, except those specified in the scenarios.
-- We assumed no plateau for existing immunity against infection.
+- No plateau for existing immunity against infection.
 - The parameters for the waning speed of protection relates to the waning since the most recent vaccination or infection.
 - No new "game changer" variants.
 - No new public health and social measures (non-pharmaceutical interventions / NPIs).
 - No changes in demography given the short timeframe.
-- No novel drugs that strongly impact burden or transmission.
+- No novel drugs that strongly impact COVID-19 burden or SARS-CoV-2 transmission.
 - Data sources used: modellers use ECDC provided data for death and hospitalisation incidence, but are free to use any data source for case data. (For countries that have discontinued reporting of an epi indicator, we ask teams to initiate model projections starting at the last reliable data point.)
 
 # Assumptions left to modeller judgement
-Modellers should use their own judgement and relevant literature if making assumptions about a number of aspects. Note that the resulting between-team differences in these assumptions are mean to reflect the uncertainty regarding these aspects and they are main contributor to the uncertainty in the analysis results. 
+Modellers should use their own judgement and relevant literature if making assumptions about a number of modelling aspects. Note that the resulting between-team differences due to these assumptions are desired, and 
+reflect uncertainty regarding these aspects. They are a main contributor to the uncertainty of the analysis results. 
 
-- Item 1
-- Item 2
+- Vaccination (and uptake levels) of at-risk individuals of all ages as well as vaccination of healthcare workers.
+- Functional shape of waning immunity against infection and against severe outcomes (following the above specified decrease of immunity against infection within the specified time frame).
+- The absolute value of vaccine effectiveness and protection from past infections for all outcomes.
+- The under-ascertainment factor and the impact of downscaled testing.
+- Contact rates in response to infection rates.
+- Impact of seasonality, including seasonal behavioural changes.
 
 
 # Round 5 submissions
-Round 5 has received submissions from six international modelling teams across the EU/EEA and beyond: Two teams submitted for 30 EU/EEA countries, and three teams submitted for one EU/EEA country. These submissions include four model submissions for infections, and five model submissions for hospitalisation and death projections.
+Round 5 has received submissions from six international modelling teams from across the EU/EEA and beyond. Submissions are from a diversity of modelling approaches, adding to the between-team variability of projections. 
+One team submitted projections for 30 EU/EEA countries, one team submitted for 6 countries, and 4 teams for one EU/EEA country.  
 
-Table 1. Participating teams by number of countries, scenarios, samples and time horizon
+Table 1. Participating teams by number of modelled countries, scenarios, age-disaggregation
 
-| Team | Countries | Scenario    | Samples |  By age |
-  | :--- | :---: |  :---: | :---: | :---: |
-  | ECDC-CM_TWO | 24 | 4 | 100 |  Yes |
-  | SwissTPH-OpenCOVID | 11 | 4 | 10 | Yes |
-  | SIMID-SCM | 1 | 4 | 100 |  Yes |
-  | UC3M-EpiGraph | 1 | 4 | 30 |  Yes |
-  | ICM | 1 | 4 | 64 | Yes |
+| Team | Countries | Scenario    |  By age |
+  | :--- | :---: |  :---: | :---: |
+  | David E. Singh et al. (Spain) | 1 (Spain) | 8 | Yes |
+  | Nicolas Franco et al. (Belgium) | 1 (Belgium) | 8 | Yes |
+  | Jiangzhuo Chen et al. (USA) | 6 | 8 | Yes |
+  | Tyll Krueger et al. (Poland) | 1 (Poland) | 8 | Yes |
+  | Jakob Benjamin et al. (Germany) | 1 (Germany) | 8 | NO |
+  | ECDC Mathematical Modelling Team (Sweden) | 30 | 8 | Yes |
 
 
 # Results
