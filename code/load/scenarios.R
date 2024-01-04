@@ -398,7 +398,7 @@ _** If a second booster is already offered to 60+ (Greece, Netherlands), a third
       </ul>
     </td>
     <td>
-      <b> Upper boundary vaccination </b>
+      <b> Theoretical upper boundary vaccination </b>
       <ul>
           <li> <b>60+</b> booster with <b>100%</b> coverage </li>
       </ul>

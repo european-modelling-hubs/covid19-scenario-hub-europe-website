@@ -1,10 +1,11 @@
 ---
-  title: "Round `r params$round`"
+title: "Round `r params$round`"
+subtitle: "\"Assessing the impact of COVID-19 booster uptake on the 2023/24 winter burden\""
 output:
   html_document:
-  self_contained: false
-toc: true
-toc_depth: 5
+    self_contained: false
+    toc: true
+    toc_depth: 5
 date: "Report created `r Sys.Date()`"
 params:
   round: 5
@@ -32,7 +33,7 @@ cat(scenarios[[round_text]][["table"]])
 
 See also the [full scenario details](`r paste0("https://github.com/covid19-forecast-hub-europe/covid19-scenario-hub-europe/wiki/Round-", params$round)`) for more detail on the common set of assumptions teams used to create their models.
 
-In Round `r params$round`, we asked modellers to start their projections from the `r scenarios[[round_text]][["origin_date"]]`. Data after this date were not included, and as a result, model projections are unlikely to fully account for later information on the changing variant landscape or behavioural patterns. 
+In Round `r params$round`, we asked modellers to start their projections from the `r scenarios[[round_text]][["origin_date"]]`. Data after this date were not included, and as a result, model projections are unlikely to fully account for later information on, for example, the changing variant landscape or behavioural patterns. 
 
 
 # Shared assumptions
