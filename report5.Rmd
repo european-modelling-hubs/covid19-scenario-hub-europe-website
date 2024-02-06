@@ -75,24 +75,49 @@ Table 1. Participating teams by number of modelled countries, scenarios, age-dis
   | Nicolas Franco et al. (Belgium) | 1 (Belgium) | 8 | Yes |
   | Jiangzhuo Chen et al. (USA) | 6 | 8 | Yes |
   | Tyll Krueger et al. (Poland) | 1 (Poland) | 8 | Yes |
-  | Jakob Benjamin et al. (Germany) | 1 (Germany) | 8 | NO |
+  | Jakob Benjamin et al. (Germany) | 1 (Germany) | 8 | No |
   | ECDC Mathematical Modelling Team (Sweden) | 30 | 8 | Yes |
 
 
-# Results
+# Results and limitations
 
-For each model and scenario, we evaluated the proportion of the three outcomes (deaths, hospitalisations, infections), that is due to a new variant and/or faster (i.e., pessimistic) waning. The cumulative outcomes were compared between baseline scenario A and the other scenarios. The results were aggregated across different countries. Figure 1 below shows that pessimistic waning (scenario C) in most models and outcomes leads to a substantial increase in cumulative burden compared to optimistic waning (scenario A). The introduction of a new variant also showed a substantial impact on the cumulative burden (i.e., comparing scenarios A and B, or C and D) across most models and outcomes. There is a substantial variation in precise values between different models, which is partly due to variation between models, model assumptions, as well as aggregation across different countries (see Table 1 above to see number of countries modelled by each model). Please note these scenarios have not explored the impact of future vaccination campaigns and thus cannot be used to estimate the impact of vaccination. We plan to explore this in the future scenario rounds.
+We first ask, what is the expected 2023/24 winter COVID-19 burden without any further vaccination? And which age groups would be most impacted? We find that without further vaccination, COVID-19 death burden is projected to be around X-X% (80% credible interval) of last year’s death. We focus here on deaths because other outcomes are less comparable across the years. Without further vaccination, elderly (60+) are projected to contribute little to infections (12-17%), but elderly contribute the majority of hospitalisations (92-98%) and deaths (96-99%). This is because the  per-capita rate of hospitalisation for elderly is approximately 5 times higher than that of younger individuals, and for death it is roughly 30 times higher.
 
-![your image alt text here](./images/Round4_Fig1.png)
+We then ask, what is the impact of a high autumn COVID-19 booster uptake on expected burden compared to a low uptake? The results show that a high-uptake booster campaign can reduce deaths substantially. Specifically, while a low-uptake autumn booster campaign reduces projected deaths by up to X% (50% upper credible interval bound, the lower being X), this impact increases to up to X% for a high-uptake booster campaign (lower bound being X). The results are similar for prevention of hospitalisations (X% - X% for a high-uptake campaign). The  impact of a booster campaign increases when there is fast immune evasion by variants and/or fast immunity waning. The overall impact of a booster campaign on infections is minimal (<4%), so that for the reduction of COVID-19 spread other measures would be required.
 
-_Figure 1: Relative change in cumulative infections (left), hospitalisations (middle) and deaths (right) across scenarios, relative to scenario A. The light and dark boxes show the  80% and 50% quantiles, respectively, and the black dot shows the median across samples and countries. The four scenarios are: (A) optimistic waning and no new variant, (B) optimistic waning and a new variant, (C) pessimistic waning and no new variant,  (D) pessimistic waning and a new variant. One model was excluded from the figure due to the low estimated number of severe outcomes in scenarios A&B. Note that we truncate the y-axis at (-0.5, 1.5)._
-
-
-# Observations
-
-Some models use local (country provided) data sources which can result in their model projections to vary both in past and current values as well as projected trends. Further harmonisation of input data and calibration periods can help with reducing the variation between models. Some teams also have experienced difficulties in calibrating the models.
+There is a substantial variation in the above estimates, which is partly due to the aggregation across different countries, as well as variation between models, and model assumptions. This variations reflects large unknowns with respect to the level and waning of protection from prior infection, vaccination, and hybrid immunity, characteristics of future variants, seasonality and social behaviour of contact mixing and mobility, the under-ascertainment factor. Note that immunocompromised subgroups, other high-risk groups, or specific settings (e.g., hospitals, LTCF) are not addressed with this modelling.
 
 
-Update 19/06/2023: Clarified that vaccination was not explicitly modelled in this scenario round, and the results shown here cannot be directly interpreted for future vaccination campaigns.
+# Methods
 
-Update 20/06/2023: Updated Figure 1 with new Model 4 results which corrected for minor issues related to calibration of the pessistic waning scenarios.
+COVID-19 burden 2023/24 relative to last year
+
+- For each country, scenario, model, and projection sample, we divide the cumulative deaths projected for the time window 1 August 2023 to 1 June 2024 by the reported deaths in the time window from the previous year. 
+- We include only the scenarios without vaccination (Scenario A and E). And we included only 5 models, because 1 model did not include projections for death burden.
+- In a Bayesian framework, we model the projected burden (relative to last year and log-transformed) as a function of individual countries, and the projecting model. 
+- We did not include an explicit effect of waning, because projections for both waning scenarios are balanced.
+- Variability between projection samples are modelled through model-specific uncertainties.
+
+COVID-19 burden 2023/24 by age group
+
+- For each projection sample we divide projected burden (COVID-19 infections, hospitalisations, and death) in elderly (60+) by the projected burden in the remaining age groups (<60).
+- We include only the scenarios without vaccination (Scenario A and E). Only 5 models provided projections split by age group and could be used for this analysis.
+- In a Bayesian framework, we model projected age-specific burden as a function of individual countries, and the projecting model.
+- Variability between projection samples are modelled through model-specific uncertainties.
+
+Impact of booster uptake on COVID-19 burden 2023/24 
+
+
+Accounting for imbalanced submissions
+
+
+![your image alt text here](./images/Round5_Fig1.png)
+
+_Figure 1: Reduction in cumulative COVID-19 death burden through a 2023 autumn booster campaign relative to the no-booster scenario. Vaccine impact estimates are shown for the high-uptake (top) and the low-uptake (bottom) conditions. Those estimates are then further split by fast and slow immunity waning. The light and dark bars show the  80% and 50% quantiles, respectively.._
+
+
+# Additional notes
+
+...
+
+
