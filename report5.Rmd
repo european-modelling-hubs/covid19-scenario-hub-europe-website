@@ -69,14 +69,14 @@ One team submitted projections for 30 EU/EEA countries, one team submitted for 6
 
 Table 1. Participating teams by number of modelled countries, scenarios, age-disaggregation
 
-| Team | Countries | Scenario    |  By age |
-  | :--- | :---: |  :---: | :---: |
-  | David E. Singh et al. (Spain) | 1 (Spain) | 8 | Yes |
-  | Nicolas Franco et al. (Belgium) | 1 (Belgium) | 8 | Yes |
-  | Jiangzhuo Chen et al. (USA) | 6 | 8 | Yes |
-  | Tyll Krueger et al. (Poland) | 1 (Poland) | 8 | Yes |
-  | Jakob Benjamin et al. (Germany) | 1 (Germany) | 8 | No |
-  | ECDC Mathematical Modelling Team (Sweden) | 30 | 8 | Yes |
+<!-- | Team | Countries | Scenario    |  By age | -->
+<!--   | :--- | :---: |  :---: | :---: | -->
+<!--   | David E. Singh et al. (Spain) | 1 (Spain) | 8 | Yes | -->
+<!--   | Nicolas Franco et al. (Belgium) | 1 (Belgium) | 8 | Yes | -->
+<!--   | Jiangzhuo Chen et al. (USA) | 6 | 8 | Yes | -->
+<!--   | Tyll Krueger et al. (Poland) | 1 (Poland) | 8 | Yes | -->
+<!--   | Jakob Benjamin et al. (Germany) | 1 (Germany) | 8 | No | -->
+<!--   | ECDC Mathematical Modelling Team (Sweden) | 30 | 8 | Yes | -->
 
 
 # Results and limitations
