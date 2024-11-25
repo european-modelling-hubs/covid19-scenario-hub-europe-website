@@ -22,7 +22,7 @@ h1 {
 </style>
 
 <p style="border: 1px solid #0073ff; padding: 10px; text-align: center;">
-This website does not include the newest scenario modelling results. To explore those, please visit the new <a href="https://respicompass.ecdc.europa.eu/">RespiCompass website"</a>.
+This website does not include the newest scenario modelling results. To explore those, please visit the new <a href="https://respicompass.ecdc.europa.eu/">RespiCompass website</a>.
 </p>
 
 <img src="images/favicon.svg" alt="European COVID-19 Scenario Hub" width="10%"/> 
